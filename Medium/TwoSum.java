@@ -40,7 +40,7 @@ class TwoSum {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) { // put all to map
             map.put(numbers[i], i);
-        }
+        }	//Don't need to put all in once. Use online add/find solution.
         
         for (int i = 0; i < numbers.length; i++) {
             int newTarget = target - numbers[i];
