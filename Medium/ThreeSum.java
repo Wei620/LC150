@@ -39,6 +39,7 @@ class ThreeSum {
         Arrays.sort(num);
 
         for (int i = 0; i < num.length - 2; i++) {
+			//Line 43 and 52 rules out the impossible case in advance.
             if (i > 0 && num[i] == num[i - 1]) continue; // skip duplicate 
             if (num[i] > 0) break; // stop at positive integers
             
@@ -51,6 +52,11 @@ class ThreeSum {
                 }
                 if (num[i] + num[j] > 0) break;// already bigger than 0
                 
+				/* 	No need for checking duplicates of num[k] considering j++
+					and k-- at the end; Both num[i] and num[j] are free of 
+					duplicates already.			
+				*/				
+				
                 if (num[i] + num[j] + num[k] < 0) j++;
                 else if (num[i] + num[j] + num[k] > 0) k--;
                 else { // num[i] + num[j] + num[k] == 0
