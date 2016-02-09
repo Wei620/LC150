@@ -33,6 +33,8 @@ class SingleNum {
      * hashtable, store the value and remove when appears second time
      * the only number left is the one
      */
+	 
+	 // Use the hashset
     public static int singleNum(int[] A) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < A.length; i++) {
