@@ -30,7 +30,7 @@ class ContainerWithMostWater {
             // update answer
             ans = Math.max(ans, (high - low) * Math.min(height[low], height[high]));
             // move lower pointer towards center
-            if (height[low] < height[high]) low++;	//Narrow bottom needs the higher heighth.
+            if (height[low] < height[high]) low++;
             else high--;
         }
         return ans;
