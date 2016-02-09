@@ -33,7 +33,7 @@ class Permutations {
         }
         for (int i = level; i < num.length; i++) {
             swap(num, level, i);
-            permute(num, level + 1, res);
+            permute(num, level + 1, res);   //recursive thinking, permute [level+1, length-1]
             swap(num, level, i); // reset
         }
     }
