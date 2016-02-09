@@ -41,7 +41,7 @@ class RestoreIPAddr {
             }
             return;
         }
-        for (int i = 1; i < 4 && i < s.length(); i++) {
+        for (int i = 1; i < 4 && i < s.length(); i++) {	// 3 digits/sector at most
             String pre = s.substring(0, i);
             if (isValid(pre)) backtrack(s.substring(i), dot - 1, res, ip + pre + ".");
         }

@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * The set [1,2,3,…,n] contains a total of n! unique permutations.
  * 
- * By listing and labeling all of the permutations in order,
+ * By listing and labeling all of the permutations in ascending order,
  * We get the following sequence (ie, for n = 3):
  * 
  * "123"
@@ -35,9 +35,9 @@ class PermutationSeq {
     public static String getPermutation(int n, int k) {
         k = k - 1;
         int factor = 1;
-        for (int i = 1; i < n; i++) factor *= i;
+        for (int i = 1; i < n; i++) factor *= i; //(n-1)! amout of Permutation n-1
         List<Integer> digits = new ArrayList<Integer>();
-        for (int i = 0; i < n; i++) digits.add(i + 1);
+        for (int i = 0; i < n; i++) digits.add(i + 1); //[1, 2, ...., n]
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
@@ -45,7 +45,7 @@ class PermutationSeq {
             sb.append(digits.get(index));
             digits.remove(index); // remove used digit
             k = k % factor;
-            if (i < n - 1) factor = factor / (n - 1 - i);
+            if (i < n - 1) factor = factor / (n - 1 - i); // factor for (n-i-1)
         }
 
         return sb.toString();

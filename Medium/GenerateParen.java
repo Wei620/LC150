@@ -38,6 +38,8 @@ class GenerateParen {
             ans.add(res);
             return;
         }
+		
+		// Why not need a copy of res? String is immutable.
         if (left > 0) dfs(left - 1, right + 1, res + "(", ans); // add (, right + 1
         if (right > 0) dfs(left, right - 1, res + ")", ans); // add ), right - 1
     }
