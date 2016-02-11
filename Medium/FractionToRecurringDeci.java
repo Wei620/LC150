@@ -54,7 +54,7 @@ class FractionToRecurringDeci {
             if (map.containsKey(r)) { // remainder appeared before
                 res.insert(map.get(r), "("); // insert an open paren
                 res.append(")"); // append a close paren
-                break;
+                break;	// from map.get(r) to the last digit will repeat due to the same processing.
             }
             map.put(r, res.length()); // save remainder and the length
             r *= 10; // simulate long division

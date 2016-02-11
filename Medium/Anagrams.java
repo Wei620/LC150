@@ -37,7 +37,7 @@ class Anagrams {
                 if (map.get(key) >= 0) { // key string not added
                     res.add(strs[map.get(key)]); 
                     map.put(key, -1); // mark already added as -1
-                }
+                }	//Just for the first occurence.
             } else map.put(key, i); // first put sorted string and index
         }
         return res;
