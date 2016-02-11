@@ -24,8 +24,8 @@ class SingleNum2 {
     public static int singleNum(int[] A) {
         int ones = 0, twos = 0;
         for (int i = 0; i < A.length; i++) {
-            ones = (ones ^ A[i]) & ~twos; // in ones not in twos
-            twos = (twos ^ A[i]) & ~ones; // in twos not in ones
+            ones = (ones ^ A[i]) & ~twos; // in ones not in twos in case the A[i] was in twos.
+            twos = (twos ^ A[i]) & ~ones; // in twos not in ones. Rule out the new A[i].
         }
         return ones; // only appeared once
     }
