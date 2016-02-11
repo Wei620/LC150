@@ -27,19 +27,27 @@ class DecodeWays {
      * Optimal, DP
      * Reduce space to O(1)
      */
+	
+	/*
+	 *	Let f(i) to be the amount of solutions for s[0,i)
+	 *  f(i) = isValid(code1)*f(i-1) + isValid(code2)*f(i-2)
+	 *  prev1 = f(i-2), prev2 = f(i-1)
+	 */
+	 
     public int numDecodingsOptimal(String s) {
         if (s == null || s.length() == 0) return 0;
         int len = s.length();
-        int prev1 = 1;
-        int prev2 = s.charAt(0) == '0' ? 0 : 1;
+        int f_i_2 = 1;
+        int f_i_1 = s.charAt(0) == '0' ? 0 : 1;
         for (int i = 2; i <= len; i++) {
             int code1 = Integer.valueOf(s.substring(i - 1, i)); // 1 digit
             int code2 = Integer.valueOf(s.substring(i - 2, i)); // 2 digits
-            int temp = prev2;
-            prev2 = (code1 != 0 ? prev2 : 0) + (code2 <= 26 && code2 > 9 ? prev1 : 0);
-            prev1 = temp;
+            int temp = f_i_1;
+			// Update for next loop. Actually, f_i_1 is the current solution.
+            f_i_1 = (code1 != 0 ? f_i_1 : 0) + (code2 <= 26 && code2 > 9 ? f_i_2 : 0);
+            f_i_2 = temp;
         }
-        return prev2;
+        return f_i_1;
     }
     
     /**
