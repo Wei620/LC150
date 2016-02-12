@@ -47,7 +47,8 @@ class SortList {
         ListNode p1 = head;
         ListNode pre2 = pMid;
         ListNode p2 = pMid.next;
-        if (p1.val > p2.val) head = p2; // switch head
+        if (p1.val > p2.val) head = p2; // switch head.
+		// The returned head need to refer to the smallest one.
         while (left > 0 && right > 0) {
             // merge second half to first half
             if (p1.val > p2.val) {
