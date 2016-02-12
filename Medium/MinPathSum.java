@@ -29,7 +29,7 @@ class MinPathSum {
         for (int row = 1; row < m; row++) {
             rowSum[0] += grid[row][0];
             for (int col = 1; col < n; col++) {
-                rowSum[col] = Math.min(rowSum[col - 1], rowSum[col]) + grid[row][col];  //rowSum[col] not update yet
+                rowSum[col] = Math.min(rowSum[col - 1], rowSum[col]) + grid[row][col];  //rowSum[col] not update yet (record of the upper cell)
             }
         }
         return rowSum[n - 1];
