@@ -32,7 +32,7 @@ class RotateList {
         // get the len-n%len th node
         for (int j = len - n % len; j > 0; j--) slow = slow.next;
         fast.next = dummy.next; 
-        dummy.next = slow.next;
+        dummy.next = slow.next; // slow.next is the original fast.
         slow.next = null; // break linkedlist
         return dummy.next;
     }
