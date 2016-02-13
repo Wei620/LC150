@@ -29,7 +29,7 @@ class PartitionList {
         // Partition into two halves.        
         while(cur != null){
             if(cur.val < x){
-                p.next = cur;
+                p.next = cur;   // cut the original link meanwhile.
                 p = p.next;
             } else {
                 q.next = cur;
