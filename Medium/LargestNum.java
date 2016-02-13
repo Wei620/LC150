@@ -34,7 +34,8 @@ class LargestNum {
                 return Long.compare(Long.valueOf(s2 + s1), Long.valueOf(s1 + s2));
             }
         };
-        Arrays.sort(str, comp);
+        Arrays.sort(str, comp); // acsending order regarding to comp, which prefers the -1 output of comp.
+        //str[0] pair with any str[i], str[i]+str[0] is smaller than str[0]+str[i]. It implies 
         if (str[0].equals("0")) return "0"; // deal with 0
         for (String s : str) res.append(s);
         return res.toString();
