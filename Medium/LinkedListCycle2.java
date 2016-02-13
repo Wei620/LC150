@@ -14,7 +14,7 @@ class LinkedListCycle2 {
     
     /**
      * Reset slow to head after cycle is detected
-     * Then move until slow and fast meets
+     * Then only move the slow one until slow and fast meets
      * Each one step every time
      */
     public ListNode detectCycle(ListNode head) {
