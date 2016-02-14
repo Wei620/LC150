@@ -34,12 +34,13 @@ class LargestNum {
                 return Long.compare(Long.valueOf(s2 + s1), Long.valueOf(s1 + s2));
             }
         };
-        Arrays.sort(str, comp); // acsending order regarding to comp, which prefers the -1 output of comp.
-        /*
-         * str[0] is the smallest element in order that defined by comp.
-         * It implies that  for any i, comp.compare(str[0], str[i]) ==  -1,
-         * So str[i] + str[0] is less than str[0] + str[i].
+        
+        /* Bubble sort xxs1s2xxx or xxs2s1xxx
+         * compare("3","30") = -1 given 303 < 330
+         * compare("5","9') = 1 given 95 > 59
          */
+        Arrays.sort(str, comp); // acsending order regarding to comp, which prefers the -1 output of comp.
+
         if (str[0].equals("0")) return "0"; // deal with 0
         for (String s : str) res.append(s);
         return res.toString();
