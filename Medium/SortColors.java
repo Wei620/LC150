@@ -41,7 +41,7 @@ class SortColors {
         
         for (int k = 0; k < A.length; k++) {
             int v = A[k];
-            A[k] = 2; // overwrite as blue
+            A[k] = 2; // overwrite as blue. may overriden as 0 or 1 later.
             if (v == 0) {
                 A[++j] = 1; // write white first, then red
                 A[++i] = 0; // overwrite 1 when there is no white yet
