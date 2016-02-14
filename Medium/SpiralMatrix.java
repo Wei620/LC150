@@ -39,7 +39,7 @@ class SpiralMatrix {
             for (int i = lv; i < m - 1 - lv; i++) res.add(matrix[i][n-1-lv]); // right
             //for (int i = lv + 1; i < m - lv; i++) res.add(matrix[i][n-lv-1]); 
             // check if reach the last row/cow. m(n) - 2 * lv = 1. which has been visit above.  
-            if (2 * lv == m - 1 || 2 * lv == n - 1) break; 
+            if (2 * lv == m - 1 || 2 * lv == n - 1) break; //otherwise, tranverse the last col or row again.
             for (int i = n - 1 - lv; i > lv; i--) res.add(matrix[m-1-lv][i]); // bottom
             //for (int i = n - lv - 2; i >= lv; i--) res.add(matrix[m-lv-1][i]);
             for (int i = m - 1 - lv; i > lv; i--) res.add(matrix[i][lv]); // left
