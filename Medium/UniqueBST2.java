@@ -41,7 +41,7 @@ class UniqueBST2 {
         for (int i = start; i <= end; i++) { // pick ith node from start to end
             left = genTrees(start, i - 1); // list of left subtree
             right = genTrees(i + 1, end); // list of right subtree
-            for (TreeNode lnode : left) {
+            for (TreeNode lnode : left) { // even i = start, left still is not empty, which includes the "null" element.
                 for (TreeNode rnode: right) {
                     /*there exists a combination for each tree*/
                     TreeNode root = new TreeNode(i);
