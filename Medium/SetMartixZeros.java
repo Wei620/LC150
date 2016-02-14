@@ -31,7 +31,19 @@ class SetMartixZeros {
                 }
             }
         }
-
+        
+        // The order gurantees that matrix[0][i] or matrix[j][0] can be overriden. 
+        for(int i = row - 1; i >= 0; i--){
+            for(int j = col -1; j >= 0; j--){
+                boolean isZero = (i == 0 && firstRow) || (j == 0 && firstCol) ||
+                                    matrix[0][j] || matrix[i][0]; 
+                if(isZero){
+                    matrix[i][j] = 0;
+                }
+            }
+            if(firstCol) matrix[i][0] = 0;
+        }
+        /*
         for (int i = row - 1; i > 0; i--) {
             if (matrix[i][0] == 0) {
                 for (int j = col - 1; j > 0; j--) {
@@ -56,6 +68,6 @@ class SetMartixZeros {
             for (int i = 0; i < row; i++) {
                 matrix[i][0] = 0;
             }
-        }
+        }*/
     }
 }
