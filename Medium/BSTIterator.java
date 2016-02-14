@@ -48,7 +48,7 @@ class BSTIterator {
     
     void pushAll(TreeNode root) {
         while (root != null) {
-            s.push(root);
+            s.push(root);  // recursively push the whole subtree
             root = root.left;
         }
     }
