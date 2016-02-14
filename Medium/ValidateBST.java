@@ -28,6 +28,7 @@ class ValidateBST {
      * Check left subtree
      * Compare with current node and set predecessor
      * Check right subtree
+     * If it's a BST, the result of inorder traversal should be in acsending order.
      */
     public boolean isValidBST(TreeNode root) { 
         if (root == null) return true;
