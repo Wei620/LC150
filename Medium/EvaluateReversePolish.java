@@ -20,6 +20,50 @@ class EvaluateReversePolish {
         String[] tokens = {"3","-4","+"};
         System.out.println(evalRPN(tokens));
     }
+    
+    interface Operator{
+        int eval(int x, int y);
+    }
+    
+    private static final Map<String,Operator> OPERATORS =
+        new HashMap<String, Operator>(){{
+            put("+", new Operator(){
+                public int eval(int x, int y){
+                    return x + y;
+                }
+            });
+            put("-", new Operator(){
+                public int eval(int x, int y){
+                    return x - y;
+                }
+            });
+            put("*",new Operator(){
+                public int eval(int x, int y){
+                    return x * y;
+                }
+            });
+            put("/", new Operator(){
+                public int eval(int x, int y){
+                    return x / y;
+                }
+            });
+        }      
+        }
+        
+        public static int evalRPN(String[] tokens){
+            Stack<Integer> stack = new Statck<>();
+            for(String token : tokens){
+                if(OPERATORS.containsKey(token)){
+                    int y = stack.pop();
+                    int x = stack.pop();
+                    stack.push(OPERATORS.get(token).eval(x,y));
+                }
+                else{
+                    stack.push(Integer.parseint(token));
+                }
+            }
+            return stack.pop();
+        }
 
     /**
      * assign a priority for each operators
