@@ -35,7 +35,7 @@ class FlatenBinaryTreeToLinkedList {
     
     /**
      * Add root's right subtree to left node's rightmost child
-     * Then set that subtree as root's right subtree
+     * Then set the root's left subtree as root's right subtree
      * And set root's left child to null
      * Move root to its right child and repeat
      */
