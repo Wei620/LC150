@@ -32,6 +32,7 @@ class SumRootToLeafNo {
      * Build a helper function to pass cur result
      * If its leaf node, just return the val
      * Otherwise, goes to left root first then right root with current value
+     * x - val of root's parent.
      */
     public static int helper(TreeNode root, int x) {
         if (root.right == null && root.left == null) return 10 * x + root.val;
