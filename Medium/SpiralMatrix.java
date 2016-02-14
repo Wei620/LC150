@@ -34,11 +34,16 @@ class SpiralMatrix {
         int lv = 0;
         
         while (2 * lv < m && 2 * lv < n) { // note 2 * level
-            for (int i = lv; i < n - lv; i++) res.add(matrix[lv][i]); // right
-            for (int i = lv + 1; i < m - lv; i++) res.add(matrix[i][n-lv-1]); // down
-            if (2 * lv == m - 1 || 2 * lv == n - 1) break; // reach last row/col
-            for (int i = n - lv - 2; i >= lv; i--) res.add(matrix[m-lv-1][i]);
-            for (int i = m - lv - 2; i >= lv+1; i--) res.add(matrix[i][lv]);
+            for (int i = lv; i < n - 1 - lv; i++) res.add(matrix[lv][i]); // top, use the symmetric style
+            //for (int i = lv; i < n - lv; i++) res.add(matrix[lv][i]);
+            for (int i = lv; i < m - 1 - lv; i++) res.add(matrix[i][n-1-lv]); // right
+            //for (int i = lv + 1; i < m - lv; i++) res.add(matrix[i][n-lv-1]); 
+            // check if reach the last row/cow. m(n) - 2 * lv = 1. which has been visit above.  
+            if (2 * lv == m - 1 || 2 * lv == n - 1) break; 
+            for (int i = n - 1 - lv; i > lv; i--) res.add(matrix[m-1-lv][i]); // bottom
+            //for (int i = n - lv - 2; i >= lv; i--) res.add(matrix[m-lv-1][i]);
+            for (int i = m - 1 - lv; i > lv; i--) res.add(matrix[i][lv]); // left
+            //for (int i = m - lv - 2; i >= lv+1; i--) res.add(matrix[i][lv]);
             lv++;
         }
         return res;
