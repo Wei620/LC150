@@ -32,11 +32,11 @@ class NextPermutation {
     public void nextPermutation(int[] num) {
         if (num == null || num.length == 0) return;
         for (int i = num.length - 2; i >= 0; i--) {
-            if (num[i] < num[i + 1]) {
+            if (num[i] < num[i + 1]) {  //step 1 - find peak
                 int j = num.length - 1;
                 for (; j > i; j--) if (num[j] > num[i]) break;
-                swap(num, i, j);
-                reverse(num, i + 1);
+                swap(num, i, j);  // step 2
+                reverse(num, i + 1); //step 3
                 return;
             }
         }
