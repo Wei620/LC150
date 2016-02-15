@@ -28,7 +28,7 @@ class FindPeak {
         if (num == null || num.length == 0) return 0;
         int n = num.length;
         if (n <= 1) return 0;
-        // handle the first and last element in num[]
+        // Edge cases: handle the first and last element in num[]
         if (num[0] > num[1]) return 0;
         if (num[n - 1] > num[n - 2]) return n - 1;
         
@@ -36,9 +36,11 @@ class FindPeak {
         while (left < right) {
             int mid = (right - left) / 2 + left;
             if (num[mid] > num[mid - 1] && num[mid] > num[mid + 1]) return mid;
-            else if (num[mid] > num[mid + 1]) right = mid - 1;
-            else left = mid + 1;
+            else if (num[mid] > num[mid + 1]) right = mid - 1; // left half has one greater element num[mid-1] at least. 
+            else left = mid + 1; // right half has one greater element num[mid+1] at least.
         }
+		// break condition left == right.
+		// So left(right) is the right element that greater than num[left-1] and num[left+1].
         return left;
     }
 }
