@@ -33,6 +33,10 @@ class SearchInsertPos {
             else if (A[m] > target) r = m - 1;
             else l = m + 1;
         }
+		// l : greatest lower bound. 
+		// last l satisify A[l-1]<target.
+		// target should be insert right after l-1. 
+		// So return l.
         return l;
     }
 }
