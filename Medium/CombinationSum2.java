@@ -49,6 +49,7 @@ class CombinationSum2 {
         }
         
         for (int i = index; i < num.length; i++) {
+            if(i != index && num[i] == num[i-1]) continue; //skip dups - keep consistent with subsetII
             int newTarget = target - num[i];
             if (newTarget >= 0) {
                 comb.add(num[i]);
@@ -56,7 +57,7 @@ class CombinationSum2 {
                 comb.remove(comb.size() - 1);
             } else break;
             // skip dups, note the range
-            while (i < num.length - 1 && num[i] == num[i + 1]) i++;
+            //while (i < num.length - 1 && num[i] == num[i + 1]) i++;
         }
     }
 }
