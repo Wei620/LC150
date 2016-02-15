@@ -32,11 +32,19 @@ class BestTimeStock3 {
         int valley = prices[0];
         int peak = prices[len - 1];
         
+		//at most two transactions. 
+		//Divide days into two parts each one covers on e trasaction. n division.
+		// Division gurantees no overlap on transactions.
+		//Same-day transaction bring 0 profit.
+		//maxBy[0] = 0, maxSince[len-1] = 0.		
+		
         for (int i = 1; i < len; i++) {
             valley = Math.min(valley, prices[i]);
+			//Compared with stock1. Need to update the everyday profit. So no pre-price-comparison.
             maxBy[i] = Math.max(maxBy[i - 1], prices[i] - valley);
         }
         /*update maxProfit while build maxSince*/
+		
         for (int i = len - 2; i >= 0; i--) {
             peak = Math.max(peak, prices[i]);
             maxSince[i] = Math.max(maxSince[i + 1], peak - prices[i]);
