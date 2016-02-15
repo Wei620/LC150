@@ -50,7 +50,12 @@ class Search2DMatrix {
             else if (matrix[mid][0] > target) right = mid - 1;
             else left = mid + 1;
         }
-        // row index is left - 1
+		// Aim to find the greatest matrix[i][0] < target.
+		// For the last left move, mid = left - 1 where matrix[i][0] < target
+		// So, row index is left - 1
+		// BS: left move, find target's greatest lower bound.
+		//     right move, find target's least 
+		
         if (left - 1 < 0 || left - 1 >= matrix.length) return false;
         int row = left - 1;
         left = 0;
