@@ -33,6 +33,7 @@ class Subsets {
     
     /**
      * Remember the start position and do backtracking
+     * null, {1}, {1,2}, {1,2,3},{2},{2,3},{3}
      */
     public static List<List<Integer>> subsetsB(int[] s) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
