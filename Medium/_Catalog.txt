@@ -26,6 +26,8 @@ Triangle
 Best Time to Buy and Sell Stock II
 Jump Game
 Two Sum
+
+P3
 4Sum
 3Sum
 Remove Duplicates from Sorted Array II
@@ -35,6 +37,8 @@ Palindrome Partitioning
 Combinations
 Permutations
 Combination Sum
+
+P4
 Gray Code
 Permutation Sequence
 Generate Parentheses
@@ -42,6 +46,8 @@ Restore IP Addresses
 Letter Combinations of a Phone Number
 Surrounded Regions
 Word Ladder
+
+P5
 Single Number II
 Repeated DNA Sequences 
 Maximum Subarray
@@ -51,6 +57,8 @@ Word Break
 Decode Ways
 Gas Station
 Single Number
+
+P6
 Fraction to Recurring Decimal
 Anagrams
 Longest Substring Without Repeating Characters
