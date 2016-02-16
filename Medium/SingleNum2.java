@@ -24,8 +24,16 @@ class SingleNum2 {
     public static int singleNum(int[] A) {
         int ones = 0, twos = 0;
         for (int i = 0; i < A.length; i++) {
-            ones = (ones ^ A[i]) & ~twos; // in ones not in twos in case the A[i] was in twos.
-            twos = (twos ^ A[i]) & ~ones; // in twos not in ones. Rule out the new A[i].
+			// New A[i]: 
+			// case 1 - never show up;
+			// case 2 - show up once already;
+			// case 3 show up twice already
+			
+			// ^ eliminate case 2, need ~twos to elimi1 case 3.
+            ones = (ones ^ A[i]) & ~twos; 
+			
+			// ^ eliminate case 3, need ~ones(updated) to elimi1 case 1. Note if A[i] was in ones, it has been removed from the updated ones.
+            twos = (twos ^ A[i]) & ~ones;
         }
         return ones; // only appeared once
     }
