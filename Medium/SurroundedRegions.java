@@ -69,7 +69,8 @@ class SurroundedRegions {
                                     q.add(nextX * n + nextY);
                                 visited[nextX][nextY] = true; // set visited
                             } else surround = false; // false if on the boundry
-                        }
+							// why not break "for" and "while" loops? need to mark other connected cells as visited.
+                        }						
                     }
                     if (surround) for (int p : pointsToChange) board[p / n][p % n] = 'X'; // set to 'X'
                 }
