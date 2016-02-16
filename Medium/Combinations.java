@@ -32,6 +32,7 @@ class Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         combine(n, k, 1, new ArrayList<Integer>(), res); // note that start is 1
+		// k - break case.
         return res;
     }
     
@@ -41,7 +42,7 @@ class Combinations {
             return;
         }
         for (int i = start; i <= n; i++) { // note that from start to n, <=
-            List<Integer> copy = new ArrayList<Integer>(comb);
+            List<Integer> copy = new ArrayList<Integer>(comb); // pass copy to next recursion. No need to remove i later.
             copy.add(i); // don't forget to add i to copy
             combine(n, k - 1, i + 1, copy, result); // choose k-1 from i+1 to n
         }
