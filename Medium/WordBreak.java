@@ -21,6 +21,8 @@ class WordBreak {
      * Traverse from start to current position and check whether current 
      * boolean is true and the rest in set 
      */
+	 
+	 // can[i] == true: substring(0,i) can be broken.
     public boolean wordBreak(String s, Set<String> dict) {
         if (s == null || s.length() == 0 || dict == null) return false;
         int len = s.length();
