@@ -44,6 +44,11 @@ class CombinationSum {
             res.add(new ArrayList<Integer>(comb)); // dereference
             return;
         }
+		
+		/* if element are negative
+		 * Comment out line54,58. Add extra base case.
+		if(target != 0) return;
+		 */
         for (int i = pos; i < candidates.length; i++) {
             int newTarget = target - candidates[i];
             if (newTarget >= 0) {
