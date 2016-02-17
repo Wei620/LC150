@@ -30,7 +30,18 @@ class Pow {
             n = -n;
             x = 1 / x; // x can be zero?
         }
+		
+		/* recursive
+		double v = power(x, n/2);
+		if(n % 2 == 0) return v * v;
+		else return v * v * n;
+		*/
+		
         double res = 1; // mind overflow
+		// res = (f^2)^(n/2) * f(if n is odd)
+		// f^2 -> f, n/2 -> n
+		// line 44: part 2
+		// line 45: part 1
         for (double f = x; n > 0; n = n >> 1) { // n >>= 1, n/=2
             if (n % 2 == 1) res *= f;
             f = f * f; // f *= f
