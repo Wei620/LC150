@@ -54,6 +54,16 @@ class ReorderList {
             tail = tail.next.next;
         }
         ListNode cur = mid.next;
+        //keep consistent with reverse linked list 2
+        if(cur == null) reutrn head; // only one node
+        while(cur.next != null){ //insert cur.next after mid 
+            ListNode tmp = curr.next.next;
+            curr.next.next = curr;
+            mid.next = curr.next;
+            curr = tmp;
+        }        
+       
+        /*
         mid.next = null; // split mid and mid.next
         // reverse list 2 
         while (cur != null) {
@@ -61,16 +71,16 @@ class ReorderList {
             cur.next = mid.next; // insert after mid
             mid.next = cur;
             cur = temp; // move to next node
-        }
+        }*/ 
         // reorder list
         ListNode left = head; 
         ListNode right = mid.next;
         while (right != null) { // latter half has fewer elements
-            mid.next = right.next;
-            right.next = left.next;
-            left.next = right;
+            mid.next = right.next; // cut right
+            right.next = left.next; // insert right
+            left.next = right; 
             // move to next node
-            left = right.next;
+            left = right.next; //original left.next
             right = mid.next;
         }
     }
