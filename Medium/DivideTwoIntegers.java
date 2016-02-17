@@ -13,8 +13,10 @@ class DivideTwoIntegers {
     
     /**
      * Take care of special cases, 0, +1, -1
-     * dividend = a0 * 1 * divisor + a1 * 2 * divisor + a2 * 2^2 * divisor...
+	 * Think about the binary muliplication 
+     * dividend = a0 * 2^0 * divisor + a1 * 2^1 * divisor + a2 * 2^2 * divisor...
      * ai can be 0 or 1, set it to 1 if dividend >= ai * 2^i * divisor
+	 * 2^i * divisor: left move i bit
      * All ais added up to result
      */
     public int divide(int dividend, int divisor) {
@@ -25,7 +27,8 @@ class DivideTwoIntegers {
         final boolean neg = (dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0);
         long ldividend = Math.abs((long)dividend); // convert to abstract long
         final long ldivisor = Math.abs((long)divisor);
-        int res = 0;
+        //start
+		int res = 0;
         for (int bit = Integer.SIZE - 1; bit >= 0 && ldividend >= ldivisor; bit--) { // bit from 31 to 0, dividend >= divisor
             if (ldividend >= (ldivisor << bit)) {
                 res |= 1 << bit; // set 1 in relative bit in result
