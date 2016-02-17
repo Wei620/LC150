@@ -39,21 +39,21 @@ class SortList {
         // sort left
         head = mergeSort(preHead, head, left);
         // sort right
-        ListNode pMid = head;
-        for (int i = 0; i < left - 1; i++) pMid = pMid.next;
+        ListNode pMid = preHead;
+        for (int i = 0; i < left; i++) pMid = pMid.next;
         mergeSort(pMid, pMid.next, right);
         // merge
         ListNode pre1 = preHead;
         ListNode p1 = head;
         ListNode pre2 = pMid;
         ListNode p2 = pMid.next;
-        if (p1.val > p2.val) head = p2; // switch head.
+        if (p1.val > p2.val) head = p2; // switch head that will be returned finally.
 		// The returned head need to refer to the smallest one.
         while (left > 0 && right > 0) {
             // merge second half to first half
             if (p1.val > p2.val) {
-                pre2.next = p2.next; // insert p2 before p1
-                p2.next = p1;
+                pre2.next = p2.next; 
+                p2.next = p1; // insert p2 before p1
                 pre1.next = p2;
                 // set to next
                 pre1 = p2;
