@@ -15,7 +15,7 @@ class AddTwoNum {
     }
 
     /**
-     * Create a pre head pointer
+     * Create a dummy head pointer
      * Build list node one by one
      * Use sum to track the current sum of nodes, or node
      * Reset sum using sum /= 10
@@ -24,8 +24,8 @@ class AddTwoNum {
     public ListNdoe addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode c1 = l1;
         ListNode c2 = l2;
-        ListNode pre = new ListNode(0); // set pre head
-        ListNode d = pre;
+        ListNode dummy = new ListNode(0); // set dummy head
+        ListNode d = dummy; //digit
         int sum = 0; // the sum of two nodes
         while (c1 != null || c2 != null) { // traverse longer list
             if (c1 != null) { // add one list 
@@ -42,7 +42,7 @@ class AddTwoNum {
             d = d.next; 
         }
         if (sum == 1) d.next = new ListNode(1); // note that can have carry at the last digit
-        return pre.next;
+        return dummy.next;
     }
     
     public class ListNode {
