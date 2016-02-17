@@ -31,7 +31,7 @@ class reverseLinkedList2 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode pre = dummy;
-        for (int i = 1; i < m; i++) pre = pre.next;
+        for (int i = 1; i < m; i++) pre = pre.next; // m, n 1-based index
         
         ListNode cur = pre.next;
         for (int i = m; i < n; i++) { // insert next to head to reverse
@@ -39,7 +39,7 @@ class reverseLinkedList2 {
             cur.next.next = pre.next;
             pre.next = cur.next;
             cur.next = temp;
-        }
+        } // pre.next - pos to be insert, pre never moved
         return dummy.next;
     }
 
