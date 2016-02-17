@@ -45,7 +45,7 @@ class ReverseWords {
                     i++;
                 }
                 res = res.length() == 0 ? word.toString() : word.toString() + " " + res; // insert to front of res
-                i--; // reset i
+                i--; // reset i due to the break in while
             }
         }
         return res;
