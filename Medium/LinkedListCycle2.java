@@ -31,6 +31,12 @@ class LinkedListCycle2 {
             }
         }
         if (!hasCycle) return null;
+		
+		/* http://fisherlei.blogspot.com/2013/11/leetcode-linked-list-cycle-ii-solution.html
+		
+		both fast and slow will reach the conjection after x steps.
+		*/
+		
         slow = head;
         while (slow != fast) { // move x steps further
             fast = fast.next;
