@@ -27,7 +27,8 @@ class SwapNode {
 
         return dummy.next;
     }
-
+    
+    // next1 and nex2 are adjacent.
     private ListNode swap(ListNode next1, ListNode next2) {
         next1.next = next2.next;
         next2.next = next1;
