@@ -16,24 +16,24 @@ class RotateList {
     
     /**
      * Two pointers
-     * Move fast pointer to the end of the list to get length
-     * Move slow pointer to len - n % len to get the break point
-     * Connect fast with head, update new head
-     * Set slow.next to null to unlink the list
+     * Move preTail pointer to the one before end of the list to get length
+     * Move preHead pointer by len - n % len steps to get the break point (preHead.next)
+     * Connect preTail with head, update new head
+     * Set preHead.next to null to unlink the list
      */
     public static ListNode rotateRight(ListNode head, int n) {
         if (head == null || head.next == null) return head;
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode fast = dummy, slow = dummy;
-        // get length and move fast to the end of list
+        ListNode preTail = dummy, preHead = dummy;
+        // get length and move preTail to the end of list
         int len;
-        for (len = 0; fast.next != null; len++) fast = fast.next;
+        for (len = 0; preTail.next != null; len++) preTail = preTail.next;
         // get the len-n%len th node
-        for (int j = len - n % len; j > 0; j--) slow = slow.next;
-        fast.next = dummy.next; 
-        dummy.next = slow.next; // slow.next is the original fast.
-        slow.next = null; // break linkedlist
+        for (int j = len - n % len; j > 0; j--) preHead = preHead.next;
+        preTail.next = dummy.next; 
+        dummy.next = preHead.next; // preHead.next will be returned.
+        preHead.next = null; // break linkedlist
         return dummy.next;
     }
     
