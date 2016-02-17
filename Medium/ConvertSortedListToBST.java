@@ -39,7 +39,7 @@ class ConvertSortedListToBST {
      */
     public static TreeNode buildTree(int n) {
         if (n == 0) return null;
-        TreeNode node = new TreeNode(0);
+        TreeNode node = new TreeNode(0); // update value later
         node.left = buildTree(n / 2);
         node.val = cur.val;
         cur = cur.next;

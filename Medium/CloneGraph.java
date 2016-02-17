@@ -43,20 +43,20 @@ class CloneGraph {
      */
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) return null;
-        Queue<UndirectedGraphNode> q = new LinkedList<UndirectedGraphNode>();
-        Map<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>();
+        Queue<UndirectedGraphNode> q = new LinkedList<UndirectedGraphNode>(); // tranverse orignal graph
+        Map<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>(); // index(1) and store(2) the clone graph. Use as the visited(3) record.
         q.add(node);
         while (!q.isEmpty()) { // BFS
             UndirectedGraphNode cur = q.poll();
-            if (!map.containsKey(cur.label)) map.put(cur.label, new UndirectedGraphNode(cur.label)); // put in map to set visited
+            if (!map.containsKey(cur.label)) map.put(cur.label, new UndirectedGraphNode(cur.label)); // step 1. put in map to set visited
             if (cur.neighbors != null) {
                 for (UndirectedGraphNode n : cur.neighbors) {
                     if (!map.containsKey(n.label)) {
-                        q.add(n);
-                        map.put(n.label, new UndirectedGraphNode(n.label));
+                        q.add(n); // step 2. Added first-visit neighbor to BFS next level
+                        map.put(n.label, new UndirectedGraphNode(n.label)); //step 3. Add neigbhors.
                     }
                     // add to neighbors
-                    map.get(cur.label).neighbors.add(map.get(n.label));
+                    map.get(cur.label).neighbors.add(map.get(n.label)); // connect neighbors.
                 }
             }
         }

@@ -22,15 +22,17 @@ class BestTimeStock {
      * If next price is bigger, it's only possible to update the profit
      * If next price is smaller or equal, it's only possible to update min
      */
+	 
     public static int maxProfit(int[] prices) {
         if (prices == null || prices.length < 2) return 0; // need at least 2
-        int max = 0;
-        int min = prices[0]; // track the minimum of profit array before cur ele
+        int maxProfit = 0;
+        int min = prices[0]; // min price
         for (int i = 1; i < prices.length; i++) { // note that i starts from 1
             min = Math.min(min, prices[i]); // update min
-            if (prices[i] > prices[i - 1]) max = Math.max(max, prices[i] - min);
+            // You can update the profit day by day. But this condition save some unnessary comparison.
+			if (prices[i] > prices[i - 1]) maxProfit = Math.max(maxProfit, prices[i] - min);
         }
-        return max;
+        return maxProfit;
     }
     
     /**

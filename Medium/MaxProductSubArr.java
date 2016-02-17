@@ -17,7 +17,7 @@ class MaxProductSubArr {
      * DP, update according to A[i]
      * f(k) = Largest product subarray, from index 0 up to k.
      * g(k) = Smallest product subarray, from index 0 up to k.
-     * 
+     * head may not be A[0] considering the comparison with A[k].
      * f(k) = max( f(k-1) * A[k], A[k], g(k-1) * A[k] )
      * g(k) = min( g(k-1) * A[k], A[k], f(k-1) * A[k] )
      */

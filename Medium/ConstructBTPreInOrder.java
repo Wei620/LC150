@@ -24,7 +24,7 @@ class ConstructBTPreInOrder {
     
     public TreeNode buildTree(int[] preorder, int[] inorder, int ps, int pe, int is, int ie) {
         if (ps > pe) return null;
-        int pos = is;
+        int pos = is;  // root's inorder index
         TreeNode root = new TreeNode(preorder[ps]);
         for (; pos <= ie; pos++) { // find root in inorder, no duplicates
             if (inorder[pos] == preorder[ps]) break;

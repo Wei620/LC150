@@ -23,13 +23,24 @@ class SearchInRotatedSortedArray2 {
         int r = A.length - 1;
         while (l <= r) {
             int m = l + (r - l) / 2;
+			/*
+			 * [l,m][m,r]
+			 * target vs A[m]
+			 * BS: target < A[m], target in [l,m]
+			 * Rotate: m may less than l, but in [m,r]instead.
+			 * So, check if target is in the sorted half
+			 * case 1. left sorted. A[l] < A[m]
+			 * case 2. right sorted. A[m] < A[r]
+			 * Update [l,r] to capture the potential target.
+			 */
             if (A[m] == target) return true;
-            /*skip*/
+            /*skip*/  // m != target in 3 skip cases.
             if(A[l] == A[m] && A[m] == A[r]) {
-                l++;
+                l++;  // pattern -'-   fast escape
                 r--;
-            } else if(A[l] == A[m]) l = m + 1;
-            else if(A[m] == A[r]) r = m;
+            } else if(A[l] == A[m]) l = m + 1; //[l,m] constant
+            else if(A[m] == A[r]) r = m; //[m,r] constant
+			// A[l], A[r], A[m] all different.
             else if (A[l] < A[m]) { // left half sorted
                 if (A[l] <= target && target < A[m]) r = m - 1;
                 } else l = m + 1;

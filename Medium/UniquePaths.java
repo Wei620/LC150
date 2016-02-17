@@ -23,14 +23,15 @@ class UniquePaths {
      * Math, Combination
      * Equivalent to choose n-1 to go down from m - 1 + n - 1
      * other steps will go right
-     * n(n-1)...(n-r+1)/r!
+     * Cr_n = n(n-1)...(n-r+1)/r!
      */
     public static int uniquePathsMath(int m, int n) {
-        int k = m > n ? n : m;
-        int N = m + n - 2;
+        int k = m > n ? n : m; // k is the less one between m and n.
+        int N = m + n - 2; // total steps
         double res = 1; // note that res can overflow
+        //calculate Ck_N
         for (int i = 1; i < k; i++) {
-            res *= N--;
+            res *= N--; // k-1 times
             res /= i;
         }
         return (int)res; // convert to int

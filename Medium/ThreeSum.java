@@ -36,21 +36,21 @@ class ThreeSum {
      */
     public List<List<Integer>> threeSum(int[] num) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        Arrays.sort(num);
+        Arrays.sort(num);  //dups - sort first.
 
         for (int i = 0; i < num.length - 2; i++) {
 			//Line 43 and 52 rules out the impossible case in advance.
-            if (i > 0 && num[i] == num[i - 1]) continue; // skip duplicate 
-            if (num[i] > 0) break; // stop at positive integers
+            if (i > 0 && num[i] == num[i - 1]) continue; // skip duplicate, edge condition
+            if (num[i] > 0) break; // stop at positive integers or target/3
             
             int j = i + 1;
             int k = num.length - 1;
             while (j < k) {
-                if (j > i + 1 && num[j] == num[j - 1]) { // skip duplicate 
+                if (j > i + 1 && num[j] == num[j - 1]) { // skip duplicate , edge condition
                     j++;
                     continue;
                 }
-                if (num[i] + num[j] > 0) break;// already bigger than 0
+                if (num[i] + num[j] > 0) break;// already bigger than 0 or > target - num[i]
                 
 				/* 	No need for checking duplicates of num[k] considering j++
 					and k-- at the end; Both num[i] and num[j] are free of 

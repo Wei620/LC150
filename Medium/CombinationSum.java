@@ -40,17 +40,22 @@ class CombinationSum {
      * Bakctracking
      */
     private void helper(int[] candidates, int target, int pos, List<Integer> comb, List<List<Integer>> res) {
-        if (target == 0) {
+        if (target == 0) {  //base case
             res.add(new ArrayList<Integer>(comb)); // dereference
             return;
         }
+		
+		/* if element are negative
+		 * Comment out line54,58. Add extra base case.
+		if(target != 0) return;
+		 */
         for (int i = pos; i < candidates.length; i++) {
             int newTarget = target - candidates[i];
             if (newTarget >= 0) {
                 comb.add(candidates[i]);
                 helper(candidates, newTarget, i, comb, res); // note i
                 comb.remove(comb.size() - 1);
-            } else break; // too big
+            } else break; // too big, never go to the base case.
         }
     }
 }

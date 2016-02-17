@@ -42,7 +42,7 @@ class WordSearch {
 
         for (int i = 0; i < board.length; i++)
             for (int j = 0; j < board[0].length; j++)
-                if (board[i][j] == word.charAt(0)) { // match the first char
+                if (board[i][j] == word.charAt(0)) { // match the first char - unnecessary but save some time
                     if (dfs(board, i, j, word, 0)) return true;
                 }
         return false;
@@ -52,6 +52,7 @@ class WordSearch {
      * Remember position in board
      * Remember position in matched word
      */
+    // String word, int n - target; i, j - starting pos, board - set    
     public static boolean dfs(char[][] board, int i, int j, String word, int n) {
         if (word.length() == n) return true;
         // outside board or doesn't match

@@ -24,6 +24,10 @@ class Permutations {
         return res;
     }
     
+	/*  http://www.sigmainfy.com/blog/leetcode-permutations-i-and-ii.html
+	 * swap A[lv] and A[j] to generate new permutation.
+	 * i = 0, A.length - 1, j = lv,...., A.length -1, 
+	 */
     public static void permute(int[] num, int level, List<List<Integer>> res) {
         if (level == num.length) {
             List<Integer> row = new ArrayList<Integer>();

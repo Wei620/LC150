@@ -34,11 +34,13 @@ class DecodeWays {
 	 *  prev1 = f(i-2), prev2 = f(i-1)
 	 */
 	 
+	 // Restore IP - List all decode ways, can also count the decode ways. But not O(n).
+	 
     public int numDecodingsOptimal(String s) {
         if (s == null || s.length() == 0) return 0;
         int len = s.length();
-        int f_i_2 = 1;
-        int f_i_1 = s.charAt(0) == '0' ? 0 : 1;
+        int f_i_2 = 1; // f(0) - always be 1 for the starting point.
+        int f_i_1 = s.charAt(0) == '0' ? 0 : 1; //f(1)
         for (int i = 2; i <= len; i++) {
             int code1 = Integer.valueOf(s.substring(i - 1, i)); // 1 digit
             int code2 = Integer.valueOf(s.substring(i - 2, i)); // 2 digits

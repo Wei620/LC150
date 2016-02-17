@@ -57,7 +57,7 @@ class WordLadder {
                         String newWord = new String(ch);
                         if (dict.contains(newWord)){ // new word in dict
                             queue.add(newWord); // add to queue
-                            dict.remove(newWord); // remove from dict
+                            dict.remove(newWord); // remove from dict. no visited record. no need to put unused new words back to the dict.
                         }
                     }
                 }

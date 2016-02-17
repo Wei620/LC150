@@ -33,6 +33,7 @@ class Subsets {
     
     /**
      * Remember the start position and do backtracking
+     * null, {1}, {1,2}, {1,2,3},{1,3},{2},{2,3},{3}
      */
     public static List<List<Integer>> subsetsB(int[] s) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -42,7 +43,7 @@ class Subsets {
     }
 
     public static void subsetsB(int[] s, int start, List<Integer> set, List<List<Integer>> result) {
-        result.add(new ArrayList<Integer>(set));
+        result.add(new ArrayList<Integer>(set)); //list all - no base case. update result for every step.
         for (int i = start; i < s.length; i++) {
             set.add(s[i]); // with i
             subsetsB(s, i + 1, set, result); // DFS

@@ -29,18 +29,34 @@ class TwoSum {
             System.out.print(i == res.length - 1 ? res[i] : res[i] + ", ");
         }
     }
-
+    
+    ////Don't need to put all in once. 
+    public int[] twoSum(int[] numbers, int target) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < numbers.length; i++) { // put all to map
+            int newTarget = target - numbers[i];
+            if(map.containsKey(newTarget)){
+                return new int[]{map.get(newTarget) + 1, i + 1};
+            }
+            else{
+                map.put(numbers[i], i);
+            }
+        }
+        return null;
+    }
+    
     /**
      * HashMap, O(n) time, O(n) space
      * key -> number, value -> index
      * Search new target in map and return index if not same
      * Otherwise return null
      */
+       
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) { // put all to map
             map.put(numbers[i], i);
-        }	//Don't need to put all in once. Use online add/find solution.
+        }
         
         for (int i = 0; i < numbers.length; i++) {
             int newTarget = target - numbers[i];

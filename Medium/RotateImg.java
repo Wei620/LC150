@@ -30,6 +30,17 @@ class RotateImg {
     public void rotate(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return;
         int n = matrix.length;
+        for(int lv = 0; lv < n/2; lv++){
+            int k = n - 1 - 2 * lv; //half close half open range
+            for(int i = 0; i < k; i++){
+                int tmp = matrix[lv][lv + i];
+                matrix[lv][lv + i] = matrix[lv + k - i][lv];
+                matrix[lv + k - i][lv] = matrix[lv + k][lv + k - i];
+                matrix[lv + k][lv + k - i] = matrix[lv + i][lv + k];
+                matrix[lv + i][lv + k] = temp;
+            }
+        }
+        /*
         for (int i = 0; i < n / 2 ; i++) {
             for (int j = i; j < n - i - 1 ; j++) {
                 int tmp = matrix[i][j]; // save in tmp var
@@ -38,6 +49,6 @@ class RotateImg {
                 matrix[n-i-1][n-j-1] = matrix[j][n-i-1]; // last col
                 matrix[j][n-i-1] = tmp;
             }
-        }
+        }*/
     }
 }

@@ -42,7 +42,7 @@ class JumpGame {
         if (A[0] == 0) return false; // note its important cause we start from 1
         int maxJump = A[0];
         for (int i = 1; i < A.length - 1; i++) {
-            maxJump = Math.max(maxJump - 1, A[i]);
+            maxJump = Math.max(maxJump - 1, A[i]);  //how to deplete maxJump, A[i] = 0, i = m,... n
             if (maxJump == 0) return false;
         }
         return true;

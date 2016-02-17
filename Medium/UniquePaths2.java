@@ -31,6 +31,7 @@ class UniquePaths2 {
      * DP, bottom-up approach
      * build from end point to start point
      * for the grid paths at the rth row and cth column
+     * paths[r][c] means the path number starting from (r,c) to the destination.
      * paths[r][c] = obstacleGrid[r][c] == 1 ? 0 
      * : paths[r + 1][c] + paths[r][c + 1];
      */
@@ -39,9 +40,9 @@ class UniquePaths2 {
         int m = obstacleGrid.length;
         if (m == 0) return 0;
         int n = obstacleGrid[0].length;
-        int[][] paths = new int[m + 1][n + 1];
-        
-        paths[m - 1][n] = 1;
+        int[][] paths = new int[m + 1][n + 1]; 
+        // the extra row and col are used for calculating path[m-1][.] and path[.][n-1]        
+        paths[m - 1][n] = 1; // Or, paths[m][n-1] = 1; Apply to calculating paths[m-1][n-1]
         for (int r = m - 1; r >= 0; r--) {
             for (int c = n - 1; c >= 0; c--) {
                 paths[r][c] = obstacleGrid[r][c] == 1 ? 0 : paths[r + 1][c] + paths[r][c + 1];

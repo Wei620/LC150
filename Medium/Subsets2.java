@@ -46,10 +46,10 @@ class Subsets2 {
      * Add number to list and pass list and i+1 to next backtrack
      * Reset list after that
      */
-    private void subsetsHelper(List<List<Integer>> res, List<Integer> list, int[] num, int pos) {
+    private void subsetsHelper(List<List<Integer>> res, List<Integer> list, int[] num, int start) {
         res.add(new ArrayList<Integer>(list));
-        for (int i = pos; i < num.length; i++) {
-            if (i != pos && num[i] == num[i - 1]) continue; // skip dups
+        for (int i = start; i < num.length; i++) {
+            if (i != start && num[i] == num[i - 1]) continue; // skip dups
             list.add(num[i]);
             subsetsHelper(res, list, num, i + 1);
             list.remove(list.size() - 1);

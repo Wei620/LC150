@@ -36,7 +36,7 @@ class BTInOrder {
         while (!s.isEmpty() || root != null) {
             // check whether current node is null
             if (root != null) { // current node is not null
-                s.push(root);
+                s.push(root);   // Go down, push non-null node
                 root = root.left;
             } else { // current node is null, pop and go right
                 root = s.pop();
@@ -69,7 +69,7 @@ class BTInOrder {
                 cur = cur.right; // move to right
             } else {
                 pre = cur.left;
-                while (pre.right != null && pre.right != cur) pre = pre.right;
+                while (pre.right != null && pre.right != cur) pre = pre.right; //most right node in left
                 if (pre.right == null) { // connect with cur
                     pre.right = cur;
                     cur = cur.left; // traverse left subtree

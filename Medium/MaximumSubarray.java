@@ -24,6 +24,11 @@ class MaximumSubarray {
      * currentMax = max(currentMax + A[i], A[i])
      * maxSubArr = max(currentMax, maxSubArr)
      */
+	
+	// Global max/min - Scan
+	// 1. Update calculation with new A[i]. 
+	// 2. Compared the current result with the temp max/min
+	// 3. return max/min
     public int maxSubArraySum(int[] A) {
         if (A == null || A.length == 0) return 0;
         int curMax = A[0];

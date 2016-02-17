@@ -20,13 +20,23 @@ class FindRotatedArrMin {
         if (num.length == 1 || num[l] < num[r]) return num[0];
         
         int mid = 0;
+        
+        /* There's n-1 pairs of adjacent nodes.
+         * Rotation brings one pair with reverse order.
+         * If the original sequence is in ascending order, the special one is max-min.
+         * Any range [left,right] contains this pair must satisify num[left] > num[right].
+         * num[right] < num[0] < num[left].
+         * Try to capture this range with Binary Search.
+         */        
         while (l < r) {
             mid = l + (r - l) / 2;
-            System.out.println(mid);
-            if (num[l] < num[mid]) l = mid;
-            else r = mid;
+            if(num[l] > num[mid]) r = mid;
+            else l = mid; //no dups. no "="
+            //System.out.println(mid);
+            //if (num[l] < num[mid]) l = mid;
+            //else r = mid;
         }
-        return num[l + 1];
+        return num[l + 1]; //l:max, r:min
     }
     
 }

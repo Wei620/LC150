@@ -37,11 +37,12 @@ class RepeatedDNASeq {
         if (s == null || s.length() < 10) return res;
         Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
         for (int t = 0, i = 0; i < s.length(); i++) {
+			// & 0x3FFFFFFF: 10 element window
             t = (t << 3 & 0x3FFFFFFF) | (s.charAt(i) & 7);
             if (map.containsKey(t)) {
                 if (map.get(t)) {
                     res.add(s.substring(i - 9, i + 1));
-                    map.put(t, false);
+                    map.put(t, false); // set false rather than remove. Retain the record because this subsequence may occurs more than twice.
                 }
             } else {
                 map.put(t, true);
