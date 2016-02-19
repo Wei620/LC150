@@ -54,7 +54,7 @@ class PathSum2 {
         path.add(root.val); // add value to current path
         pathSum(root.left, sum, path, res);
         pathSum(root.right, sum, path, res);
-        path.remove(path.size()-1);
+        path.remove(path.size()-1); // reset path for normal case.
     }
 
     public class TreeNode {
