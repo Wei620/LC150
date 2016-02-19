@@ -1,0 +1,42 @@
+First Missing Positive                      *** Array
+Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
+Word Ladder II                              *** Array?Backtracking?BFS?String
+Search in Rotated Sorted Array              *** Array?Binary Search
+Best Time to Buy and Sell Stock III         *** Array?DP
+Jump Game II                                *** Array?Greedy
+Longest Consecutive Sequence                *** Array?HashTable
+Maximal Rectangle                           *** Array?HashTable?Stack?DP
+Insert Interval                             *** Array?Sort
+Merge Intervals                             *** Array?Sort
+Largest Rectangle in Histogram              *** Array?Stack
+Trapping Rain Water                         *** Array?Two Pointers?Stack
+Permutations II                             *** Backtracking
+N-Queens II                                 *** Backtracking?Bit Manipulation
+N-Queens                                    *** Backtracking?Bit Manipulation
+Sudoku Solver                               *** Backtracking?HashTable
+LRU Cache                                   *** Data Structure
+Median of Two Sorted Arrays                 *** DC?Array?Binary Search
+Merge k Sorted Lists                        *** DC?LinkedList?Heap
+Palindrome Partitioning II                  *** DP
+Word Break II                               *** DP?Backtracking
+Regular Expression Matching                 *** DP?Backtracking ?String
+Wildcard Matching                           *** DP?Backtracking?Greedy?String
+Dungeon Games                               *** DP?Binary Search
+Edit Distance                               *** DP?String
+Distinct Subsequences                       *** DP?String
+Interleaving String                         *** DP?String
+Scramble String                             *** DP?String
+Longest Valid Parentheses                   *** DP?String
+Candy                                       *** Greedy
+Copy List with Random Pointer               *** HashTable?LinkedList
+Max Points on a Line                        *** HashTable?Math
+Minimum Window Substring                    *** HashTable?Two Pointers?String
+Substring with Concatenation of All Words   *** HashTable?Two Pointers?String
+Reverse Nodes in k-Group                    *** LinkedList
+Valid Number                                *** Math?String
+Maximum Gap                                 *** Sort
+Text Justification                          *** String
+Binary Tree Maximum Path Sum                *** Tree?DFS
+Populating Next Right Pointers in Each Node II        *** Tree?DFS
+Recover Binary Search Tree                  *** Tree?DFS
+Binary Tree Postorder Traversal             *** Tree?Stack
