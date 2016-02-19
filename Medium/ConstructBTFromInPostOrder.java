@@ -27,12 +27,13 @@ class ConstructBTFromInPostOrder {
         if (ps > pe) return null;
         TreeNode root = new TreeNode(postorder[pe]);
         int pos = is;
-        for (; pos <= ie; pos++) {
+        for (;pos <= ie; pos++) {
             if (inorder[pos] == root.val) break;
         }
         // Note how to calcuclate the start and end indices for post array
-        root.left = buildTree(inorder, postorder, is, pos - 1, ps, ps - is - 1 + pos);// ps + pos -1 - is + 1 - 1
-        root.right = buildTree(inorder, postorder, pos + 1, ie, pe - ie + pos, pe - 1); 
+        int lNum = pos - is;
+        root.left = buildTree(inorder, postorder, is, pos - 1, ps, ps + lNum - 1);
+        root.right = buildTree(inorder, postorder, pos + 1, ie, ps + lNum, pe - 1);
         return root;
     }
     

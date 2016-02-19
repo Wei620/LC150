@@ -44,7 +44,7 @@ class FlatenBinaryTreeToLinkedList {
             if (root.left != null) { // check left child
                 TreeNode n = root.left;
                 while (n.right != null) n = n.right; // rightmost child of left
-                n.right = root.right; // insert right subtree to its right
+                n.right = root.right; // insert right subtree to its right (acsending order, if descending, don't need this step)
                 root.right = root.left; // set left subtree as right subtree
                 root.left = null; // set left to null
             }
