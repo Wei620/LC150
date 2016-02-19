@@ -25,18 +25,19 @@ class FindRotatedArrMin {
          * Rotation brings one pair with reverse order.
          * If the original sequence is in ascending order, the special one is max-min.
          * Any range [left,right] contains this pair must satisify num[left] > num[right].
-         * num[right] < num[0] < num[left].
+         * So, num[right] < num[0] < num[left].
+         * Meanwhile, if num[left] > num[right], we have max-min within [left, right] range.
          * Try to capture this range with Binary Search.
          */        
         while (l < r) {
             mid = l + (r - l) / 2;
-            if(num[l] > num[mid]) r = mid;
-            else l = mid; //no dups. no "="
+            //if(num[l] > num[mid]) r = mid;
+            //else l = mid; //no dups. no "=", num[l] < num[mid]
             //System.out.println(mid);
-            //if (num[l] < num[mid]) l = mid;
-            //else r = mid;
+            if (num[l] < num[mid]) l = mid; // revert to the original solution. when mid == l, should avoid l = mid; dead loop.
+            else r = mid;
         }
-        return num[l + 1]; //l:max, r:min
+        return num[l + 1]; //num[l]:max, num[r]:min
     }
     
 }
