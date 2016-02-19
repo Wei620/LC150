@@ -29,6 +29,7 @@ class UniqueBST {
      *      + a[1] * a[n-2]     // put 2 at root, 1 left, 3...n right
      *      + ...
      *      + a[n-1] * a[0]     // put n at root, 1...n-1 left
+     ^ why 0 + n - 1? because the other one is the root.
      */
     public static int numTrees(int n) {
         if (n < 0) return 0;
