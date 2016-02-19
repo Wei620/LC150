@@ -22,23 +22,23 @@ class MultiplyStrings {
     public String multiply(String num1, String num2) {
         if (num1 == null || num2 == null) return "";
         if (num1.equals("0") || num2.equals("0")) return "0"; // if one is 0
-        char[] c1 = num1.toCharArray();
-        char[] c2 = num2.toCharArray();
+        char[] c1 = num1.toCharArray(); //c1[0] MSB
+        char[] c2 = num2.toCharArray(); //c2[0] MSB
         int m = c1.length;
         int n = c2.length;
-        int[] res = new int[m + n]; // max length possible
+        int[] res = new int[m + n]; // max length possible 1(carry) + M + (N-1) = M + N
         for (int i = m - 1; i >= 0; i--) {
             for (int j = n - 1; j >= 0; j--) {
-                // note += below
-                res[m + n - i - j - 2] += (c1[i] - '0') * (c2[j] - '0'); // reverse to keep zeros of result but skip unnecessary zeros
+                // highlight "+=" below
+                res[m + n - i - j - 2] += (c1[i] - '0') * (c2[j] - '0'); //res[0] LSB
                 res[m + n - i - j - 1] += res[m + n - i - j - 2] / 10;
                 res[m + n - i - j - 2] %= 10;
             }
         }
         // build ans string
         StringBuilder ans = new StringBuilder();
-        for (int i = m + n - 1; i >= 0; i--) {
-            if (res[i] != 0) {
+        for (int i = m + n - 1; i >= 0; i--) {//res[m+n-1] MSB
+            if (res[i] != 0) {// skipped unused cells
                 for (int j = i; j >= 0; j--) ans.append(res[j]); // note res[j]
                 return ans.toString();
             }

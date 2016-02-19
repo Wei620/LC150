@@ -46,6 +46,7 @@ class SimplifyPath {
             } else s.push(str); // is a word
         }
         String res = s.isEmpty() ? "/" : ""; // check whether stack is empty
+		// stack iterator traverse the stack in a opposite way. (FIFO)
         for (String word : s) res += "/" + word;
         return res;
     }
