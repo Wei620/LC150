@@ -32,6 +32,8 @@ class Candy {
             candies[i] = ratings[i] > ratings[i - 1] ? candies[i - 1] + 1 : 1;
 
         int res = candies[candies.length - 1];
+		
+		
         for (int i = ratings.length - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1])    
                 candies[i] = Math.max(candies[i], candies[i + 1] + 1);
@@ -54,17 +56,16 @@ class Candy {
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i] < ratings[i - 1]) {
                 if (dec == 0) gap = curCandy;
-                dec++;
+                dec++; // length of decreasing sequence
                 curCandy = 1;
-                res += dec + curCandy;
-                if (gap > 1) {
-                    gap--;
-                    res--;
+                res += dec;
+                if (dec >= gap) { //candy right after the gap equals to the dec.
+					res++;  // increase on the gas
                 }
             } else {
                 dec = 0;
                 if (ratings[i] > ratings[i - 1]) curCandy++;
-                else curCandy = 1;
+                else curCandy = 1; // ratings[i] = ratings[i - 1]
                 res += curCandy;
             }
         }

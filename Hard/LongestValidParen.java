@@ -30,6 +30,38 @@ class LongestValidParen {
         System.out.println(longestValidParentheses("(())()")); // 6
         System.out.println(longestValidParentheses(")()()")); // 4
     }
+	
+    public static int longestValidParentheses(String s) {
+        if (s==null) return 0;
+        
+        int start=0;
+        int maxLen=0;
+        Stack<Integer> stack=new Stack<Integer>();
+        
+        for (int i=0; i<s.length();i++){
+            if (s.charAt(i)=='('){
+                stack.push(i);
+            }else{
+                if (stack.isEmpty()){
+                    // record the position before first left parenthesis
+                    start=i+1;
+                }else{
+                    stack.pop();
+                    // if stack is empty mean the positon before the valid left parenthesis is "last"
+                    if (stack.isEmpty()){
+                        maxLen=Math.max(i-start+1, maxLen);
+                    }
+                    else{
+                        // if stack is not empty, then for current i the longest valid parenthesis length is
+                        // i-stack.peek()
+                        maxLen=Math.max(i-stack.peek(),maxLen);
+						// next round pop if followed by another ")"
+                    }
+                }
+            }
+        }
+            return maxLen;
+    }
     
     /**
      * Optimized DP
@@ -50,7 +82,7 @@ class LongestValidParen {
 
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') s.push(i);
-            else if (s.isEmpty()) len = 0;
+            else if (s.isEmpty()) len = 0; //restart
             else {
                 int matchedPos = s.pop();
                 int matchedLen = i - matchedPos + 1;

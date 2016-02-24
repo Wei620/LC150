@@ -46,7 +46,7 @@ class SubstringWithConcatOfAllWords {
                         res.add(i);
                         break;
                     }
-                } else break; // not in L
+                } else break; // not in L,  BREAK
             }
         }
         return res;

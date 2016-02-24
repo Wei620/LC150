@@ -28,10 +28,10 @@ class MaxPoints {
         int res = 1; // at least 1 point
         Map<String, Integer> map = new HashMap<String, Integer>(); // line,count
         for (int i = 0; i < points.length; i++) {
-            int max = 0;
+            int max = 0; // with the starting point i
             int countSame = 0; // # of same points
             for (int j = i + 1; j < points.length; j++) {
-                if (points[i].x == points[j].x && points[i].y == points[j].y ) countSame++; // same point
+                if (points[i].x == points[j].x && points[i].y == points[j].y ) countSame++; // same point as i
                 else {
                     String key = normalize(points[i], points[j]); // a|b|c
                     if (map.containsKey(key)) { // on the line
@@ -44,8 +44,9 @@ class MaxPoints {
                     }
                 }
             }
-            res = Math.max(res, max + countSame + 1); // +1 for the start point
+            res = Math.max(res, max + countSame + 1); // +1 for the start point i
             map.clear(); // clear map for next point
+			// reusing -1 record slows down the program.
         }
         return res;
     }
@@ -71,8 +72,10 @@ class MaxPoints {
             int dx = p1.x - p2.x;
             int dy = p1.y - p2.y;
             /*reduce to simplest*/
+			// a*dx + b*dy = 0
+			// a = -dy, b = dx
             int gcd = gcd(Math.abs(dx), Math.abs(dy));
-            a = dy / gcd;
+            a = dy / gcd; //normalized
             b = dx / gcd;
             if (a * b < 0) { // force a to be negative
                 a = -1 * Math.abs(a);

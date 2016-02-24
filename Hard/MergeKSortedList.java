@@ -26,11 +26,11 @@ class MergeKSortedList {
         for (ListNode n : lists) if (n != null) queue.add(n);
         
         ListNode dummy = new ListNode(0); // set dummy head
-        ListNode tail = dummy;
+        ListNode curr = dummy;
         while (!queue.isEmpty()) { // build next
-            tail.next = queue.poll();
-            tail = tail.next;
-            if (tail.next != null) queue.add(tail.next);
+            curr.next = queue.poll();
+            curr = curr.next;
+            if (curr.next != null) queue.add(curr.next); // not reach the end of one list`
         }
         return dummy.next;
     }

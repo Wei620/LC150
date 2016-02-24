@@ -30,13 +30,13 @@ class ValidNumber {
         // skip leading +/-
         if (s.charAt(i) == '+' || s.charAt(i) == '-') i++;
         boolean num = false; // is a digit
-        boolean dot = false; // is a '.'
-        boolean exp = false; // is a 'e'
+        boolean dot = false; // is a '.' no need to set back
+        boolean exp = false; // is a 'e' no need to set back
         while (i <= e) {
-            char c = s.charAt(i);
+            char c = s.charAt(i); // 5 cases
             if (Character.isDigit(c)) num = true;
             else if (c == '.') { // '.' appear
-                if(exp || dot) return false; // exp can't have '.' or dots
+                if(exp || dot) return false; // exp can't have '.' or dot
                 dot = true;
             } else if (c == 'e') { // e appear
                 if(exp || num == false) return false; // already e but not num 

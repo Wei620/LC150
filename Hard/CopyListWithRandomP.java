@@ -30,8 +30,8 @@ class CopyListWithRandomP {
         if (map.containsKey(node)) return map.get(node); // return copy
         RandomListNode res = new RandomListNode(node.label);
         map.put(node, res); // build map
-        res.next = helper(node.next, map); // build next
-        res.random = helper(node.random, map); // build copy
+        res.next = helper(node.next, map); // build next base - last node
+        res.random = helper(node.random, map); // build copy, base -all nodes has been added.
         return res;
     }
     
