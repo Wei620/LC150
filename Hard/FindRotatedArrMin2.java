@@ -22,20 +22,22 @@ class FindRotatedArrMin2 {
     /**
      * Skip all the indentical elements on the left in each search
      */
+    // [l, r] = [l, m] + [m+1, r]
     public int findMin(int[] num) {
         if (num == null || num.length == 0) return 0;
         int l = 0;
         int r = num.length - 1;
-        while (l <= r) {
+        while (l < r) {
             int k = l;
-            while (k <= r && num[k] == num[r]) k++;
-            if (k > r) return num[l];
-            l = k;
+            while (k <= r && num[k] == num[r]) k++; // move left dups
+            if (k > r) return num[l]; // num[l] = ... = num[r]
+            l = k;  //line 31-34 can move right dups intead.
             if (num[l] < num[r]) return num[l];
-            int mid = l + (r - l) / 2;
-            if (num[mid] >= num[l]) l = mid + 1;
-            else r = mid;
+            // num[l] > num[r]
+            int mid = l + (r - l) / 2; // mid == l
+            if (num[mid] >= num[l]) l = mid + 1; // left half sorted, min is not here.
+            else r = mid;   // num[l] > num[mid], left half unsorted, min is here.
         }
-        return l;
+        return num[l]; // l == r
     }
 }

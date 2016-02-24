@@ -29,7 +29,7 @@ class LongestPalindromicSubstring {
             while (i - count >= 0 && i + count <= 2 * len && get(s, i - count) == get(s, i + count)) count++;
             count--; // there will be one extra count for the outbound #
             if (count > max) { // update max and result when longer is found
-                res = s.substring((i - count) / 2, (i + count) / 2);
+                res = s.substring((i - count) / 2, (i + count) / 2); // # is with even index. divided by 2, means the one after #
                 max = count;
             }
         }

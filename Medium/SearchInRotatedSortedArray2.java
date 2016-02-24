@@ -37,13 +37,13 @@ class SearchInRotatedSortedArray2 {
             /*skip*/  // m != target in 3 skip cases.
             if(A[l] == A[m] && A[m] == A[r]) {
                 l++;  // pattern -'-   fast escape
-                r--;
-            } else if(A[l] == A[m]) l = m + 1; //[l,m] constant
-            else if(A[m] == A[r]) r = m; //[m,r] constant
+                r--; // not necessary, but considering line 36, it's ok.
+            } else if(A[l] == A[m]) l = m + 1; // 1) l == m 2)A[l] = ... = A[m] 
+            else if(A[m] == A[r]) r = m - 1; //1) r == m 2)A[m] = ... = A[r] 
 			// A[l], A[r], A[m] all different.
             else if (A[l] < A[m]) { // left half sorted
                 if (A[l] <= target && target < A[m]) r = m - 1;
-                } else l = m + 1;
+                else l = m + 1;
             } else if (A[l] > A[m]) { // right half sorted
                 if (A[m] < target && target <= A[r]) l = m + 1;
                 else r = m - 1;

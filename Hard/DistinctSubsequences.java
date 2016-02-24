@@ -48,6 +48,9 @@ class DistinctSubsequences {
         for (int i = 1; i <= m; i++)
             for (int j = 1; j <= n; j++)
                 dp[i][j] = dp[i][j - 1] + (t.charAt(i - 1) == s.charAt(j - 1) ? dp[i - 1][j - 1] : 0);
+            
+            //   o 
+            //   o x
         
         return dp[m][n];
     }
@@ -64,10 +67,10 @@ class DistinctSubsequences {
         int[] dp = new int[m + 1];
         dp[0] = 1;
         
-        for (int i = 1; i <= n; i++)
-            for (int j = m; j >= 1; j--)
+        for (int j = 1; j <= n; j++)
+            for (int i = m; i >= 1; i--)
                 // same: path[i] = path[i] + (T[i-1] == S[j-1] ? path[i-1] : 0);
-                if (t.charAt(j - 1) == s.charAt(i - 1)) dp[j] += dp[j - 1];
+                if (t.charAt(i - 1) == s.charAt(j - 1)) dp[i] += dp[i - 1];
         return dp[m];
     }
 }

@@ -26,6 +26,8 @@ import java.util.*;
  * ]
  * 
  * Tags: Backtracking, Bit Manipulation
+ 
+ http://www.geeksforgeeks.org/backtracking-set-3-n-queen-problem/
  */
 class NQueens {
     public static void main(String[] args) {

@@ -37,7 +37,7 @@ class TrappingRainWater {
                 level = curLevel;
             }
             // move index and update block
-            if (A[l] < A[r]) block += A[l++];
+            if (A[l] < A[r]) block += A[l++]; //move the lower one
             else block += A[r--];
         }
         return all - block;

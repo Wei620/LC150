@@ -36,10 +36,10 @@ class MaximumGap {
             min = Math.min(min, i);
         }
         /*put into buckets*/
-        double dist = (double)(max - min) / (n - 1);
-        int[] uppers = new int[n - 1];
+        double dist = (double)(max - min) / (n - 1);// maxGap >= dist
+        int[] uppers = new int[n - 1]; 
         int[] lowers = new int[n - 1];
-        Arrays.fill(uppers, -1);
+        Arrays.fill(uppers, -1);//non-negative
         Arrays.fill(lowers, -1);
         for (int i : num) {
             int idx = (i == max ? n - 2 : (int)((i - min) / dist));

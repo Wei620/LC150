@@ -29,10 +29,10 @@ class MergeIntervals {
         for (Interval i : intervals) {
             if (res.isEmpty()) res.add(i); // first interval
             else {
-                Interval last = res.get(res.size() - 1); // get last interval
+                Interval last = res.get(res.size() - 1); // get last interval, last may not be the previous i. see line 35.
                 if (last.end >= i.start) { // overlap
                     res.remove(last);
-                    res.add(new Interval(last.start, Math.max(last.end, i.end))); // extend end
+                    res.add(new Interval(last.start, Math.max(last.end, i.end))); // extend end; no needs for start,sorted already.
                 } else res.add(i); //no overlap
             }
         }

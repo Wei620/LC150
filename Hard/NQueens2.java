@@ -51,16 +51,22 @@ class NQueens2 {
     /**
      * Backtracking
      */
-    public static void dfs(int h, int r, int l) {
+    public static void dfs(int h, int r, int l) {//h only add one queue, the affect on r, l will determin the pos
         if (h == limit) { 
             ans++;
             return;
         }
         int pos = limit & (~(h|r|l));
         while (pos != 0) { // has position
+            /*
+            to negate a number, you take the complement (changing 0 to 1 and 
+1 to 0) and add 1:
+            53 --> 00110101
+            -53 --> 11001010 + 1 = 11001011
+            */
             int p = pos & (-pos); // right most 1
-            pos -= p; // place a queen, 1 -> 0 on that position
-            dfs(h + p, (r + p) << 1, (l + p) >> 1);
+            pos -= p; // place a queen, try it from the right to left
+            dfs(h + p, (r + p) << 1, (l + p) >> 1); 
         }
     }
 }

@@ -36,11 +36,13 @@ class PalindromePartition {
      * Each cut at i+j is calculated by scanning (i-j)'s minimum cut + 1 if
      * s[i-j, i+j] is a palindrome. 
      */
+     
+     // cuts【i] means the minimum cuts for s[0,i)
     public int minCut(String s) {
         if(s == null || s.length() == 0) return 0;
         int len = s.length();
         int[] cuts = new int[len + 1]; // store results
-        for (int i = 0; i <= len; i++) cuts[i] = i - 1; // max cuts
+        for (int i = 0; i <= len; i++) cuts[i] = i - 1; // max cuts, every letter is a palindrome
         for (int i = 0; i < len; i++) {
             // odd palin
             for (int j = 0; i - j >= 0 && i + j < len && s.charAt(i - j) == s.charAt(i + j); j++) cuts[i + j + 1] = Math.min(cuts[i + j + 1], 1 + cuts[i - j]);

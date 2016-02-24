@@ -37,8 +37,8 @@ class WordLadder2 {
      */
     public List<List<String>> findLadders(String start, String end, Set<String> dict) {
         List<List<String>> res = new ArrayList<List<String>>();
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
-        Map<String, Integer> dist = new HashMap<String, Integer>();
+        Map<String, List<String>> map = new HashMap<String, List<String>>();  // string to the words which only has one diffrent char.
+        Map<String, Integer> dist = new HashMap<String, Integer>(); // string to the minimum distance to the start
 
         bfs(map, dist, start, end, dict);
         dfs(res, new LinkedList<String>(), end, start, dist, map);
@@ -62,9 +62,9 @@ class WordLadder2 {
             String word = q.poll();
             List<String> expansion = expand(word, dict); // generate all words
             for (String next : expansion) {
-                map.get(next).add(word);
+                map.get(next).add(word);    //step 1
                 if (!dist.containsKey(next)) { // not in dist map yet
-                    dist.put(next, dist.get(word) + 1);
+                    dist.put(next, dist.get(word) + 1); //step2
                     q.offer(next);
                 }
             }
@@ -80,11 +80,11 @@ class WordLadder2 {
         List<String> res = new ArrayList<String>();
         for (int i = 0; i < word.length(); i++) {
             for (char ch = 'a'; ch <= 'z'; ch++) {
-                char[] chs = word.toCharArray();
+                char[] chs = word.toCharArray(); // chs was changed in last loop.
                 if (ch != chs[i]) {
                     chs[i] = ch;
                     String next = new String(chs);
-                    if (dict.contains(next)) res.add(next);
+                    if (dict.contains(next)) res.add(next); // compared to I, next is not removed from dict.
                 }
             }
         }
@@ -103,7 +103,8 @@ class WordLadder2 {
             return; // note to return
         }
         for (String next : map.get(word)) {
-            if (dist.containsKey(next) && dist.get(word) == dist.get(next) + 1) { // backward, so word = next + 1
+            // if next is in word's mapping, next must been added to dist. See line 65 - 67.
+            if (/*dist.containsKey(next) && */dist.get(word) == dist.get(next) + 1) { // backward, so word = next + 1 
                 path.add(0, word); // add current word
                 dfs(res, path, next, start, dist, map); // dfs next word
                 path.remove(0);

@@ -36,6 +36,8 @@ class MinWindowSubstring {
      * Update count in window as well
      * Compare with minLength and update result as well
      */
+     
+     //http://www.lifeincode.net/programming/leetcode-minimum-window-substring-java/
     public String minWindow(String S, String T) {
         if (S == null || T == null) return "";
         if (S.length() == 0 || T.length() == 0 || T.length() > S.length()) return "";

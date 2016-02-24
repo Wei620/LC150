@@ -13,7 +13,7 @@ class MaxRectangle {
     
     /**
      * row by row
-     * create a height integer array to bigger than column size
+     * create a height integer array which is one bigger than column size
      * set last height to zero(out of bounds)
      * build new height on each row
      * use stack to store indices

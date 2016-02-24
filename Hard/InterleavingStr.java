@@ -29,7 +29,7 @@ class InterleavingStr {
     /**
      * DP, bottom-up, Time: O(nm), and Space: O(nm)
      * quick check, length of s3 should be the sum of s1 and s2
-     * 
+     * dp[i][j] whether s1[0,i) s2[0,j) match s3(0,i+j-1)
      * 1. i == 0 && j == 0, dp[i][j] is true initially
      * 2. first row, i == 0, dp[i][j] = dp[i][j - 1] && s2.charAt(j - 1)
      * == s3.charAt(j - 1)
@@ -39,6 +39,7 @@ class InterleavingStr {
      * - 1))|| (dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i + j - 1))
      * 
      * final result should dp[a][b]
+     * http://fisherlei.blogspot.com/2012/12/leetcode-interleaving-string.html
      */
     public static boolean isInterleave(String s1, String s2, String s3) {
         if (s1 == null || s2 == null || s3 == null) return false;

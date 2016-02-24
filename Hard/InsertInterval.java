@@ -23,6 +23,26 @@ class InsertInterval {
         
     }
     
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        List<Interval> res = new ArrayList<Interval>();
+
+        for(Interval i : intervals){
+            if(i.end < newInterval.start) res.add(i);
+            else if(newInterval.end < i.start){
+                res.add(newInterval);
+                newInterval = i;
+            }
+            else if(newInterval.start >= i.end || i.start <= newInterval.end){ //need this condition.
+                newInterval = new Interval(Math.min(i.start, newInterval.start),
+                                    Math.max(i.end, newInterval.end));
+            }
+        }
+        
+        res.add(newInterval);
+        
+        return res;   
+    }
+    
     /**
      * O(n), not in place solution, make use of intervals are sorted
      * Go through the list, compare interval's start and end with the last 
@@ -32,7 +52,7 @@ class InsertInterval {
         List<Interval> res = new ArrayList<Interval>();
         res.add(newInterval);
         if (intervals == null || intervals.size() == 0) return res;
-        for (Interval i : intervals) {
+        for (Interval i : intervals) { // range i has been sorted.
             int a = res.get(res.size() - 1).start;
             int b = res.get(res.size() - 1).end;
             if (i.end < a) res.add(res.size() - 1, i); // no overlap, add to second last

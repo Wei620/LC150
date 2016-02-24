@@ -20,11 +20,15 @@ class MedianOfTwoSortedArrs {
      * If total # of items is even, get the min of A[l] and B[k-l+1], b
      * Return the average of a and b
      */
+     
+     
+     //http://www.drdobbs.com/parallel/finding-the-median-of-two-sorted-arrays/240169222?pgno=1
+     //https://www.youtube.com/watch?v=_H50Ir-Tves solution 4
     public double findMedianSortedArrays(int[] A, int[] B) {
         int n = A.length;
         int m = B.length;
         if (n > m) return findMedianSortedArrays(B, A); // shorter array first
-        int k = (n + m - 1) / 2; // mid position
+        int k = (n + m - 1) / 2; // mid position index
         int l = 0, r = Math.min(k, n); // r is n, NOT n-1, this is important!!
         // find A[l] > B[k - l]
         while (l < r) {
