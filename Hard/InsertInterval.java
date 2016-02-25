@@ -22,6 +22,26 @@ class InsertInterval {
     public static void main(String[] args) {
         
     }
+	
+	//LC 150
+	public List<Interval> insert(List<Interval> intervals, Interval newInterval) {    
+     
+        List<Interval> res = new ArrayList<Interval>();
+
+        for(Interval i : intervals){
+            if(i.end < newInterval.start) res.add(i);
+            else if(newInterval.end < i.start){
+                res.add(newInterval);
+                newInterval = i;
+            }
+            else /*if(newInterval.start >= i.end || i.start <= newInterval.end)*/{
+                newInterval = new Interval(Math.min(i.start, newInterval.start),
+                                    Math.max(i.end, newInterval.end));
+            }
+        }        
+        res.add(newInterval);
+        return res;   
+    }
     
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res = new ArrayList<Interval>();

@@ -29,7 +29,7 @@ class BestTimeStock4 {
     
     /**
      * DP, bottom-up, O(kn) Time, O(n) Space
-     * If k >= n/2, we can have transactions any time, O(n).
+     * If k >= n/2, we can have transactions any time, O(n). n/2 increasing curve at most.
      * dp[k][i+1] represents the max profit of using [0, i] and k transactions
      * It can be dp[k-1][i+1](add 1 more transaction changes nothing)
      * It can be dp[k][i](prices[i] changes nothing)
@@ -56,7 +56,7 @@ class BestTimeStock4 {
                 int temp = cur[j+1];
                 cur[j+1] = Math.max(Math.max(cur[j+1], cur[j]), prices[j] + curMax);
                 System.out.print(curMax + "|");
-                curMax = Math.max(curMax, temp - prices[j]);
+                curMax = Math.max(curMax, temp - prices[j]);  // for next round(j) use
                 System.out.print(curMax + "\n");
             }
             System.out.println(Arrays.toString(cur));
