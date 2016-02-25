@@ -37,7 +37,7 @@ class JumpGame2 {
                 if(furthestNextStep > furthestCurrStep){
                     step++;
                     furthestCurrStep = furthestNextStep;
-                    if (furthestCurrStep >= A.length) return step;
+                    if (furthestCurrStep >= A.length - 1) return step;
                 }
                 else return -1; //cannot reach i
             }
