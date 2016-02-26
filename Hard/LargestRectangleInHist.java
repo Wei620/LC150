@@ -40,16 +40,19 @@ import java.util.*;
      * Stack for indices
      * add a zero height into the group
      */
+    // pop - right hedge. 
+	// s.peek + 1  - left hedge. poped already. 
     public int largestRectangleArea(int[] height) {
         if (height == null || height.length == 0) return 0;
-        height = Arrays.copyOf(height, height.length + 1); // add a zero
+        height = Arrays.copyOf(height, height.length + 1); // add a zero - for the last element.
         int max = 0;
         Stack<Integer> s = new Stack<Integer>(); // store indices
         for (int i = 0; i < height.length; i++) {
             while (!s.isEmpty() && height[i] < height[s.peek()]) { // update when current height is smaller
                 int h = height[s.pop()];
-                int w = (s.isEmpty() ? i : i - s.peek() - 1); // poped already, i - 1 - (s.peek　＋　１)　＋　１
-                max = Math.max(max, h * w);
+                int w = (s.isEmpty() ? i : i - s.peek() - 1); 
+                // s.peek() + 1: tp or the element prior to tp that has been poped out.
+				max = Math.max(max, h * w);
             }
             s.push(i); // push index into stack
         }

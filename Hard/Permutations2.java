@@ -44,7 +44,7 @@ class Permutations2 {
                     break;
                 }
             }
-            if (skip) continue;
+            if (skip) continue; //5(pos), 2(j), ..., 3, 2(i), 1, ....
             swap(num, pos, i);
             permute(num, pos + 1, res);
             swap(num, pos, i); // reset

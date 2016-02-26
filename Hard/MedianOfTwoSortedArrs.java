@@ -13,7 +13,11 @@ class MedianOfTwoSortedArrs {
         System.out.println(m.findMedianSortedArrays(A, B));
     }
     
-    /**
+	//http://www.geeksforgeeks.org/median-of-two-sorted-arrays/
+    
+	
+	
+	/**
      * Search in shorter array
      * Find 4 possible candidates A[l-1], A[l], B[k-1], B[k-l+1]
      * If total # of items is odd, return the max of A[l-1] and B[k-1], a

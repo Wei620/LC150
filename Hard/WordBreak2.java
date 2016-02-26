@@ -18,7 +18,7 @@ public class Solution {
      * Memory function
      * Store how a word can be decomposed
      */
-    Map<String, List<String>> res = new HashMap<String, List<String>>();
+    Map<String, List<String>> cache = new HashMap<String, List<String>>();
     
     /**
      * DP, Backtracking
@@ -28,10 +28,10 @@ public class Solution {
      * If in dictionary, check current position
      * If reaches the end, add prefix to a solution
      * If within length do the following: 
-     * Check whether the rest of the string is already decomposed
-     * If not, backtracking the rest of the string
-     * If yes, get the result from memory function
-     * If there is an result, add each word to current solution with front in
+     * Check whether the cachet of the string is already decomposed
+     * If not, backtracking the cachet of the string
+     * If yes, get the cacheult from memory function
+     * If there is an cacheult, add each word to current solution with front in
      */
     public List<String> wordBreak(String s, Set<String> dict) {
         List<String> words = new ArrayList<String>(); 
@@ -40,14 +40,14 @@ public class Solution {
         for (int i = 1; i <= len; i++) {
             String pref = s.substring(0, i);
             if (dict.contains(pref)) {
-                if (i == len) words.add(pref); // reach the end
+                if (i == len) words.add(pref); // reach the end.
                 else {
                     String remain = s.substring(i, len); // remaining string
-                    List<String> remainDecomp = res.containsKey(remain) ?
-                        res.get(remain) : wordBreak(remain, dict); // avoid backtracking if a decomposition is already there
+                    List<String> remainDecomp = cache.containsKey(remain) ?
+                        cache.get(remain) : wordBreak(remain, dict); // avoid backtracking if a decomposition is already there
                     //if (remainDecomp != null) {
                         for (String w : remainDecomp) words.add(pref + " " + w);
-                        res.put(remain, remainDecomp); // add to cache
+                        cache.put(remain, remainDecomp); // add to cache
                     //}
                 }
             }
@@ -59,10 +59,10 @@ public class Solution {
      * Backtracking
      * Get prefix first
      * If prefix is in dictionary, check current length
-     * If reaches the end, add prefix to result 
+     * If reaches the end, add prefix to cacheult 
      * If not, go ahead and decompose the remain string
-     * Get the result list, and concat prefix with those results
-     * Add the concatenated string to result and return
+     * Get the cacheult list, and concat prefix with those cacheults
+     * Add the concatenated string to cacheult and return
      */
     public List<String> wordBreak(String s, Set<String> dict) {
         List<String> words = new ArrayList<String>();

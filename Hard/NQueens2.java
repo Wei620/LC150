@@ -65,7 +65,7 @@ class NQueens2 {
             -53 --> 11001010 + 1 = 11001011
             */
             int p = pos & (-pos); // right most 1
-            pos -= p; // place a queen, try it from the right to left
+            pos -= p; // place a queen, try it from the right to left, no need to set back see L59
             dfs(h + p, (r + p) << 1, (l + p) >> 1); 
         }
     }

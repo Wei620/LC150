@@ -1,28 +1,28 @@
-First Missing Positive                      *** Array
-Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
-Word Ladder II                              *** Array?Backtracking?BFS?String
-Search in Rotated Sorted Array              *** Array?Binary Search
-Best Time to Buy and Sell Stock III         *** Array?DP
-Jump Game II                                *** Array?Greedy
-Longest Consecutive Sequence                *** Array?HashTable
+	First Missing Positive                      *** Array
+	Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
+	Word Ladder II                              *** Array?Backtracking?BFS?String
+	Search in Rotated Sorted Array              *** Array?Binary Search
+	Best Time to Buy and Sell Stock III         *** Array?DP
+	Jump Game II                                *** Array?Greedy
+	Longest Consecutive Sequence                *** Array?HashTable
 
-Maximal Rectangle                           *** Array?HashTable?Stack?DP
-Insert Interval                             *** Array?Sort
-Merge Intervals                             *** Array?Sort
-Largest Rectangle in Histogram              *** Array?Stack
-Trapping Rain Water                         *** Array?Two Pointers?Stack
-Permutations II                             *** Backtracking
-N-Queens II                                 *** Backtracking?Bit Manipulation
-N-Queens                                    *** Backtracking?Bit Manipulation
+	Insert Interval                             *** Array?Sort
+	Merge Intervals                             *** Array?Sort
+	Largest Rectangle in Histogram              *** Array?Stack
+	Maximal Rectangle                           *** Array?HashTable?Stack?DP
+	Trapping Rain Water                         *** Array?Two Pointers?Stack	
+	Permutations II                             *** Backtracking
+	N-Queens II                                 *** Backtracking?Bit Manipulation
+	N-Queens                                    *** Backtracking?Bit Manipulation
 
-Sudoku Solver                               *** Backtracking?HashTable
+	Sudoku Solver                               *** Backtracking?HashTable
 LRU Cache                                   *** Data Structure
 Median of Two Sorted Arrays                 *** DC?Array?Binary Search
 Merge k Sorted Lists                        *** DC?LinkedList?Heap
 Palindrome Partitioning II                  *** DP
-Word Break II                               *** DP?Backtracking
-Regular Expression Matching                 *** DP?Backtracking ?String
-Wildcard Matching                           *** DP?Backtracking?Greedy?String
+	Word Break II                               *** DP?Backtracking
+	Regular Expression Matching                 *** DP?Backtracking ?String
+	Wildcard Matching                           *** DP?Backtracking?Greedy?String
 Dungeon Games                               *** DP?Binary Search
 Edit Distance                               *** DP?String
 

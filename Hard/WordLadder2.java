@@ -58,7 +58,7 @@ class WordLadder2 {
         dist.put(start, 0);
         for (String s : dict) map.put(s, new ArrayList<String>());
 
-        while (!q.isEmpty()) {
+        while (!q.isEmpty()) { // never use end.
             String word = q.poll();
             List<String> expansion = expand(word, dict); // generate all words
             for (String next : expansion) {

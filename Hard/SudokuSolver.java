@@ -53,32 +53,31 @@ class SudokuSolver {
             }
         }
         for (int i = 1; i <= 9; i++) 
-            if (helper(board, 0, 0, 0, i)) return;
+            if (helper(board, 0, 0, i)) return;
     }
     
-    private boolean helper(char[][] board, int i, int j, int k, int num) {
-        if (j == 9) { // reach rightmost
-            j = 0;
-            i++; // next row
+    private boolean helper(char[][] board, int idx, int num) {
+        while (idx < 81 && board[idx/9][idx%9] != '.') { // find next blank
+			idx++;
         }
-        if (i == 9) return true; // reach bottom, finished
-        while (board[i][j] != '.') { // find next blank
-            j = (j + 1) % 9; // move to right
-            if (j % 9 == 0) i++; // next row
-            if (i == 9) return true; // reach bottom
-        }
-        k = (i - i % 3) + j / 3; // kth square
-        // if valid, set masks and board
-        if (isValid(i, j, k, num)) {
-            row[i] |= 1 << num;
-            col[j] |= 1 << num;
-            sqr[k] |= 1 << num;
-            board[i][j] = (char)('0' + num);
-        } else return false; // not valid, return false
+		if(idx == 81) return true;
+		
+		int i = idx/9, j = idx%9;
+        int k = (i - i % 3) + j / 3; // kth square
+        
+		// if valid, set masks and board
+        if (!isValid(i, j, k, num)) return false;
+
+		row[i] |= 1 << num;
+        col[j] |= 1 << num;
+        sqr[k] |= 1 << num;
+        board[i][j] = (char)('0' + num);
+
         for (int n = 1; n <= 9; n++) // backtrack the next column
-            if (helper(board, i, j + 1, k, n)) return true;
+            if (helper(board, idx+1, n)) return true;
         // all possible combinations from this position generated
-        // reset this position
+        
+		// reset this position
         row[i] ^= 1 << num; 
         col[j] ^= 1 << num;
         sqr[k] ^= 1 << num;
@@ -90,6 +89,6 @@ class SudokuSolver {
         if ((row[i] & 1 << num) > 0) return false; // both are 1
         if ((col[j] & 1 << num) > 0) return false; // both are 1
         if ((sqr[k] & 1 << num) > 0) return false; // both are 1
-        return true;
+        return true; // (row[i] | col[j] |sqr[k])^(1<<num);
     }
 }
