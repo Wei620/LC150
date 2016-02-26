@@ -64,13 +64,13 @@ class TextJustification {
                 if (line.size() == 1) { // only 1 word in this line
                     str = line.get(0);
                     for (int j = L - str.length(); j > 0; j--) str += " ";
-                } else if (line.size() > 1) {
+                } else if (line.size() > 1) { // necessary
                     div = (L - len) / (line.size() - 1); // divisor
                     mod = (L - len) % (line.size() - 1); // remainder
                     str = line.get(0); // append first word
                     for (int j = 1; j < line.size(); j++) { // append rest of the words
                         for (int k = 0; k < div; k++) str += " ";
-                        if (j <= mod) str += " "; // append 1 more space
+                        if (j <= mod) str += " "; // append 1 more space. j is 1-based.
                         str += line.get(j);
                     }
                 }

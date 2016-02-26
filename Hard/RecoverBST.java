@@ -45,11 +45,16 @@ class RecoverBST {
      * subtree
      * b) Go to this left child, i.e., current = current->left
      */
+	 
+	 //http://fisherlei.blogspot.com/2012/12/leetcode-recover-binary-search-tree.html
+	 //https://en.wikipedia.org/wiki/Threaded_binary_tree
+	 //http://www.cnblogs.com/TenosDoIt/p/3445682.html
+	 
     void morrisInorder(TreeNode root) {
         TreeNode cur = root;
         TreeNode pred = null;
         while (cur != null) {
-            if (cur.left == null) {
+            if (cur.left == null) {// left most
                 // set first and second if first still doesn't exist
                 if (cur.val <= prev.val && first == null) first = prev;
                 // set second only if first exists
@@ -60,10 +65,10 @@ class RecoverBST {
                 pred = cur.left;
                 while (pred.right != null && pred.right != cur) pred = pred.right;
                 if (pred.right == null) { // not connected
-                    pred.right = cur; // connect predecessor to current node
+                    pred.right = cur; // connect predecessor to current node, pred.left == null line 55
                     cur = cur.left; // move to left child
-                } else { // connected
-                    if (cur.val <= prev.val && first == null) first = prev;
+                } else { // connected, revisted curr via the thread
+                    if (cur.val <= prev.val && first == null) first = prev;  //prev is assigned by line 62
                     if (cur.val <= prev.val && first != null) second = cur;
                     pred.right = null; // break connection
                     prev = cur; // previous node needs to be saved

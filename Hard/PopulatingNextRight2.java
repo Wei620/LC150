@@ -37,7 +37,7 @@ class PopulatingNextRight2 {
         if(root == null) return;
         
         TreeLinkNode cur = root;  // current node of current level
-        TreeLinkNode prev; // previous node
+        TreeLinkNode prev; // previous node. on next level
         TreeLinkNode nextHead; // nextHead of the next level
 
         
