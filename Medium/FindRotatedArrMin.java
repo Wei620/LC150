@@ -32,19 +32,11 @@ class FindRotatedArrMin {
             if(num[l] < num[r]) return num[l];
             
             // case 3 num[l] > num[r] [l,mid][mid+1,r]
-            // case 3.1 num[l] > num[r] > num[mid]            
-            /* 
-            mid = r - (r - l) / 2; // last move because mid == r   ...... (1)
-            if (num[mid] < num[r]) r = mid;
-            //else if(num[mid] == num[r]) l = mid+1;
-            else l = mid+1;
-            */
-            
-            // case 3.2 num[mid] > num[l] > num[r]
-            mid = l + (r - l)/2; //last move mid == l   ...... (2)
-            if(num[mid] >= num[l]) l = mid + 1; 
+            int mid = l + (r - l)/2; //unique definition for [l,mid][mid+1].
+            //If mid = r - (r-l)/2, mid == r, l = mid + 1 may exceeds bound. It's for [l,mid-1][mid,r].
+            if(num[mid] >= num[l]) l = mid + 1; //num[l] > num[r] > num[mid] - must be last move. so num[l] is the min.
             //else if(num[mid] == num[l]) l = mid+1;
-            else r = mid;
+            else r = mid; //num[l] > num[r] >= num[mid]
         }
         return num[l]; // l == r
         

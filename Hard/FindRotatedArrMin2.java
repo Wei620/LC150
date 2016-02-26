@@ -22,7 +22,7 @@ class FindRotatedArrMin2 {
     /**
      * Skip all the indentical elements on the left in each search
      */
-    // [l, r] = [l, m] + [m+1, r]
+    // [l, r] = [l, m] + [m+1, r] // m+1 so last step l == mid, otherwise out of bound.
     public int findMin(int[] num) {
         if (num == null || num.length == 0) return 0;
         int l = 0;
