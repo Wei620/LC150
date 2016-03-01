@@ -37,10 +37,13 @@ class SpiralMatrix2 {
         int lv = 0;
         while (2 * lv < n) {
             int k = n - 2 * lv - 1; // number of element on each "edge";
-            for(int j = lv; j < lv + k; j++) ans[lv][j] = num++;
-            for(int i = lv; i < lv + k; i++) ans[i][lv + k] = num++;
-            for(int j = lv + k; j > lv; j++) ans[lv + k][j] = num++;
-            for(int i = lv + k; i > lv; i++) ans[i][lv] = num++;
+			if(k > 0){
+				for(int j = lv; j < lv + k; j++) ans[lv][j] = num++;
+				for(int i = lv; i < lv + k; i++) ans[i][lv + k] = num++;
+				for(int j = lv + k; j > lv; j++) ans[lv + k][j] = num++;
+				for(int i = lv + k; i > lv; i++) ans[i][lv] = num++;
+			}
+			else ans[lv][lv] = num;
             /*
             for (int i = lv; i < n - lv; i++) ans[lv][i] = num++;
             for (int i = lv + 1; i < n - lv; i++) ans[i][n - lv - 1] = num++;
@@ -48,6 +51,7 @@ class SpiralMatrix2 {
             for (int i = n - lv - 2; i >= lv + 1; i--) ans[i][lv] = num++;*/
             lv++;
         }
+		
         return ans;
     }
     

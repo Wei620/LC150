@@ -1,29 +1,29 @@
-P1
-Set Matrix Zeroes
-Sort Colors
-Spiral Matrix II
-Spiral Matrix
-Rotate Image
-Next Permutation
-Search for a Range
-Word Search
-Subsets II
-Combination Sum II
-Subsets
-Find Minimum in Rotated Sorted Array
-Search in Rotated Sorted Array II
+	5	Set Matrix Zeroes
+	5	Sort Colors
+	10	Spiral Matrix II
+	17	Spiral Matrix
+	15	Rotate Image
+	9	Next Permutation
+	?15	Search for a Range
+	10	Word Search
+	7	Subsets II
+	6	Combination Sum II
+	5	Subsets
+	9	Find Minimum in Rotated Sorted Array
+	8	Search in Rotated Sorted Array II
 
 P2
-Search a 2D Matrix
-Search Insert Position
-Find Peak Element
-Maximum Product Subarray
-Best Time to Buy and Sell Stock
+	15	Search a 2D Matrix
+	15	Search Insert Position
+	15	Find Peak Element
+	3	Maximum Product Subarray
+	3	Best Time to Buy and Sell Stock
 Minimum Path Sum
 Unique Paths II
 Unique Paths
 Triangle
-Best Time to Buy and Sell Stock II
+	1	Best Time to Buy and Sell Stock II
+	10	Best Time to Buy and Sell Stock III
 Jump Game
 Two Sum
 
@@ -36,7 +36,7 @@ Container With Most Water
 Palindrome Partitioning
 Combinations
 Permutations
-Combination Sum
+	6	Combination Sum
 
 P4
 Gray Code
@@ -103,3 +103,4 @@ Unique Binary Search Trees II
 Binary Tree Inorder Traversal
 Binary Tree Preorder Traversal
 Binary Search Tree Iterator
+

@@ -36,11 +36,12 @@ class FindPeak {
         while (left < right) {
             int mid = (right - left) / 2 + left;
             if (num[mid] > num[mid - 1] && num[mid] > num[mid + 1]) return mid;
-            else if (num[mid] > num[mid + 1]) right = mid - 1; // left half has one greater element num[mid-1] at least. 
+            else if (num[mid] > num[mid + 1]) right = mid - 1; // left half has one greater element num[mid-1] at least. num[right] > num[right+1] > num[right + 2]
             else left = mid + 1; // right half has one greater element num[mid+1] at least.
+			// num[left - 1] < num[left]
         }
 		// break condition left == right.
-		// So left(right) is the right element that greater than num[left-1] and num[left+1].
+		// So left(right) is the right element that greater than num[left-1], num[left+1] and num[left + 2]
         return left;
     }
 }

@@ -41,7 +41,7 @@ class SetMartixZeros {
                     matrix[i][j] = 0;
                 }
             }
-            if(firstCol) matrix[i][0] = 0;
+            //if(firstCol) matrix[i][0] = 0;
         }
         /*
         for (int i = row - 1; i > 0; i--) {

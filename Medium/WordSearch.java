@@ -60,7 +60,7 @@ class WordSearch {
         board[i][j] = '#'; // mark 
         // search 4 connectivity
         boolean res = dfs(board, i - 1, j, word, n + 1) || dfs(board, i + 1, j, word, n + 1) || dfs(board, i, j - 1, word, n + 1) || dfs(board, i, j + 1, word, n + 1);
-        board[i][j] = word.charAt(n);// reset mark
+        board[i][j] = word.charAt(n);// reset mark, if res is true, the reset is just to resume matrix rather than backtracking reset.
         return res;
     }
 }

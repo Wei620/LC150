@@ -50,16 +50,16 @@ class BestTimeStock4 {
             return res;
         }
         int[] cur = new int[n+1];
-        for (int i = 1; i <= k; i++) {
+        for (int j = 1; j <= k; i++) {
             int curMax = Integer.MIN_VALUE;
-            for (int j = 0; j < n; j++) {
-                int temp = cur[j+1];
-                cur[j+1] = Math.max(Math.max(cur[j+1], cur[j]), prices[j] + curMax);
-                System.out.print(curMax + "|");
-                curMax = Math.max(curMax, temp - prices[j]);  // for next round(j) use
-                System.out.print(curMax + "\n");
+            for (int i = 0; i < n; i++) {//i != n
+                int temp = cur[i+1]; //dp[k-1][i+1]
+                cur[i+1] = Math.max(Math.max(cur[i+1], cur[i]), prices[i] + curMax);
+                //System.out.print(curMax + "|");
+                curMax = Math.max(curMax, temp - prices[i]);  // for next round(i) use
+               // System.out.print(curMax + "\n");
             }
-            System.out.println(Arrays.toString(cur));
+            //System.out.println(Arrays.toString(cur));
         }
         return cur[n];
     }

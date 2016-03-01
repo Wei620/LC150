@@ -43,6 +43,6 @@ class JumpGame2 {
             }
             furthestNextStep = Math.max(furthestNextStep, i + A[i]);
         }
-        return step;
+        return step; // A.length == 1;
     }
 }

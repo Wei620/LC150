@@ -34,7 +34,7 @@ class BestTimeStock3 {
 		//Divide days into two parts each one covers on e trasaction. n division.
 		// Division gurantees no overlap on transactions.
 		//Same-day transaction bring 0 profit.
-		//maxBy[0] = 0, maxSince[len-1] = 0.		
+		//NOTE maxBy[0] = 0, maxSince[len-1] = 0.		
 		int valley = prices[0];
         for (int i = 1; i < len; i++) {
             valley = Math.min(valley, prices[i]);
