@@ -14,6 +14,26 @@ class CopyListWithRandomP {
         
     }
     
+    //My Implementation
+    public RandomListNode copyRandomList(RandomListNode head) {
+        Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        
+        RandomListNode dummy = new RandomListNode(0), currCopy = dummy;
+        for(RandomListNode curr = head; curr != null; curr = curr.next){
+            currCopy.next = new RandomListNode(curr.label);
+            currCopy = currCopy.next;
+            map.put(curr, currCopy);
+        }
+        
+        currCopy = dummy.next;
+        for(RandomListNode curr = head; curr != null; curr = curr.next){
+            currCopy.random = map.get(curr.random);
+            currCopy = currCopy.next;
+        }
+        
+        return dummy.next;
+    }
+    
     /**
      * Use a hashmap to store map between original node and copy node
      */

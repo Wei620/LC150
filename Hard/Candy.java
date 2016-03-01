@@ -58,9 +58,9 @@ class Candy {
                 if (dec == 0) gap = curCandy;
                 dec++; // length of decreasing sequence
                 curCandy = 1;
-                res += dec;
+                res += dec; // everyone in the decreasing sequence needs one more candy.
                 if (dec >= gap) { //candy right after the gap equals to the dec.
-					res++;  // increase on the gas
+					res++;  // increase on the gap
                 }
             } else {
                 dec = 0;

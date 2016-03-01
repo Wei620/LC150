@@ -37,30 +37,30 @@ class PopulatingNextRight2 {
         if(root == null) return;
         
         TreeLinkNode cur = root;  // current node of current level
-        TreeLinkNode prev; // previous node. on next level
-        TreeLinkNode nextHead; // nextHead of the next level
+        TreeLinkNode currNL; // previous node. on next level
+        TreeLinkNode dummyNL; // dummyNL of the next level
 
         
         while (cur != null) {
-            nextHead = null;
-            prev = null;
+            dummyNL = new TreeLinkNode(0);
+            currNL = dummyNL;
             while (cur != null) {
                 if (cur.left != null) { // left child
-                    if (prev != null) prev.next = cur.left;
-                    else nextHead = cur.left; // set nextHead
-                    prev = cur.left; // move right
+                    currNL.next = cur.left;
+                    currNL = currNL.next; // move right
                 }
                 if (cur.right != null) { // right child
-                    if (prev != null) prev.next = cur.right;
-                    else nextHead = cur.right; // set nextHead
-                    prev = cur.right; // move right
+                    currNL.next = cur.right;
+                    currNL = currNL.next; // move right
                 }
                 cur = cur.next; // move right to next node in same level
             }
             // move to next level
-            cur = nextHead;
+            cur = dummyNL.next;
         }
     }
+    
+    
     
     public class TreeLinkNode {
         int val;

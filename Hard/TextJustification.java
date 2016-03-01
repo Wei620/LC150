@@ -62,8 +62,7 @@ class TextJustification {
                 len += words[i].length();
             } else {
                 if (line.size() == 1) { // only 1 word in this line
-                    str = line.get(0);
-                    for (int j = L - str.length(); j > 0; j--) str += " ";
+                    str = leftJustify(line,L);
                 } else if (line.size() > 1) { // necessary
                     div = (L - len) / (line.size() - 1); // divisor
                     mod = (L - len) % (line.size() - 1); // remainder
@@ -76,15 +75,20 @@ class TextJustification {
                 }
                 res.add(str);
                 line.clear();
-                line.add(words[i]); // next line
+                // next line
+                line.add(words[i]); 
                 len = words[i].length();
             }
         }
         // last line
-        str = line.get(0);
+        res.add(leftJustify(line,L));
+        return res;
+    }
+    
+    private String leftJustify(List<String> line, int L){
+        String str = line.get(0);
         for (int i = 1; i < line.size(); i++) str += " " + line.get(i); // words
         for (int i = L - str.length(); i > 0; i--) str += " "; // append spaces
-        res.add(str);
-        return res;
+        return str;
     }
 }

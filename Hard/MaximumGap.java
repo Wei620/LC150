@@ -47,8 +47,8 @@ class MaximumGap {
             if (uppers[idx] == -1 || i > uppers[idx]) uppers[idx] = i;
         }
         /*find max gap*/
-        int prevUpper = uppers[0]; // previous bucket can be skipped
         int maxGap = uppers[0] - lowers[0];
+        int prevUpper = uppers[0]; // previous bucket can be skipped
         for (int i = 1; i < n - 1; i++) {
             if (lowers[i] == -1) continue; // no min in this bucket
             maxGap = Math.max(maxGap, lowers[i] - prevUpper);

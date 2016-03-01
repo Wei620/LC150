@@ -23,13 +23,15 @@ class ValidNumber {
     public boolean isNumber(String s) {
         int len = s.length();
         int i = 0, e = len - 1;
-        // whitespace
+        // whitespace, trim() return copy.
         while (i <= e && Character.isWhitespace(s.charAt(i))) i++;
-        if (i > len - 1) return false;
         while (e >= i && Character.isWhitespace(s.charAt(e))) e--;
+        if (i > e) return false;
+        
         // skip leading +/-
         if (s.charAt(i) == '+' || s.charAt(i) == '-') i++;
-        boolean num = false; // is a digit
+        
+        boolean num = false; // is a digit, was shown already.
         boolean dot = false; // is a '.' no need to set back
         boolean exp = false; // is a 'e' no need to set back
         while (i <= e) {
@@ -45,7 +47,7 @@ class ValidNumber {
             } else if (c == '+' || c == '-') { // +, - must appear after e
                 if (s.charAt(i - 1) != 'e') return false;
             }
-            else return false;
+            else return false; // other char
             i++;
         }
         return num; // whether is num or not

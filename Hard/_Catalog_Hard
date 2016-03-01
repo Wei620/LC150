@@ -1,4 +1,4 @@
-	First Missing Positive                      *** Array
+ nb j	First Missing Positive                      *** Array
 	Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
 	Word Ladder II                              *** Array?Backtracking?BFS?String
 	Search in Rotated Sorted Array              *** Array?Binary Search
@@ -17,7 +17,7 @@
 
 	Sudoku Solver                               *** Backtracking?HashTable
 LRU Cache                                   *** Data Structure
-Median of Two Sorted Arrays                 *** DC?Array?Binary Search
+    Median of Two Sorted Arrays                 *** DC?Array?Binary Search
 Merge k Sorted Lists                        *** DC?LinkedList?Heap
 Palindrome Partitioning II                  *** DP
 	Word Break II                               *** DP?Backtracking
@@ -30,17 +30,17 @@ Edit Distance                               *** DP?String
     Interleaving String                         *** DP?String
     Scramble String                             *** DP?String
     Longest Valid Parentheses                   *** DP?String
-    Candy                                       *** Greedy
-    Copy List with Random Pointer               *** HashTable?LinkedList
-    Max Points on a Line                        *** HashTable?Math
-    Minimum Window Substring                    *** HashTable?Two Pointers?String
+    18  Candy                                       *** Greedy
+    20  Copy List with Random Pointer               *** HashTable?LinkedList
+    10  Max Points on a Line                        *** HashTable?Math
+    12  Minimum Window Substring                    *** HashTable?Two Pointers?String
 
-Substring with Concatenation of All Words   *** HashTable?Two Pointers?String
-Reverse Nodes in k-Group                    *** LinkedList
-Valid Number                                *** Math?String
-    Maximum Gap                                 *** Sort
-Text Justification                          *** String
-Binary Tree Maximum Path Sum                *** Tree?DFS
-Populating Next Right Pointers in Each Node II        *** Tree?DFS
-Recover Binary Search Tree                  *** Tree?DFS
+    11  Substring with Concatenation of All Words   *** HashTable?Two Pointers?String
+    15  Reverse Nodes in k-Group                    *** LinkedList
+    18  Valid Number                                *** Math?String
+    15  Maximum Gap                                 *** Sort
+    15  Text Justification                          *** String
+    2   Binary Tree Maximum Path Sum                *** Tree?DFS
+    5   Populating Next Right Pointers in Each Node II        *** Tree?DFS
+    20  Recover Binary Search Tree                  *** Tree?DFS
 Binary Tree Postorder Traversal             *** Tree?Stack

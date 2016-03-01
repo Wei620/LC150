@@ -44,7 +44,7 @@ class ReverseNodesInKGroup {
         while (cur != null) {
             ListNode p = pre.next; // the first one in the group
             int group = k;
-            while (p != null && group > 0) { // move p to next head as stop node
+            while (p != null && group > 0) { // move p to the stop node, who is head of next group.
                 group--;
                 p = p.next;
             }

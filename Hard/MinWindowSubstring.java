@@ -42,8 +42,8 @@ class MinWindowSubstring {
         if (S == null || T == null) return "";
         if (S.length() == 0 || T.length() == 0 || T.length() > S.length()) return "";
         String res = "";
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
-        Map<Character, Integer> window = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>(); // for T
+        Map<Character, Integer> window = new HashMap<Character, Integer>(); // for S
         
         for (int i = 0; i < T.length(); i++) { // build map for T
             char c = T.charAt(i);

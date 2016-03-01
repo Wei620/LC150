@@ -31,6 +31,7 @@ class LongestValidParen {
         System.out.println(longestValidParentheses(")()()")); // 4
     }
 	
+    // when pop "(" and peek "(", which one is the paried one considering current ")".
     public static int longestValidParentheses(String s) {
         if (s==null) return 0;
         
@@ -54,8 +55,10 @@ class LongestValidParen {
                     else{
                         // if stack is not empty, then for current i the longest valid parenthesis length is
                         // i-stack.peek()
-                        maxLen=Math.max(i-stack.peek(),maxLen);
-						// next round pop if followed by another ")"
+                        // (()() = 4
+                        maxLen=Math.max(i-stack.peek(),maxLen); // stack.peek() + 1 is a "(" defintely. Otherwise, it would been poped out.
+						// next round pop if followed by another ")".
+
                     }
                 }
             }
