@@ -1,17 +1,17 @@
- nb j	First Missing Positive                      *** Array
-	Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
-	Word Ladder II                              *** Array?Backtracking?BFS?String
-	Search in Rotated Sorted Array              *** Array?Binary Search
-	Best Time to Buy and Sell Stock III         *** Array?DP
-	Jump Game II                                *** Array?Greedy
-	Longest Consecutive Sequence                *** Array?HashTable
+22	First Missing Positive                      *** Array
+5	Find Minimum in Rotated Sorted Array II     *** Array ?Binary Search
+17	Word Ladder II                              *** Array?Backtracking?BFS?String
+4	Search in Rotated Sorted Array              *** Array?Binary Search
+10	Best Time to Buy and Sell Stock IV          *** Array?DP
+8	[*]Jump Game II                                *** Array?Greedy
+8	Longest Consecutive Sequence                *** Array?HashTable
 
-	Insert Interval                             *** Array?Sort
-	Merge Intervals                             *** Array?Sort
-	Largest Rectangle in Histogram              *** Array?Stack
-	Maximal Rectangle                           *** Array?HashTable?Stack?DP
-	Trapping Rain Water                         *** Array?Two Pointers?Stack	
-	Permutations II                             *** Backtracking
+5	Insert Interval                             *** Array?Sort
+5	Merge Intervals                             *** Array?Sort
+9	Largest Rectangle in Histogram              *** Array?Stack
+5	Maximal Rectangle                           *** Array?HashTable?Stack?DP
+4	Trapping Rain Water                         *** Array?Two Pointers?Stack	
+12	Permutations II                             *** Backtracking
 	N-Queens II                                 *** Backtracking?Bit Manipulation
 	N-Queens                                    *** Backtracking?Bit Manipulation
 
