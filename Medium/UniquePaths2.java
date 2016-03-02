@@ -27,6 +27,21 @@ class UniquePaths2 {
         System.out.println(uniquePathsWithObstacles(obstacleGrid));
     }
     
+	public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
+		if (obstacleGrid == null || obstacleGrid.length == 0) return 0;
+		int len = obstacleGrid[0].length;
+		if (len == 0) return 0;
+		int[] dp = new int[len];
+		dp[0] = 1;
+		for(int i = 0; i < obstacleGrid.length; i++){
+			dp[0] = obstacleGrid[0][0]? 0 : dp[0];
+			for(int j = 1; j < len; j++){
+				dp[j] = i > 0? dp[j]:0 + dp[j-1];
+			}
+		}
+		return dp[len-1];
+	}
+	
     /**
      * DP, bottom-up approach
      * build from end point to start point

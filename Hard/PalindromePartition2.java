@@ -44,7 +44,7 @@ class PalindromePartition {
         int[] cuts = new int[len + 1]; // store results
         for (int i = 0; i <= len; i++) cuts[i] = i - 1; // max cuts, every letter is a palindrome
         for (int i = 0; i < len; i++) { // i != len due to even palin
-			// why just compare two chars?
+			// why just compare two chars? Wrong, j-loop
             // odd palin
             for (int j = 0; i - j >= 0 && i + j < len && s.charAt(i - j) == s.charAt(i + j); j++) cuts[i + j + 1] = Math.min(cuts[i + j + 1], 1 + cuts[i - j]);
             // even palin

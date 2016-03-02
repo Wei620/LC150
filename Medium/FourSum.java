@@ -43,7 +43,7 @@ class FourSum {
             if(3 * num[i] + 6 > target) break;
             for (int j = i + 1; j < num.length - 2; j++) { // 2 indices remain
                 if (j > i + 1 && num[j] == num[j - 1]) continue; // skip
-                if(2 * (num[i] + num[j] + 4 > target) break;
+                if(2 * (num[i] + num[j]) + 4 > target) break;
                 int newTar = target - num[i] - num[j]; // 2 sum
                 int l = j + 1;
                 int r = num.length - 1;

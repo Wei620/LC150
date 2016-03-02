@@ -66,7 +66,7 @@ class NQueens2 {
             */
             int p = pos & (-pos); // right most 1
             pos -= p; // place a queen, try it from the right to left, no need to set back see L59
-            dfs(h + p, (r + p) << 1, (l + p) >> 1); 
+            dfs(h + p, (r + p) << 1, (l + p) >> 1); // Failed : h | l | r == limit, Successful: h == limit
         }
     }
 }

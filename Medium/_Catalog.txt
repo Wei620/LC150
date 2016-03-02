@@ -4,66 +4,58 @@
 	17	Spiral Matrix
 	15	Rotate Image
 	9	Next Permutation
-	?15	Search for a Range
+	15	Search for a Range
 	10	Word Search
 	7	Subsets II
 	6	Combination Sum II
 	5	Subsets
 	9	Find Minimum in Rotated Sorted Array
 	8	Search in Rotated Sorted Array II
-
-P2
 	15	Search a 2D Matrix
 	15	Search Insert Position
 	15	Find Peak Element
 	3	Maximum Product Subarray
 	3	Best Time to Buy and Sell Stock
-Minimum Path Sum
-Unique Paths II
-Unique Paths
-Triangle
+		11	Minimum Path Sum
+		16	Unique Paths II
+		6	Unique Paths
+		10	Triangle
 	1	Best Time to Buy and Sell Stock II
 	10	Best Time to Buy and Sell Stock III
-Jump Game
-Two Sum
-
-P3
-4Sum
-3Sum
-Remove Duplicates from Sorted Array II
-Container With Most Water
-3Sum Closest
-Palindrome Partitioning
-Combinations
+		17	Jump Game
+		1	Two Sum
+		18	3Sum
+		12	3Sum Closest
+		6	4Sum
+		12	Remove Duplicates from Sorted Array II
+		6	Container With Most Water
+		8	Palindrome Partitioning
+		11	Combinations
     11  Permutations
 	6	Combination Sum
-
-P4
-Gray Code
-Permutation Sequence
-Generate Parentheses
-Restore IP Addresses
-Letter Combinations of a Phone Number
-Surrounded Regions
-Word Ladder
-
-P5
-Single Number II
-Repeated DNA Sequences 
-Maximum Subarray
+		12	Gray Code
+		18	Permutation Sequence
+		17	Generate Parentheses
+		6	Restore IP Addresses
+		6	Letter Combinations of a Phone Number
+		22	Surrounded Regions
+		14	Word Ladder
+		4	Single Number II
+		15	Repeated DNA Sequences 
+		2	Maximum Subarray
 Clone Graph
 Convert Sorted List to Binary Search Tree
-Word Break
-Decode Ways
-Gas Station
-Single Number
+        8   Word Break
+		10	Decode Ways
+		4	Gas Station
+		1	Single Number
 
 P6
 Fraction to Recurring Decimal
 Anagrams
 Longest Substring Without Repeating Characters
 Swap Nodes in Pairs
-Remove Duplicates from Sorted List II
+		20	Remove Duplicates from Sorted List II
 Reverse Linked List II
 Reorder List
 Add Two Numbers

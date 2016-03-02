@@ -45,7 +45,7 @@ class PermutationSeq {
             sb.append(digits.get(index));
             digits.remove(index); // remove used digit
             k = k % factor;
-            if (i < n - 1) factor = factor / (n - 1 - i); // factor for (n-i-1)
+            if (i < n - 1) factor = factor / (n - 1 - i); // factor for (n-i-1) 0! = 1  0!/0 -  no use 
         }
 
         return sb.toString();

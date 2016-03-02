@@ -5,22 +5,20 @@
 10	Best Time to Buy and Sell Stock IV          *** Array?DP
 8	[*]Jump Game II                                *** Array?Greedy
 8	Longest Consecutive Sequence                *** Array?HashTable
-
 5	Insert Interval                             *** Array?Sort
 5	Merge Intervals                             *** Array?Sort
 9	Largest Rectangle in Histogram              *** Array?Stack
 5	Maximal Rectangle                           *** Array?HashTable?Stack?DP
 4	Trapping Rain Water                         *** Array?Two Pointers?Stack	
 12	Permutations II                             *** Backtracking
-	N-Queens II                                 *** Backtracking?Bit Manipulation
-	N-Queens                                    *** Backtracking?Bit Manipulation
-
-	Sudoku Solver                               *** Backtracking?HashTable
-LRU Cache                                   *** Data Structure
-    Median of Two Sorted Arrays                 *** DC?Array?Binary Search
-Merge k Sorted Lists                        *** DC?LinkedList?Heap
-Palindrome Partitioning II                  *** DP
-	Word Break II                               *** DP?Backtracking
+    15	N-Queens II                                 *** Backtracking?Bit Manipulation
+    20	N-Queens                                    *** Backtracking?Bit Manipulation
+    20	Sudoku Solver                               *** Backtracking?HashTable
+    10  LRU Cache                                   *** Data Structure
+    20  Median of Two Sorted Arrays                 *** DC?Array?Binary Search
+    9   Merge k Sorted Lists                        *** DC?LinkedList?Heap
+	16	Palindrome Partitioning II                  *** DP
+	15  Word Break II                               *** DP?Backtracking
 	Regular Expression Matching                 *** DP?Backtracking ?String
 	Wildcard Matching                           *** DP?Backtracking?Greedy?String
 Dungeon Games                               *** DP?Binary Search

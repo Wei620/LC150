@@ -42,7 +42,7 @@ class WordLadder {
         Queue<String> queue = new LinkedList<String>();
         queue.add(start);
         dict.remove(start);
-        int length = 1;
+        int length = 1; //? what if start == end? see line 15
 
         while (!queue.isEmpty()) {
             int count = queue.size(); // get current level size

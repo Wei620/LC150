@@ -33,14 +33,14 @@ public class Solution {
      * If yes, get the cacheult from memory function
      * If there is an cacheult, add each word to current solution with front in
      */
-    public List<String> wordBreak(String s, Set<String> dict) {
+    public List<String> wordBreak(String s, Set<String> dict) {// return value DP
         List<String> words = new ArrayList<String>(); 
 
         int len = s.length();
         for (int i = 1; i <= len; i++) {
             String pref = s.substring(0, i);
             if (dict.contains(pref)) {
-                if (i == len) words.add(pref); // reach the end.
+                if (i == len) words.add(pref); // reach the end. base case. no break.
                 else {
                     String remain = s.substring(i, len); // remaining string
                     List<String> remainDecomp = cache.containsKey(remain) ?

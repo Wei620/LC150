@@ -53,7 +53,7 @@ class SudokuSolver {
             }
         }
         for (int i = 1; i <= 9; i++) 
-            if (helper(board, 0, 0, i)) return;
+            if (helper(board, 0, i)) return;
     }
     
     private boolean helper(char[][] board, int idx, int num) {
@@ -78,7 +78,7 @@ class SudokuSolver {
         // all possible combinations from this position generated
         
 		// reset this position
-        row[i] ^= 1 << num; 
+        row[i] ^= 1 << num; // line 69
         col[j] ^= 1 << num;
         sqr[k] ^= 1 << num;
         board[i][j] = '.';
@@ -89,6 +89,6 @@ class SudokuSolver {
         if ((row[i] & 1 << num) > 0) return false; // both are 1
         if ((col[j] & 1 << num) > 0) return false; // both are 1
         if ((sqr[k] & 1 << num) > 0) return false; // both are 1
-        return true; // (row[i] | col[j] |sqr[k])^(1<<num);
+        return true; // !(row[i] | col[j] |sqr[k])&(1<<num);
     }
 }

@@ -50,7 +50,7 @@ class MedianOfTwoSortedArrs {
                 if(A[i] >= getPrevElement(B, j)){
                     return new int[]{A[i], Math.min(B[j], getNextElement(A, i))};
                 }
-                else{//A[i] < Bj - 1, at most k - 1 elements are in front of A[i]
+                else{//A[i] < Bj_1 < Bj, at most k - 1 elements are in front of A[i]
                     l = i + 1;
                 }
             }
@@ -63,7 +63,7 @@ class MedianOfTwoSortedArrs {
                 }
             }
         }
-        return new int[]{B[k - l],getNextElement(B, k - l)};
+        return new int[]{B[k - l],getNextElement(B, k - l)}; // A[l - 1], l from A, needs k - l from B.
     }
     
     private int getPrevElement(int[] arr, int idx){

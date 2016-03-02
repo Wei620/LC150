@@ -26,6 +26,70 @@ class JumpGame {
         System.out.println(j.canJump(C));
         System.out.println(j.canJump(D));
     }
+	
+	public boolean canJamp(int[] A){
+		if (A == null) return false;
+		int maxStep = Integer.MIN_VALUE;
+		for(int i = 0; i < A.length, i++){
+			maxStep = Math.max(maxStep, i + A[i]);
+			if(maxStep > A.length - 1){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	// dp[i] represents whether we can reach the ith step (0-based)
+	// dp[i] = max(j + A[j]) >= i, where 0 <= j < i && dp[j] == true
+	public boolean canJamp(int[] A){
+		if (A == null || A.length == 0) return false;
+		int currMax = 0;
+		for(int i = 0; i < A.length; i++){
+			if(currMax >= i){
+				currMax = Math.max(currMax, i + A[i]);
+			}
+		}
+		return currMax >= A.length;
+	}
+	
+	// JumpGame II
+	public int canJump(int[] A){
+		if (A == null) return -1;
+		int currMaxStep = -1, nextMaxStep = 0, step = -1;
+		for(int i = 0; i < A.length; i++){
+			if(i > currMaxStep){
+				if(nextMaxStep > currMaxStep){
+					step++;
+					currMaxStep = nextMaxStep;
+					if(currMaxStep > A.length - 1){
+						return step;
+					}	
+				}
+			}
+			nextMaxStep = Math.max(nextMaxStep, i + A[i]);
+		}
+		return step;
+	}
+	
+	// dp[i] the maxReachableIdx after ith Step
+	// dp[i+1] = max(j + A[j]), where dp[i - 1] + 1 <= j <= dp[i]
+
+	// dp[0] = A[0]
+	public int canJump(int[] A){
+		if (A == null) return -1;
+		int dp_prev = -1, dp = 0;
+		for(int i = 0; i < A.length; i++){
+			int tmp = dp;
+			for(int j = dp_prev + 1; j <= dp; j++){
+				dp = Math.max(dp, j + A[j]);
+			}
+			if(dp > A.Length - 1) return i+1;
+			dp_prev = tmp;
+		}
+		return -1
+	}
+	
+	
     
     /**
      * Dynamic Programming
