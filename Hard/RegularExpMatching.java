@@ -44,15 +44,32 @@ class RegularExpMatching {
 			if(s.length() < 1 || (p.charAt(0) != ’.’ && s.charAt(0) != p.charAt(0)))
 				return false;
 			return isMatch(s.substring(1), p.substring(1));
-		}else{
-			int len = s.length();
+		}else{ // p.charAt(1) == ’*’
+            if(isMatch(s.substring(0), p.substring(2)){ 0 p[0]
+                return true;
+            }
+            else{
+                int len = s.length(); 
+                for(int i = 0; i < len; i++){
+                    if(p.charAt(0) == s.charAt(i) || p.charAt(0) == ’.’){
+                        if(isMatch(s.substring(i+1), p.substring(2))){//s.substring(len) = "";
+                            return true;
+                        }                            
+                    }
+                    else break;
+                }
+            }
+            
+            return false;
+            /*
+			int len = s.length();  
 			int i = -1;
 			while(i<len && (i < 0 || p.charAt(0) == ’.’ || p.charAt(0) == s.charAt(i))){
 				if(isMatch(s.substring(i+1), p.substring(2)))
 					return true;
 				i++;
 			}
-			return false;
+			return false;*/
 		}
 	}
 

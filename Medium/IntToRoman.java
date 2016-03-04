@@ -11,7 +11,8 @@ class IntToRoman {
 
     public static final int[] intDict = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
     public static final String[] romanDict = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-
+    // intDict[i] + intDict[i+1] >= intDict[i-1], cannot use both of i and i+1 
+    
     /**
      * Recursion
      * Go through the dict, if num >= dict, insert it to head

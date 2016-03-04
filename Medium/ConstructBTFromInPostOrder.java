@@ -32,7 +32,7 @@ class ConstructBTFromInPostOrder {
         }
         // Note how to calcuclate the start and end indices for post array
         int lNum = pos - is;
-        root.left = buildTree(inorder, postorder, is, pos - 1, ps, ps + lNum - 1);
+        root.left = buildTree(inorder, postorder, is, pos - 1, ps, ps + lNum - 1); // ps + lNum -1 given ps
         root.right = buildTree(inorder, postorder, pos + 1, ie, ps + lNum, pe - 1);
         return root;
     }

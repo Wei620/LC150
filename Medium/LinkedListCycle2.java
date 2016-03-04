@@ -33,7 +33,9 @@ class LinkedListCycle2 {
         if (!hasCycle) return null;
 		
 		/* http://fisherlei.blogspot.com/2013/11/leetcode-linked-list-cycle-ii-solution.html
-		
+		t = X + mY + k
+        2t = X + nY + k
+        X + k = (n - 2m)Y
 		both fast and slow will reach the conjection after x steps.
 		*/
 		

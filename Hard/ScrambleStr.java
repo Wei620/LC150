@@ -48,33 +48,35 @@ class ScrambleStr {
     
     /**
      * DP
-     * f[n][i][j] means isScramble(s1[i: i+n], s2[j: j+n])
-     * f[n][i][j] = f[k][i][j] && f[n - k][i+k][j+k] 
-     *                 || f[k][i][j+n-k] && f[n-k][i+k][j]
+     * f[len][i][j] means isScramble(s1[i: i+len), s2[j: j+len))
+     * f[len][i][j] = f[k][i][j] && f[len - k][i+k][j+k] 
+     *                 || f[k][i][j+len-k] && f[len-k][i+k][j], 1 <= k <= len 
      */
     public boolean isScramble(String s1, String s2) {
-       if (s1.length() != s2.length()){ return false;
-       if (s1.length() == 0 || s1.equals(s2)) return true;
+		if (s1.length() != s2.length()){ return false;
+		if (s1.length() == 0 || s1.equals(s2)) return true;
        
-       int n = s1.length();
-       boolean[][][] res = new boolean[n][n][n];
-       for (int i = 0; i < n; i++)
-           for (int j = 0; j < n; j++)
-               res[0][i][j] = s1.charAt(i) == s2.charAt(j);
+		int n = s1.length();
+		boolean[][][] res = new boolean[n+1][n][n];
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++)
+				res[1][i][j] = s1.charAt(i) == s2.charAt(j);
        
-       for (int len = 2; len <= n; len++) {
-           for (int i = n - len; i>= 0; i--) {
-               for (int j = n - len;  j>=0; j--) {
-                   boolean r = false;
-                   for (int k = 1; k < len && r == false; k++) {
-                       r = (res[k-1][i][j] && res[len-k-1][i+k][j+k]) || (res[k-1][i][j+len-k] && res[len-k-1][i+k][j]);
-                   }
-                   res[len-1][i][j] = r;
-               }
-           }
-       }       
-       return res[n-1][0][0];
-    }
+		for (int len = 2; len <= n; len++) {
+			for (int i = n - len; i>= 0; i--) {
+				for (int j = n - len;  j>=0; j--) {
+					boolean isFound = false;
+					for (int k = 1; k <= len; k++) { // k < len, len - k < len, previous records. So how to tranverse the i and j doesn't matter. 
+						isFound = (res[k][i][j] && res[len-k][i+k][j+k]) || 
+								  (res[k][i][j+len-k] && res[len-k][i+k][j]);
+						if(isFound) break;
+					}
+					res[len][i][j] = isFound;
+				}
+			}
+		}       
+		return res[n][0][0];
+	}
     
     /**
      * separate s1 into two parts, namely --s11--, --------s12--------

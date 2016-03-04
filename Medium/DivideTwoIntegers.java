@@ -15,7 +15,7 @@ class DivideTwoIntegers {
      * Take care of special cases, 0, +1, -1
 	 * Think about the binary muliplication 
      * dividend = a0 * 2^0 * divisor + a1 * 2^1 * divisor + a2 * 2^2 * divisor...
-     * ai can be 0 or 1, set it to 1 if dividend >= ai * 2^i * divisor
+     * ai can be 0 or 1, set it to 1 if dividend >= 2^i * divisor
 	 * 2^i * divisor: left move i bit
      * All ais added up to result
      */

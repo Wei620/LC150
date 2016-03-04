@@ -32,9 +32,10 @@ class Pow {
         }
 		
 		/* recursive
+        if(n == 0) return 1;
 		double v = power(x, n/2);
 		if(n % 2 == 0) return v * v;
-		else return v * v * n;
+		else return v * v * x;
 		*/
 		
         double res = 1; // mind overflow

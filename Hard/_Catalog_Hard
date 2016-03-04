@@ -19,26 +19,24 @@
     9   Merge k Sorted Lists                        *** DC?LinkedList?Heap
 	16	Palindrome Partitioning II                  *** DP
 	15  Word Break II                               *** DP?Backtracking
-	Regular Expression Matching                 *** DP?Backtracking ?String
-	Wildcard Matching                           *** DP?Backtracking?Greedy?String
-Dungeon Games                               *** DP?Binary Search
-Edit Distance                               *** DP?String
-
-    Distinct Subsequences                       *** DP?String
-    Interleaving String                         *** DP?String
-    Scramble String                             *** DP?String
-    Longest Valid Parentheses                   *** DP?String
-    18  Candy                                       *** Greedy
-    20  Copy List with Random Pointer               *** HashTable?LinkedList
-    10  Max Points on a Line                        *** HashTable?Math
-    12  Minimum Window Substring                    *** HashTable?Two Pointers?String
-
-    11  Substring with Concatenation of All Words   *** HashTable?Two Pointers?String
-    15  Reverse Nodes in k-Group                    *** LinkedList
-    18  Valid Number                                *** Math?String
-    15  Maximum Gap                                 *** Sort
-    15  Text Justification                          *** String
-    2   Binary Tree Maximum Path Sum                *** Tree?DFS
-    5   Populating Next Right Pointers in Each Node II        *** Tree?DFS
-    20  Recover Binary Search Tree                  *** Tree?DFS
-Binary Tree Postorder Traversal             *** Tree?Stack
+		15	Regular Expression Matching                 *** DP?Backtracking ?String
+		15	Wildcard Matching                           *** DP?Backtracking?Greedy?String
+		10	Dungeon Games                               *** DP?Binary Search
+		8	Edit Distance                               *** DP?String
+		15	Distinct Subsequences                       *** DP?String
+		8	Interleaving String                         *** DP?String
+			20	Scramble String                             *** DP?String
+			10	Longest Valid Parentheses                   *** DP?String
+			8	18  Candy                                       *** Greedy
+			14	20  Copy List with Random Pointer               *** HashTable?LinkedList
+			15	10  Max Points on a Line                        *** HashTable?Math
+			25	12  Minimum Window Substring                    *** HashTable?Two Pointers?String
+			20	11  Substring with Concatenation of All Words   *** HashTable?Two Pointers?String
+			10	15  Reverse Nodes in k-Group                    *** LinkedList
+            10  18  Valid Number                                *** Math?String
+            15  15  Maximum Gap                                 *** Sort
+            15  15  Text Justification                          *** String
+            3   2   Binary Tree Maximum Path Sum                *** Tree?DFS
+            7   5   Populating Next Right Pointers in Each Node II        *** Tree?DFS
+            22  20  Recover Binary Search Tree                  *** Tree?DFS
+            6       Binary Tree Postorder Traversal             *** Tree?Stack

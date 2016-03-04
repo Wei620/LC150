@@ -44,8 +44,8 @@ class ReverseWords {
                     word.append(c);
                     i++;
                 }
-                res = res.length() == 0 ? word.toString() : word.toString() + " " + res; // insert to front of res
                 i--; // reset i due to the break in while
+                res = res.length() == 0 ? word.toString() : word.toString() + " " + res; // insert to front of res
             }
         }
         return res;
@@ -63,7 +63,7 @@ class ReverseWords {
         StringBuilder res = new StringBuilder();
         String[] words = s.split(" ");
         for (int i = words.length - 1; i >= 0; i--) {
-            if (!words[i].equals("")) {
+            if (!words[i].equals("")) { // consecutive space
                 res.append(words[i]);
                 if (i != 0) res.append(" ");
             }

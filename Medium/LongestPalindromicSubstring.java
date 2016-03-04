@@ -27,7 +27,7 @@ class LongestPalindromicSubstring {
         for (int i = 1; i <= 2 * len - 1; i++) { // skip two #s
             int count = 1;
             while (i - count >= 0 && i + count <= 2 * len && get(s, i - count) == get(s, i + count)) count++;
-            count--; // there will be one extra count for the outbound #
+            count--; // there will be one extra count for the outbound, i +- count must be "#" (even)
             if (count > max) { // update max and result when longer is found
                 res = s.substring((i - count) / 2, (i + count) / 2); // # is with even index. divided by 2, means the one after #
                 max = count;
@@ -49,7 +49,7 @@ class LongestPalindromicSubstring {
 
     /**
      * Manacher's Algorithm, O(n) Time.
-     * S = “abba” => T = “^#a#b#b#a#$”.
+     * S = “abba” => T = “^#a#b#b#a#$”.  ^ and $ is to prevent out-bound access.
      * http://www.felix021.com/blog/read.php?2040
      * http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
      */
@@ -62,7 +62,7 @@ class LongestPalindromicSubstring {
         for (int i = 1; i < n - 1; i++) {
             int mirror = 2 * center - i; // mirror of i to center
             p[i] = range > i ? Math.min(range - i, p[mirror]) : 0;
-            while (t.charAt(i + 1 + p[i]) == t.charAt(i - 1 - p[i])) p[i]++;
+            while (t.charAt(i + 1 + p[i]) == t.charAt(i - 1 - p[i])) p[i]++;// ^$ for "+ 1"
             if (i + p[i] > range) {
                 center = i;
                 range = i + p[i];
@@ -77,7 +77,7 @@ class LongestPalindromicSubstring {
                 centerIdx = i;
             }
         }
-        return s.substring((centerIdx - 1 - maxLen) / 2, (centerIdx - 1 + maxLen) / 2);
+        return s.substring((centerIdx - 1 - maxLen) / 2, (centerIdx - 1 + maxLen) / 2);  // c - 1 +- m must be #(odd)
     }
 
     private String preProcess(String s) {

@@ -54,25 +54,25 @@ class RecoverBST {
         TreeNode cur = root;
         TreeNode pred = null;
         while (cur != null) {
-            if (cur.left == null) {// left most
+            if (cur.left == null) {
                 // set first and second if first still doesn't exist
                 if (cur.val <= prev.val && first == null) first = prev;
                 // set second only if first exists
                 if (cur.val <= prev.val && first != null) second = cur;
                 prev = cur; // note that previous node needs to be saved
-                cur = cur.right; // move to next node
+                cur = cur.right; // move to next node. left -> root or root -> right
             } else {
                 pred = cur.left;
                 while (pred.right != null && pred.right != cur) pred = pred.right;
                 if (pred.right == null) { // not connected
                     pred.right = cur; // connect predecessor to current node, pred.left == null line 55
                     cur = cur.left; // move to left child
-                } else { // connected, revisted curr via the thread
+                } else { // connected, revisted curr via the thread, 
                     if (cur.val <= prev.val && first == null) first = prev;  //prev is assigned by line 62
                     if (cur.val <= prev.val && first != null) second = cur;
                     pred.right = null; // break connection
                     prev = cur; // previous node needs to be saved
-                    cur = cur.right; // move to right child
+                    cur = cur.right; // move to right child. root -> right
                 }
             }
         }

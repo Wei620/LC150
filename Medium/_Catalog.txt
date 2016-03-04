@@ -43,49 +43,41 @@
 		4	Single Number II
 		15	Repeated DNA Sequences 
 		2	Maximum Subarray
-Clone Graph
-Convert Sorted List to Binary Search Tree
+                Clone Graph
+                Convert Sorted List to Binary Search Tree
         8   Word Break
 		10	Decode Ways
 		4	Gas Station
 		1	Single Number
-
-P6
-Fraction to Recurring Decimal
-Anagrams
-Longest Substring Without Repeating Characters
-Swap Nodes in Pairs
+                Fraction to Recurring Decimal
+                Anagrams
+                Longest Substring Without Repeating Characters
+                Swap Nodes in Pairs
 		20	Remove Duplicates from Sorted List II
-Reverse Linked List II
-Reorder List
-Add Two Numbers
-
-P7
-Sort List
-Insertion Sort List
-Partition List
-Rotate List
-Linked List Cycle
-Linked List Cycle II
-Pow(x, n)
-Sqrt(x)
-Divide Two Integers
-
-P8
-Integer to Roman
-Multiply Strings
-Largest Number
-Evaluate Reverse Polish Notation
-Simplify Path
-Reverse Words in a String
-Longest Palindromic Substring
-Flatten Binary Tree to Linked List
-Construct Binary Tree from Inorder and Postorder Traversal
-Construct Binary Tree from Preorder and Inorder Traversal
-
-P9
-Binary Tree Zigzag Level Order Traversal
-Validate Binary Search Tree
+                Reverse Linked List II
+                Reorder List
+                Add Two Numbers
+                Sort List
+                Insertion Sort List
+                Partition List
+                Rotate List
+                2   Linked List Cycle
+                5   Linked List Cycle II
+                10  Pow(x, n)
+                5   Sqrt(x)
+                    15  Divide Two Integers
+                    6   Integer to Roman
+                    12  Multiply Strings
+                    20  Largest Number
+                    4   Evaluate Reverse Polish Notation
+                    5   Simplify Path
+                    12  Reverse Words in a String
+                    20  Longest Palindromic Substring
+                    15  Flatten Binary Tree to Linked List
+                    4   Construct Binary Tree from Inorder and Postorder Traversal
+                    4   Construct Binary Tree from Preorder and Inorder Traversal
+                    4   Binary Tree Zigzag Level Order Traversal
+                    10  Validate Binary Search Tree
 Sum Root to Leaf Numbers
 Populating Next Right Pointers in Each Node
 Convert Sorted Array to Binary Search Tree

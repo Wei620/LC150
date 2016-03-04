@@ -36,6 +36,7 @@ class MultiplyStrings {
             }
         }
         // build ans string
+        // new String(res) will bring extra zeros in begining.
         StringBuilder ans = new StringBuilder();
         for (int i = m + n - 1; i >= 0; i--) {//res[m+n-1] MSB
             if (res[i] != 0) {// skipped unused cells

@@ -30,7 +30,7 @@ class LargestNum {
         for (int i = 0; i < num.length; i++) str[i] = num[i] + "";
         Comparator<String> comp = new Comparator<String>() {
             @Override
-            public int compare(String s1, String s2) {
+            public int compare(String s1, String s2) {// -1 -> s1 first.
                 return Long.compare(Long.valueOf(s2 + s1), Long.valueOf(s1 + s2));
             }
         };
