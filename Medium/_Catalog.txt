@@ -78,13 +78,13 @@
                     4   Construct Binary Tree from Preorder and Inorder Traversal
                     4   Binary Tree Zigzag Level Order Traversal
                     10  Validate Binary Search Tree
-Sum Root to Leaf Numbers
-Populating Next Right Pointers in Each Node
-Convert Sorted Array to Binary Search Tree
-Path Sum II
-Unique Binary Search Trees
-Unique Binary Search Trees II
-Binary Tree Inorder Traversal
-Binary Tree Preorder Traversal
-Binary Search Tree Iterator
+					5	Sum Root to Leaf Numbers
+					6	Populating Next Right Pointers in Each Node
+					2	Convert Sorted Array to Binary Search Tree
+					15	Path Sum II
+					15	Unique Binary Search Trees
+					15	Unique Binary Search Trees II
+					11	Binary Tree Inorder Traversal
+					5	Binary Tree Preorder Traversal
+					8	Binary Search Tree Iterator
 

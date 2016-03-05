@@ -38,11 +38,10 @@ class PopulatingNextRight2 {
         
         TreeLinkNode cur = root;  // current node of current level
         TreeLinkNode currNL; // previous node. on next level
-        TreeLinkNode dummyNL; // dummyNL of the next level
+        TreeLinkNode dummyNL = new TreeLinkNode(0);; // dummyNL of the next level
 
         
         while (cur != null) {
-            dummyNL = new TreeLinkNode(0);
             currNL = dummyNL;
             while (cur != null) {
                 if (cur.left != null) { // left child
