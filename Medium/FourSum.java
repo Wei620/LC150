@@ -40,10 +40,10 @@ class FourSum {
 
         for (int i = 0; i < num.length - 3; i++) { // 3 indices remain
             if (i > 0 && num[i] == num[i - 1]) continue; // skip duplicate
-            if(3 * num[i] + 6 > target) break;
+            //if(4 * num[i] > target) break;
             for (int j = i + 1; j < num.length - 2; j++) { // 2 indices remain
                 if (j > i + 1 && num[j] == num[j - 1]) continue; // skip
-                if(2 * (num[i] + num[j]) + 4 > target) break;
+                //if(num[i] + 3 * num[j] > target) break;
                 int newTar = target - num[i] - num[j]; // 2 sum
                 int l = j + 1;
                 int r = num.length - 1;
@@ -52,6 +52,7 @@ class FourSum {
                         l++; 
                         continue;
                     }
+                    if(2 * num[l] > netTar) break;
                     
                     /* no need to check dups on num[r], line 63, line 66-67.
                     if (r < num.length - 1 && num[r] == num[r + 1]) { // skip

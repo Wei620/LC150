@@ -1,38 +1,39 @@
-	5	Set Matrix Zeroes
-	5	Sort Colors
-	10	Spiral Matrix II
-	17	Spiral Matrix
-	15	Rotate Image
-	9	Next Permutation
-	15	Search for a Range
-	10	Word Search
-	7	Subsets II
-	6	Combination Sum II
-	5	Subsets
-	9	Find Minimum in Rotated Sorted Array
-	8	Search in Rotated Sorted Array II
-	15	Search a 2D Matrix
-	15	Search Insert Position
-	15	Find Peak Element
-	3	Maximum Product Subarray
-	3	Best Time to Buy and Sell Stock
-		11	Minimum Path Sum
-		16	Unique Paths II
-		6	Unique Paths
-		10	Triangle
-	1	Best Time to Buy and Sell Stock II
-	10	Best Time to Buy and Sell Stock III
-		17	Jump Game
-		1	Two Sum
-		18	3Sum
-		12	3Sum Closest
-		6	4Sum
-		12	Remove Duplicates from Sorted Array II
-		6	Container With Most Water
-		8	Palindrome Partitioning
-		11	Combinations
-    11  Permutations
-	6	Combination Sum
+5	5	Set Matrix Zeroes
+2	5	Sort Colors
+10	10	Spiral Matrix II
+20	17	Spiral Matrix
+6	15	Rotate Image
+8	9	Next Permutation
+35	15	Search for a Range
+5	10	Word Search
+6	5	Subsets
+8   7	Subsets II
+4   6	Combination Sum
+7	6	Combination Sum II	
+9	9	Find Minimum in Rotated Sorted Array
+5	8	Search in Rotated Sorted Array II
+7	15	Search a 2D Matrix
+2	15	Search Insert Position
+9	15	Find Peak Element
+2   2	Maximum Subarray
+3	3	Maximum Product Subarray
+4	3	Best Time to Buy and Sell Stock
+1   1	Best Time to Buy and Sell Stock II
+5	10	Best Time to Buy and Sell Stock III
+6	11	Minimum Path Sum
+6	6	Unique Paths
+8	16	Unique Paths II
+10	10	Triangle	
+17	17	Jump Game
+3   1	Two Sum
+13	18	3Sum
+10	12	3Sum Closest
+6	6	4Sum
+7	12	Remove Duplicates from Sorted Array II
+5	6	Container With Most Water
+5	8	Palindrome Partitioning
+5	11	Combinations
+5   11  Permutations
 		12	Gray Code
 		18	Permutation Sequence
 		17	Generate Parentheses
@@ -42,7 +43,7 @@
 		14	Word Ladder
 		4	Single Number II
 		15	Repeated DNA Sequences 
-		2	Maximum Subarray
+		
                 Clone Graph
                 Convert Sorted List to Binary Search Tree
         8   Word Break

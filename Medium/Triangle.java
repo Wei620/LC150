@@ -39,12 +39,12 @@ class Triangle {
      * Pick the smaller one of next row and add it up to current level
      */
     public static int minimumTotal(List<List<Integer>> triangle) {
-        List<Integer> res = new ArrayList<Integer>(triangle.get(level));
         int level = triangle.size() - 1;
+        List<Integer> res = new ArrayList<Integer>(triangle.get(level));
         for (int i = level - 1; i >= 0; i--) { // start from second last row
             for (int j = 0; j <= i; j++) { // go through each node
-                int res = Math.min(res.get(j), res.get(j + 1)) + triangle.get(i).get(j); // add the smaller one 
-                res.set(j, res);
+                int minSum = Math.min(res.get(j), res.get(j + 1)) + triangle.get(i).get(j); // add the smaller one 
+                res.set(j, minSum);
             }
         }
         return res.get(0);

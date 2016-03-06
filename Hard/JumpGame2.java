@@ -29,20 +29,20 @@ class JumpGame2 {
      */
     public int jump(int[] A) {
         int step = 0;
-        int furthestCurrStep = 0; // how far we already can reach
-        int furthestNextStep = A[0]; // how far can we reach for next step
+        int currRange = 0; // how far we already can reach
+        int nextRange = A[0]; // how far can we reach for next step
         
         for (int i = 1; i < A.length; i++) {
-            if (i > furthestCurrStep) { // run out of we can reach, need one more step
-                if(furthestNextStep > furthestCurrStep){
+            if (i > currRange) { // run out of we can reach, need one more step
+                if(nextRange > currRange){
                     step++;
-                    furthestCurrStep = furthestNextStep;
-                    if (furthestCurrStep >= A.length) return step;
+                    currRange = nextRange;
+                    if (currRange >= A.length - 1) return step;
                 }
                 else return -1; //cannot reach i
             }
-            furthestNextStep = Math.max(furthestNextStep, i + A[i]);
+            nextRange = Math.max(nextRange, i + A[i]);
         }
-        return step; // A.length == 1;
+        return step;
     }
 }

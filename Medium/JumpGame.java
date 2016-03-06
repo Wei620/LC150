@@ -27,12 +27,12 @@ class JumpGame {
         System.out.println(j.canJump(D));
     }
 	
-	public boolean canJamp(int[] A){
+	public boolean canJump(int[] A){
 		if (A == null) return false;
-		int maxStep = Integer.MIN_VALUE;
-		for(int i = 0; i < A.length, i++){
-			maxStep = Math.max(maxStep, i + A[i]);
-			if(maxStep > A.length - 1){
+		int range = A[0];
+		for(int i = 0; i <= range; i++){ // if i = 1, [0] fails.
+			range = Math.max(range, i + A[i]);
+			if(range >= A.length - 1){
 				return true;
 			}
 		}
@@ -49,10 +49,30 @@ class JumpGame {
 				currMax = Math.max(currMax, i + A[i]);
 			}
 		}
-		return currMax >= A.length;
+		return currMax >= A.length - 1; reach the last elemnet.
 	}
 	
 	// JumpGame II
+    public int jump(int[] A) {
+        int step = 0;
+        int currRange = 0; // how far we already can reach
+        int nextRange = A[0]; // how far can we reach for next step
+        
+        for (int i = 1; i < A.length; i++) {
+            if (i > currRange) { // run out of we can reach, need one more step
+                if(nextRange > currRange){
+                    step++;
+                    currRange = nextRange;
+                    if (currRange >= A.length - 1) return step;
+                }
+                else return -1; //cannot reach i
+            }
+            nextRange = Math.max(nextRange, i + A[i]);
+        }
+        return step;
+    }
+    
+    //slow
 	public int canJump(int[] A){
 		if (A == null) return -1;
 		int currMaxStep = -1, nextMaxStep = 0, step = -1;
@@ -71,11 +91,11 @@ class JumpGame {
 		return step;
 	}
 	
-	// dp[i] the maxReachableIdx after ith Step
+	//x dp[i] the maxReachableIdx after ith Step
 	// dp[i+1] = max(j + A[j]), where dp[i - 1] + 1 <= j <= dp[i]
 
 	// dp[0] = A[0]
-	public int canJump(int[] A){
+	public int jump(int[] A){
 		if (A == null) return -1;
 		int dp_prev = -1, dp = 0;
 		for(int i = 0; i < A.length; i++){
@@ -83,10 +103,10 @@ class JumpGame {
 			for(int j = dp_prev + 1; j <= dp; j++){
 				dp = Math.max(dp, j + A[j]);
 			}
-			if(dp > A.Length - 1) return i+1;
+			if(dp > A.length - 1) return i+1;
 			dp_prev = tmp;
 		}
-		return -1
+		return -1;
 	}
 	
 	

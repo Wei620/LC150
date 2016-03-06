@@ -40,7 +40,7 @@ class BestTimeStock3 {
             valley = Math.min(valley, prices[i]);
 			//Compared with stock1. Need to update the everyday profit. So no pre-price-comparison.
             maxBy[i] = Math.max(maxBy[i - 1], prices[i] - valley);
-        }
+        } // ignore same day transatcion on day 1.
         
 		int peak = prices[len - 1];
         for (int i = len - 2; i >= 0; i--) {
@@ -48,7 +48,7 @@ class BestTimeStock3 {
             maxSince[i] = Math.max(maxSince[i + 1], peak - prices[i]);
             /*update maxProfit while build maxSince*/
             maxProfit = Math.max(maxProfit, maxBy[i] + maxSince[i]); // find i such that maxBy[i]+maxSince[i+1] is the max two-transaction profit, no overlap
-        }
+        } // ignore same day ransaction on last day. need transact twice.
         return maxProfit;
     }
 }
