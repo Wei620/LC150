@@ -40,8 +40,8 @@ class SpiralMatrix2 {
 			if(k > 0){
 				for(int j = lv; j < lv + k; j++) ans[lv][j] = num++;
 				for(int i = lv; i < lv + k; i++) ans[i][lv + k] = num++;
-				for(int j = lv + k; j > lv; j++) ans[lv + k][j] = num++;
-				for(int i = lv + k; i > lv; i++) ans[i][lv] = num++;
+				for(int j = lv + k; j > lv; j--) ans[lv + k][j] = num++;
+				for(int i = lv + k; i > lv; i--) ans[i][lv] = num++;
 			}
 			else ans[lv][lv] = num;
             /*
