@@ -34,22 +34,22 @@
 5	8	Palindrome Partitioning
 5	11	Combinations
 5   11  Permutations
-		12	Gray Code
-		18	Permutation Sequence
-		17	Generate Parentheses
-		6	Restore IP Addresses
-		6	Letter Combinations of a Phone Number
-		22	Surrounded Regions
-		14	Word Ladder
-		4	Single Number II
-		15	Repeated DNA Sequences 
-		
-                Clone Graph
+15	12	Gray Code
+16	18	Permutation Sequence
+3	17	Generate Parentheses
+7	6	Restore IP Addresses
+4	6	Letter Combinations of a Phone Number
+13	22	Surrounded Regions
+9	14	Word Ladder
+1	1	Single Number
+3	4	Single Number II
+10	15	Repeated DNA Sequences 
+14  Clone Graph
                 Convert Sorted List to Binary Search Tree
         8   Word Break
 		10	Decode Ways
 		4	Gas Station
-		1	Single Number
+
                 Fraction to Recurring Decimal
                 Anagrams
                 Longest Substring Without Repeating Characters

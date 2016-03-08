@@ -42,7 +42,7 @@ class RepeatedDNASeq {
             if (map.containsKey(t)) {
                 if (map.get(t)) {
                     res.add(s.substring(i - 9, i + 1));
-                    map.put(t, false); // set false rather than remove. Retain the record because this subsequence may occurs more than twice.
+                    map.put(t, false); // set false rather than remove. Retain the record because this subsequence may occurs more than twice.Otherwise，it may be added back.
                 }
             } else {
                 map.put(t, true);

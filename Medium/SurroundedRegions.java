@@ -54,13 +54,12 @@ class SurroundedRegions {
                     boolean surround = true;
                     List<Integer> pointsToChange = new ArrayList<Integer>();
                     q.add(i * n + j); // add root
-                    //visited[i][j] = true; // set root visited
+                    visited[i][j] = true; // set root visited
                     while (q.size() > 0) { // BFS
                         int point = q.poll(); // get from queue
                         pointsToChange.add(point);
                         int x = point / n; // get coordinates
                         int y = point % n;
-						visited[x][y] = true; // better
                         // try 4 direction
                         for (int k = 0; k < dir.length; k++) { 
                             int nextX = x + dir[k][0];
@@ -68,7 +67,7 @@ class SurroundedRegions {
                             if (nextX >= 0 && nextX < m && nextY >= 0 && nextY < n) { // within board
                                 if (board[nextX][nextY] == 'O' && !visited[nextX][nextY]) // add to queue, check visited instead of pointToChange for high efficiency.
                                     q.add(nextX * n + nextY);
-                                //visited[nextX][nextY] = true; // set visited
+                                visited[nextX][nextY] = true; // set visited， must set here
                             } else surround = false; // false if on the boundry
 							// why not break "for" and "while" loops? need to mark other connected cells as visited.
                         }						
