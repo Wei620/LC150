@@ -45,11 +45,10 @@
 3	4	Single Number II
 10	15	Repeated DNA Sequences 
 14  Clone Graph
-                Convert Sorted List to Binary Search Tree
-        8   Word Break
-		10	Decode Ways
-		4	Gas Station
-
+4   Convert Sorted List to Binary Search Tree
+10  8   Word Break
+10  10	Decode Ways
+2	4	Gas Station
                 Fraction to Recurring Decimal
                 Anagrams
                 Longest Substring Without Repeating Characters
@@ -81,7 +80,7 @@
                     10  Validate Binary Search Tree
 					5	Sum Root to Leaf Numbers
 					6	Populating Next Right Pointers in Each Node
-					2	Convert Sorted Array to Binary Search Tree
+4    2	Convert Sorted Array to Binary Search Tree
 					15	Path Sum II
 					15	Unique Binary Search Trees
 					15	Unique Binary Search Trees II
