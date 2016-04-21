@@ -44,13 +44,14 @@ class PathSum2 {
      */
     public void pathSum(TreeNode root, int sum, List<Integer> path, List<List<Integer>> res) {
         if (root == null) return; // return if current node is null 
-        sum -= root.val; // update sum
-        if (root.left == null && root.right == null && sum == 0) {
+        if (root.left == null && root.right == null && sum == root.val) {
             path.add(root.val);
             res.add(new ArrayList<Integer>(path)); // add dereferenced path
             path.remove(path.size()-1); // reset path here!
             return;
         }
+        
+        sum -= root.val;
         path.add(root.val); // add value to current path
         pathSum(root.left, sum, path, res);
         pathSum(root.right, sum, path, res);

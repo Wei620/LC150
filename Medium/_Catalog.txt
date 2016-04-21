@@ -54,36 +54,36 @@
                 Longest Substring Without Repeating Characters
                 Swap Nodes in Pairs
 		20	Remove Duplicates from Sorted List II
-                Reverse Linked List II
-                Reorder List
-                Add Two Numbers
-                Sort List
-                Insertion Sort List
-                Partition List
-                Rotate List
-                2   Linked List Cycle
-                5   Linked List Cycle II
-                10  Pow(x, n)
-                5   Sqrt(x)
-                    15  Divide Two Integers
-                    6   Integer to Roman
-                    12  Multiply Strings
-                    20  Largest Number
-                    4   Evaluate Reverse Polish Notation
-                    5   Simplify Path
-                    12  Reverse Words in a String
-                    20  Longest Palindromic Substring
-                    15  Flatten Binary Tree to Linked List
-                    4   Construct Binary Tree from Inorder and Postorder Traversal
-                    4   Construct Binary Tree from Preorder and Inorder Traversal
-                    4   Binary Tree Zigzag Level Order Traversal
-                    10  Validate Binary Search Tree
-					5	Sum Root to Leaf Numbers
-					6	Populating Next Right Pointers in Each Node
-4    2	Convert Sorted Array to Binary Search Tree
-					15	Path Sum II
-					15	Unique Binary Search Trees
-					15	Unique Binary Search Trees II
+3   Reverse Linked List II
+12  Reorder List
+5   Add Two Numbers
+20  Sort List
+10  Insertion Sort List
+10  Partition List
+10  Rotate List
+2   2   Linked List Cycle
+5   5   Linked List Cycle II
+5   10  Pow(x, n)
+5   5   Sqrt(x)
+10  15  Divide Two Integers
+10  6   Integer to Roman
+10  12  Multiply Strings
+100 20  Largest Number
+4   4   Evaluate Reverse Polish Notation
+5   5   Simplify Path
+6   12  Reverse Words in a String
+20  20  Longest Palindromic Substring
+6   15  Flatten Binary Tree to Linked List
+5   4   Construct Binary Tree from Inorder and Postorder Traversal
+5   4   Construct Binary Tree from Preorder and Inorder Traversal
+5   4   Binary Tree Zigzag Level Order Traversal
+5   10  Validate Binary Search Tree
+5   5	Sum Root to Leaf Numbers
+10  6	Populating Next Right Pointers in Each Node
+4   2	Convert Sorted Array to Binary Search Tree
+10  15	Path Sum II
+10  15	Unique Binary Search Trees
+    15	Unique Binary Search Trees II
 					11	Binary Tree Inorder Traversal
 					5	Binary Tree Preorder Traversal
 					8	Binary Search Tree Iterator

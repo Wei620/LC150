@@ -46,17 +46,17 @@ class PopulatingNextRight {
      */
     public void connect(TreeLinkNode root) {
         if(root == null) return;
-        TreeLinkNode pre = root;  // first node on current level
+        TreeLinkNode firstCL = root;  // first node on current level
         //TreeLinkNode cur = null;
-        while (pre.left != null) { // no more next level if left child is null - Perfect BT
-            TreeLink Node cur = pre;
+        while (firstCL.left != null) { // no more next level if left child is null - Perfect BT
+            TreeLink Node cur = firstCL;
             while (cur != null) { // work on next level
                 cur.left.next = cur.right; // step 1 - connect left and right
                 // step 2- connect right child with next node's left child
                 if (cur.next != null) cur.right.next = cur.next.left;
                 cur = cur.next; // move current to next node
             }
-            pre = pre.left; // move to next line
+            firstCL = firstCL.left; // move to next line
         }
     }
 
