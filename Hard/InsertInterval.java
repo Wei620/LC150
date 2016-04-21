@@ -34,7 +34,7 @@ class InsertInterval {
                 res.add(newInterval);
                 newInterval = i;
             }
-            else /*if(newInterval.start >= i.end || i.start <= newInterval.end)*/{
+            else{
                 newInterval = new Interval(Math.min(i.start, newInterval.start),
                                     Math.max(i.end, newInterval.end));
             }
