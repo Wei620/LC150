@@ -15,6 +15,11 @@ class NumberOfBits {
         System.out.println(nob.hammingWeightB(n));
         System.out.println(nob.hammingWeightC(n));
     }
+	
+	/*****
+	1. 符号数 diff & -diff， 最右1代表的二进制数。
+	   无符号 n & n - 1， 去除最右1后的二进制数。
+	*****/
     
     /**
      * Pure bit manipulation

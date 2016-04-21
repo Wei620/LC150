@@ -11,11 +11,25 @@
  * 
  * Tags: Array, Two pointers
  */
+ 
+ /* ****
+ 两个尾指针。 A[len]虚位以待。
+ *****/
 class RemoveDuplicates {
     public static void main(String[] args) {
         RemoveDuplicates r = new RemoveDuplicates();
         int[] A = { 1, 1, 2, 2, 3 };
         System.out.println(r.removeDup(A));
+    }
+	
+	public int removeDupStandard(int[] A) {
+        int len = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (len == 0 || A[i] != A[len - 1]) { // first or not dup
+                A[len++] = A[i]; // copy and update count
+            }
+        }
+        return len;
     }
     
     /**

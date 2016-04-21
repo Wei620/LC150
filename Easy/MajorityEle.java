@@ -7,6 +7,13 @@
  * 
  * Tags: Divide and Conquer, Array, Bit Manipulation
  */
+ 
+/* *****
+1. 每两个不同的元素一组，最后剩下无法配对的（dups）是major
+2. candidate 计数配对
+3. Cnt要early termination.
+4. 初始值 count = 0， candidate any value
+*****/
 class MajorityEle {
     public static void main(String[] args) {
         
@@ -17,9 +24,9 @@ class MajorityEle {
      * Add 1 to count if same element, otherwise minus 1
      */
     public static int majorityElement(int[] num) {
-        int maj = num[0];
-        for (int count = 0, i = 0; i < num.length && count <= num.length / 2; i++){
-            if (count == 0){
+        int maj = num[0]; // any value
+        for (int count = 0, i = 0; i < num.length && count <= num.length / 2; i++){	//2nd condition- save time
+            if (count == 0){	// less than half counted element is the majority
                 maj = num[i];
                 count++;
             }

@@ -12,6 +12,24 @@ class RemoveDuplicatesFromSortedList {
     public static void main(String[] args) {
 
     }
+	
+	/* ****
+	1. dummy作用， 返回时的标签， 处理head == null的case
+	2. 和removeFromArray一样的原理。
+	*****/
+	
+	public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+		ListNode prev = dummy, curr = head;
+		whilc(curr != null){
+			if(prev == dummy || prev.val != curr.val){
+				prev.next = curr;
+				prev = prev.next;
+			}
+			curr = curr.next;
+		}
+        return dummy.next;
+	}
 
     /**
      * nested while loop, skip next node

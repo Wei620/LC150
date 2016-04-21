@@ -16,6 +16,11 @@
  * 
  * Tags: Math
  */
+ 
+ /* ****
+ 1. 累加到res里，下一轮加权。
+ *****/
+ 
 class ExcelSheetColNum {
     public static void main(String[] args) {
         System.out.println(titleToNumber("AAA"));
@@ -30,7 +35,7 @@ class ExcelSheetColNum {
         if (s == null || s.length() == 0) return 0;
         int res = 0;
         for (int i = 0; i < s.length(); i++) {
-            res = res * 26 + (s.charAt(i) - '@');
+            res = res * 26 + (s.charAt(i) - '@'); // - 'A' + 1
         }
         return res;
     }

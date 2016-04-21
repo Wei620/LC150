@@ -19,6 +19,18 @@ import java.util.*;
  * Tags: Bit Manipulation
  */
 class ReverseBits {
+    //418
+    public int reverseBits(int n){
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            result <<= 1;
+            result += (n >>> i) & 1;
+            //n >>>= 1; // CATCH: must do unsigned shift
+            //if (i < 31) // CATCH: for last digit, don't shift!
+            //	result <<= 1;
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         ReverseBits r = new ReverseBits();
@@ -61,7 +73,7 @@ class ReverseBits {
         
         int res = 0;
         for (int i = 0; i < 4; i++)
-            res = (res << 8) ^ reverseBytes(bytes[i]);
+            res = (res << 8) | reverseBytes(bytes[i]);
         return res;
     }
     
@@ -69,7 +81,7 @@ class ReverseBits {
         if (cache.containsKey(b)) return cache.get(b);
         int res = 0;
         for (int i = 0; i < 8; i++) {
-            res = (res << 1) ^ ((b >>> i) & 1);
+            res = (res << 1) | ((b >>> i) & 1);
         }
         cache.put(b, res);
         return res;

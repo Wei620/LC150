@@ -20,6 +20,46 @@ class CountAndSay {
         System.out.println(countAndSay(5));
         System.out.println(countAndSay(6));
     }
+	
+	/* ****
+	1. 连读统计
+	2. 翻译， 类似罗马。 注意复数。
+	3. 两种分割符。
+	****/	
+	
+	private String countAndSay(String str){
+		int len = str.length();
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < len; i++){
+			int cnt = 0;
+			while(i < len - 1 && str.charAt(i) == str.charAt(i+1)){
+				cnt++;
+				i++;
+			}
+			sb.append(cnt).append(str.charAt(i));			
+		}
+		return sb.toString();
+	}
+	
+	public String countAndSay(int n){
+		String str = "1";
+		for(int i = 0; i < n; i++){
+			str = countAndSay(str);
+		}
+		
+		String[] nums = {"", "one ", "two ", "three ", "four ", "five ", "six ", "seven ", "eight ", "nine "};
+		
+		char[] cArr = str.toCharArray();
+		sb.setLength(0);
+		for(int i = 0; i*2 < cArr.length; i++){
+			int cnt = cArr[i * 2] - '0';
+			sb.append(nums[cnt]).append(cArr[i * 2 + 1]);
+			if(cnt > 1) sb.append('s');
+			if(i < cArr.length/2 - 1) sb.append(", ");
+			else if(i == cArr.length/2 - 1) sb.append(" then ");
+		}
+		returbn sb.toString();
+	}
     
     /**
      * Build from n - 1 to n

@@ -18,6 +18,11 @@ class PlusOne {
         }
         System.out.println("}");
     }
+	
+	/* ****
+	1. 先考虑总长不变。 由后向前，加1后，10变零继续。
+	2. 前面没返回，说明最高位都进位了，新开数组int[len+1],拷值。
+	*****/
     
     /**
      * Add 1 for the last digit

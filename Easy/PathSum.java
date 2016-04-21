@@ -21,7 +21,17 @@ class PathSum {
     public static void main(String[] args) {
         
     }
-    
+    /* ****
+	1. Root-to-leaf path.
+	2. 没说值为正，不能用sum early terminated.
+	*****/	
+	public boolean hasPathSum(TreeNode root, int sum) {
+		if(root == null) return false;
+		if(sum == root.val) return root.left = null && root.right == null;
+		return 	hasPathSum(root.left, sum - root.val) ||
+				hasPathSum(root.right, sum - root.val);
+	}
+	
     /**
      * Substract root value from sum every time
      * Return leaf node with sum == 0 

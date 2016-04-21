@@ -27,6 +27,10 @@ class PalindromeNo {
         System.out.println(isPalindrom(1234567));
         System.out.println(isPalindrom(1000000021));
     }
+	/* ****
+	1. 找到最大权数的方法， while(num/div >= 10) div*=10
+	2. 同时去除两位， (num % div) / 10
+	*****/
     
     /**
      * Clarify whether negative nums are palindrom first

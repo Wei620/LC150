@@ -16,6 +16,23 @@ class RemoveElement {
         int elem = 1;
         System.out.println(r.removeElement(A, elem));
     }
+	
+	/*****
+	1. 顺序不变的写法。
+	2. 如果顺序可变， 把最后元素填充值elem to be removo。 这样改动的较少。
+	*****/
+	
+	//顺序不变
+	public int removeElement(int[] A, int elem) {
+		if(A == null) return 0;
+		int len = 0;
+		for(int num : A){
+			if(num != elem){
+				A[len++] = num;
+			}
+		}
+		return len;
+	}
     
     /**
      * Order is not important
@@ -24,13 +41,13 @@ class RemoveElement {
     public int removeElement(int[] A, int elem) {
         if (A == null || A.length == 0) return 0;
         int i = 0;
-        int j = A.length;
-        while (i < j) {
+        int len = A.length;
+        while (i < len) {
             if (A[i] == elem) {
-                A[i] = A[j - 1]; // move last element
-                j--; // decrease length
+                A[i] = A[len - 1]; // move last element
+                len--; // decrease length
             } else i++; // move on
         }
-        return j;
+        return len;	//new length
     }
 }

@@ -6,6 +6,11 @@
  * 
  * Tags: DP
  */
+ 
+ /* ****
+ 1. dp[i] = dp[i-1] + dp[i-2];
+    枚举进入当前态的所有情况。
+ *****/
 class ClimbingStairs {
     public static void main(String[] args) {
         System.out.println(climbStairs(44));
@@ -18,7 +23,7 @@ class ClimbingStairs {
      */
     public int climbStairs(int n) {
         if (n <= 1) return n;
-        int last = 1, lastlast = 1;
+        int last = 1, lastlast = 1;		// last - jump from n-1 th step; lastlast - jump from (n-2)th step
         int now = 0;
         for (int i = 2; i <= n; i++) {
             now = last + lastlast;

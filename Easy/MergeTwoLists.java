@@ -4,6 +4,11 @@
  * 
  * Tags: Linkedlist
  */
+ 
+ /* ****
+ 1. 递归完美。注意base。
+ 2. 循环法，更新的是curr.next. 还要注意合并剩余的方法。
+ *****/
 public class MergeTwoLists {
     
     /**
@@ -26,36 +31,28 @@ public class MergeTwoLists {
     
     /**
      * iterasive
-     */
+     */	 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
         
         // merge
-        ListNode beforeHead = new ListNode(0);
-        ListNode temp = new ListNode(0);
-        beforeHead.next = temp;
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+
         while (l1 != null && l2 != null) {
             if (l1.val < l2.val) {
-                temp.next = l1;
+                curr.next = l1;
                 l1 = l1.next;
             } else {
-                temp.next = l2;
+                curr.next = l2;
                 l2 = l2.next;
             }
-            temp = temp.next;
+            curr = curr.next;
         }
         // merge remain
-        while (l1 != null) {
-            temp.next = l1;
-            temp = temp.next;
-            l1 = l1.next;
-        }
-        while (l2 != null) {
-            temp.next = l2;
-            temp = temp.next;
-            l2 = l2.next;
-        }
-        return beforeHead.next.next;
+        if(l1 != null) curr.next = l1;
+		if(l2 != null) curr.next = l2;
+        return dummy.next;
     }
 }

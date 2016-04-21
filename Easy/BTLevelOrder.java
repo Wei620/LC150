@@ -21,6 +21,12 @@ import java.util.*;
  * 
  * Tags: Tree, BFS
  */
+ 
+ /* ****
+ 1. BFS while for 结构更好。
+ 2. 不重复用currLevel，因为已添加至结果。
+ 3. 出栈加入currLevel
+ *****/
 class BTLevelOrder {
     public static void main(String[] args) {
         

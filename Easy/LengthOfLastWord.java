@@ -13,6 +13,10 @@
  *
  * Tags: String
  */
+ 
+ /* *****
+ 1. 可能有trailing space. 从后往前， 第一个非空开始计数，再遇到空格返回。
+ *****/
 class LengthOfLastWord {
     public static void main(String[] args) {
         String a = " ";

@@ -22,6 +22,10 @@ class LongestCommonPrefix {
         }
         return strs[0];
     }
+	
+	/* **
+	同步扫，直至不同
+	***/
     
     /**
      * Get length of two strings
@@ -35,10 +39,9 @@ class LongestCommonPrefix {
         int lenA = a.length();
         int lenB = b.length();
         int i = 0;
-        while (i < lenA && i < lenB) {
+        for(int i = 0; i < lenA && i < lenB; i++) {
             if (a.charAt(i) == b.charAt(i)) pref.append(a.charAt(i));
             else break;
-            i++;
         }    
         return pref.toString();
     }

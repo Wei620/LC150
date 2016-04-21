@@ -25,6 +25,11 @@ class IntersectionOfLinkedList {
     public static void main(String[] args) {
 
     }
+	
+	/* ****
+	1. 等长，同步移动，直至相等。
+	2. 不等长， 转化为等长。
+	*****/
 
     /**
      * Time O(n), Space O(1)
@@ -35,12 +40,15 @@ class IntersectionOfLinkedList {
         if (headA == null || headB == null) return null;
         int lenA = length(headA);
         int lenB = length(headB);
-        int diff = Math.abs(lenA - lenB);
         
-        if (lenA > lenB) while(diff-- > 0) headA = headA.next;
-        else while(diff-- > 0) headB = headB.next;
-        
-        for (; headA != null && headB != null; headA = headA.next, headB = headB.next) if (headA.equals(headB)) return headA;
+        while(lenA > lenB){headA = headA.next; lenA--;}
+        while(lenB > lenA){headB = headB.next; lenB--;}
+       
+        while(headA != null && headB != null){
+			if (headA.equals(headB)) return headA;
+			headA = headA.next;
+			headB = headB.next;
+		} 
         return null;
     }
 
@@ -53,6 +61,11 @@ class IntersectionOfLinkedList {
         }
         return length;
     }
+	
+	private int len(ListNode n){
+		if(n == null) return 0;
+		return 1 + len(n.next);
+	}
 
     public class ListNode {
         int val;

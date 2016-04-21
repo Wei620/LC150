@@ -11,6 +11,10 @@ import java.util.Stack;
  *
  * Tags: Stack, Data Structure
  */
+ 
+ /* ****
+ 1. 伴随栈 minStack， 注意当 x == minStack，也要进栈
+ *****/
 class MinStack {
     
     private Stack s = new Stack<>();

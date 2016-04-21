@@ -6,6 +6,11 @@
  *
  * Tags: Tree, DFS
  */
+ 
+ /* ****
+ 1. max depth == height + 1.
+ 2. height： base return -1.
+ *****/
 class MaxDepth {
     public static void main(String[] args) {
 

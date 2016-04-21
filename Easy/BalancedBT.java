@@ -7,6 +7,12 @@
  * 
  * Tags: Tree, DFS
  */
+
+/* ****
+1.	树高+ early termination
+2.	递归从根节点想。 子树平衡返回的是其树高，否则-1. 
+* ****/ 
+ 
 class BalancedBT {
     public static void main(String[] args) {
 
@@ -23,6 +29,7 @@ class BalancedBT {
      * If the difference is bigger than 1, set isBalance false
      * Otherwise go on to the rest of the nodes
      */
+
     private int maxDepth(TreeNode root) {
         if (root == null) return 0;
         int left = maxDepth(root.left);

@@ -21,6 +21,11 @@ import java.util.*;
  * 
  * Tags: Tree, BFS
  */
+ 
+ /* *****
+ 1. 还是bfs， while-for
+ 2. 结果插入list头
+ *****/
 class LevelOrderBottomUp {
     
     public static void main(String[] args) {

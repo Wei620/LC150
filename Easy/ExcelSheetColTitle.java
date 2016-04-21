@@ -14,6 +14,11 @@
  *
  * Tags: Math
  */
+ 
+ /* ****
+ 1. 低位到高位
+ 2. mod 0-based， map是1based, 一定要整体-1， 所以n--；
+ ****/
 class ExcelSheetColTitle {
     public static void main(String[] args) {
         // for (int i = 1; i <= 26; i++) {

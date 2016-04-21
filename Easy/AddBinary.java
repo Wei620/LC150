@@ -23,6 +23,11 @@ class AddBinary {
      * 
      * Use + to insert to front, turn digit sum to int and restore to binary
      */
+	 
+	/* ****
+	1. 如何找最后一位， 用完了当零。
+	
+	* ****/
     public static String addBinary(String a, String b) {
         int m = a.length();
         int n = b.length();

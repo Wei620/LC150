@@ -7,11 +7,11 @@ import java.util.*;
  * Return
  * 
  * [
- *      [1],
+ *      [1], //0
  *     [1,1],
  *    [1,2,1],
  *   [1,3,3,1],
- *  [1,4,6,4,1]
+ *  [1,4,6,4,1] //4
  * ]
  * 
  * Tags: Array
@@ -20,6 +20,10 @@ class PascalsTriangle {
     public static void main(String[] args) {
 
     }
+	/* ****
+	1. ArrayList初始化大小 i+1.
+	2. 规律行两段恒定为1. 斜对齐。
+	*****/
     
     /**
      * Definition
@@ -32,7 +36,7 @@ class PascalsTriangle {
         firstRow.add(1);
         triangle.add(firstRow);
     
-        for (int i = 1; i < numRows; i++) {
+        for (int i = 1; i < numRows; i++) {//一行已加， “<”说明还是0based
             List<Integer> lastRow = triangle.get(i - 1);
             List<Integer> row = new ArrayList<Integer>(i + 1);
         

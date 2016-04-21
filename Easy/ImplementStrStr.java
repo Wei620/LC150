@@ -18,6 +18,12 @@ class ImplementStrStr {
         System.out.println(strStr(str4, str2));
         System.out.println(strStr(str5, str2));
     }
+	
+	/* ****
+	1. 	遍历其实位置， 带early termination。
+	2.  返回的是第一匹配开始的子序列。
+	3.  corn里 当needle是空的情况。
+	*****/
     
     /**
      * return null if anyone is null or haystack is shorter 
@@ -27,18 +33,14 @@ class ImplementStrStr {
      * if not returned during loop, return null
      */
     public static String strStr(String haystack, String needle) {
-        if (haystack == null || needle == null || haystack.length() < needle.length()) return null;
+        if (haystack == null || needle == null) return null;
         if (needle.length() == 0) return haystack;
         int len = haystack.length();
         int tarLen = needle.length();
-        for (int i = 0; i < len - tarLen + 1; i++) { // iteration times reduced
+        for (int i = 0; i + tarLen <= len; i++) { // iteration times reduced
             int j = 0;
-            int k = i;
-            while (k < len && haystack.charAt(k) == needle.charAt(j)) {
-                k++;
-                j++;
-                if (j == needle.length()) return haystack.substring(k - j);
-            }
+            while (j < tarLen && haystack.charAt(i+j) == needle.charAt(j)) j++;
+            if (j == tarLen) return haystack.substring(i);
         }
         return null;
     }

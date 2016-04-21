@@ -16,6 +16,12 @@
  * 
  * Tags: String
  */
+ 
+ /* ****
+ x. 同步扫描看谁先遇“.". leading zeros.
+ 1. 分隔符确定，直接split. leading zeros用 Integer.valueOf（str）处理。
+ 2. str在文件， 太大装不下，无法分割。只能逐位乘10累加到点， 再比较。
+ *****/
 class CompareVersionNums {
     public static void main(String[] args) {
         String v1 = "001.3.3.7.000";
@@ -32,13 +38,12 @@ class CompareVersionNums {
         if (version1 == null || version2 == null) return version1 == null ? -1 : 1;
         String[] list1 = version1.split("\\."); // back slash
         String[] list2 = version2.split("\\.");
-        int i = 0;
-        while (i < list1.length || i < list2.length) {
-            int a = i < list1.length ? Integer.valueOf(list1[i]) : 0;
+        
+        for (int i = 0; i < list1.length || i < list2.length; i++) {
+            int a = i < list1.length ? Integer.valueOf(list1[i]) : 0;		// handle different length #AddBinary
             int b = i < list2.length ? Integer.valueOf(list2[i]) : 0;
             if (a < b) return -1;
             else if (a > b) return 1;
-            i++; // update i
         }
         return 0;
     }
