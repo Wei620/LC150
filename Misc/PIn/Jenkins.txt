@@ -1,0 +1,8 @@
+“Continuous Integration is a software development practice
+where members of a team integrate their work frequently,
+usually each person integrates at least daily - leading to
+multiple integrations per day. Each integration is verified by
+an automated build (including test) to detect integration
+errors as quickly as possible” 
+
+https://www.cs.colorado.edu/~kena/classes/5828/s12/presentation-materials/bowesjesse.pdf
