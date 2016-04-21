@@ -10,6 +10,24 @@
  * Tags: Linkedlist
  */
 class SwapNode {
+	
+	//418
+	public ListNode swapPairs(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy, curr = head;
+		
+		while(curr != null && curr.next != null){
+			ListNode tmp = curr.next.next;
+			curr.next.next = curr;
+			prev.next = curr.next;
+			curr.next = tmp;
+			prev = curr;
+			curr = curr.next;
+		}
+		
+        return dummy.next;
+    }
 
     /**
      * create a node at before the head

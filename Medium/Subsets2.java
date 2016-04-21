@@ -27,6 +27,10 @@ class Subsets2 {
         int[] num = {1, 2, 2};
         subsetsWithDup(num);
     }
+	
+	/* ****
+	1. 比I， 多了跳dups. 
+	*****/
     
     /**
      * Backtrack to generate all subsets

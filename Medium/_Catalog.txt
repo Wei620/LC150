@@ -1,89 +1,90 @@
-5	5	Set Matrix Zeroes
-2	5	Sort Colors
-10	10	Spiral Matrix II
-20	17	Spiral Matrix
-6	15	Rotate Image
-8	9	Next Permutation
-35	15	Search for a Range
-5	10	Word Search
-6	5	Subsets
-8   7	Subsets II
-4   6	Combination Sum
-7	6	Combination Sum II	
-9	9	Find Minimum in Rotated Sorted Array
-5	8	Search in Rotated Sorted Array II
-7	15	Search a 2D Matrix
-2	15	Search Insert Position
-9	15	Find Peak Element
-2   2	Maximum Subarray
-3	3	Maximum Product Subarray
-4	3	Best Time to Buy and Sell Stock
-1   1	Best Time to Buy and Sell Stock II
-5	10	Best Time to Buy and Sell Stock III
-6	11	Minimum Path Sum
-6	6	Unique Paths
-8	16	Unique Paths II
-10	10	Triangle	
-17	17	Jump Game
-3   1	Two Sum
-13	18	3Sum
-10	12	3Sum Closest
-6	6	4Sum
-7	12	Remove Duplicates from Sorted Array II
-5	6	Container With Most Water
-5	8	Palindrome Partitioning
-5	11	Combinations
-5   11  Permutations
-15	12	Gray Code
-16	18	Permutation Sequence
-3	17	Generate Parentheses
-7	6	Restore IP Addresses
-4	6	Letter Combinations of a Phone Number
-13	22	Surrounded Regions
-9	14	Word Ladder
-1	1	Single Number
-3	4	Single Number II
-10	15	Repeated DNA Sequences 
-14  Clone Graph
-4   Convert Sorted List to Binary Search Tree
-10  8   Word Break
-10  10	Decode Ways
-2	4	Gas Station
+19	5	5	Set Matrix Zeroes
+22	2	5	Sort Colors
+24	10	10	Spiral Matrix II
+46	20	17	Spiral Matrix
+41	6	15	Rotate Image
+40	8	9	Next Permutation
+40	35	15	Search for a Range
+15	5	10	Word Search
+11	6	5	Subsets
+5	8   7	Subsets II
+10	4   6	Combination Sum
+10	7	6	Combination Sum II	
+25	9	9	Find Minimum in Rotated Sorted Array
+40	5	8	Search in Rotated Sorted Array II
+15	7	15	Search a 2D Matrix
+5	2	15	Search Insert Position
+15	9	15	Find Peak Element
+5	2   2	Maximum Subarray
+20	3	3	Maximum Product Subarray
+10	4	3	Best Time to Buy and Sell Stock
+3	1   1	Best Time to Buy and Sell Stock II
+15	5	10	Best Time to Buy and Sell Stock III
+	6	11	Minimum Path Sum
+	6	6	Unique Paths
+	8	16	Unique Paths II
+	10	10	Triangle	
+	17	17	Jump Game
+	3   1	Two Sum
+	13	18	3Sum
+	10	12	3Sum Closest
+	6	6	4Sum
+	7	12	Remove Duplicates from Sorted Array II
+	5	6	Container With Most Water
+	5	8	Palindrome Partitioning
+	5	11	Combinations
+	5   11  Permutations
+	15	12	Gray Code
+	16	18	Permutation Sequence
+	3	17	Generate Parentheses
+	7	6	Restore IP Addresses
+	4	6	Letter Combinations of a Phone Number
+	13	22	Surrounded Regions
+	9	14	Word Ladder
+	1	1	Single Number
+	3	4	Single Number II
+	10	15	Repeated DNA Sequences 
+	14  Clone Graph
+	4   Convert Sorted List to Binary Search Tree
+	10  8   Word Break
+	10  10	Decode Ways
+	2	4	Gas Station
+
                 Fraction to Recurring Decimal
                 Anagrams
                 Longest Substring Without Repeating Characters
                 Swap Nodes in Pairs
 		20	Remove Duplicates from Sorted List II
-3   Reverse Linked List II
-12  Reorder List
-5   Add Two Numbers
-20  Sort List
-10  Insertion Sort List
-10  Partition List
-10  Rotate List
-2   2   Linked List Cycle
-5   5   Linked List Cycle II
-5   10  Pow(x, n)
-5   5   Sqrt(x)
-10  15  Divide Two Integers
-10  6   Integer to Roman
-10  12  Multiply Strings
-100 20  Largest Number
-4   4   Evaluate Reverse Polish Notation
-5   5   Simplify Path
-6   12  Reverse Words in a String
-20  20  Longest Palindromic Substring
-6   15  Flatten Binary Tree to Linked List
-5   4   Construct Binary Tree from Inorder and Postorder Traversal
-5   4   Construct Binary Tree from Preorder and Inorder Traversal
-5   4   Binary Tree Zigzag Level Order Traversal
-5   10  Validate Binary Search Tree
-5   5	Sum Root to Leaf Numbers
-10  6	Populating Next Right Pointers in Each Node
-4   2	Convert Sorted Array to Binary Search Tree
-10  15	Path Sum II
-10  15	Unique Binary Search Trees
-    15	Unique Binary Search Trees II
+                Reverse Linked List II
+                Reorder List
+                Add Two Numbers
+                Sort List
+                Insertion Sort List
+                Partition List
+                Rotate List
+                2   Linked List Cycle
+                5   Linked List Cycle II
+                10  Pow(x, n)
+                5   Sqrt(x)
+                    15  Divide Two Integers
+                    6   Integer to Roman
+                    12  Multiply Strings
+                    20  Largest Number
+                    4   Evaluate Reverse Polish Notation
+                    5   Simplify Path
+                    12  Reverse Words in a String
+                    20  Longest Palindromic Substring
+                    15  Flatten Binary Tree to Linked List
+                    4   Construct Binary Tree from Inorder and Postorder Traversal
+                    4   Construct Binary Tree from Preorder and Inorder Traversal
+                    4   Binary Tree Zigzag Level Order Traversal
+                    10  Validate Binary Search Tree
+					5	Sum Root to Leaf Numbers
+					6	Populating Next Right Pointers in Each Node
+4    2	Convert Sorted Array to Binary Search Tree
+					15	Path Sum II
+					15	Unique Binary Search Trees
+					15	Unique Binary Search Trees II
 					11	Binary Tree Inorder Traversal
 					5	Binary Tree Preorder Traversal
 					8	Binary Search Tree Iterator

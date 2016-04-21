@@ -24,7 +24,7 @@ class InsertionSortList {
 		 * c - the p may insert after c.
 		 */
         
-        for (ListNode p = head.next, pre = head; p != null; pre = p, p = p.next) {// pre -> p
+        for (ListNode p = pre = head, head.next; p != null; pre = p, p = p.next) {// pre -> p
             for (ListNode c = dummy; c != pre; c = c.next) {//c!=pre because p is right after pre already.       
                 if (c.next.val > p.val) {  // ascending sort
                     pre.next = p.next; // skip p

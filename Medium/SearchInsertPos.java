@@ -13,11 +13,30 @@
  * 
  * Tags: Array, Binary Search
  */
+
+ /* ****
+1. 209， 虽然no dups
+2. 找到 >= target 
+ *****/
+//410 
+public class Solution {
+    public int searchInsert(int[] nums, int target) {
+        if(nums == null || nums.length == 0) return 0;
+        int l = 0, r = nums.length;
+        while(l < r){
+            int mid = l + (r - l)/2;
+            if(nums[mid] >= target) r = mid;
+            else l = mid + 1;
+        }
+        return r;
+    }
+}
+ 
 class SearchInsertPos {
     public static void main(String[] args) {
         
     }
-    
+	   
     /**
      * Binary search
      * r = m - 1, l = m + 1

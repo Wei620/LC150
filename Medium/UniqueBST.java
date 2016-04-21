@@ -37,7 +37,7 @@ class UniqueBST {
         trees[0] = 1; // initialize 0, only 1 type of tree
         
         for(int i = 1; i <= n; i++) // from 1 ~ n
-            for (int j = 0; j < i; j++) // from 0 ~ i - 1 as root
+            for (int j = 0; j < i; j++) // from 0 ~ i - 1
                 trees[i] += trees[j] * trees[i-j-1]; // note i-j-1 + j = i - 1
 
         return trees[n];

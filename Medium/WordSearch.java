@@ -32,6 +32,11 @@ class WordSearch {
         System.out.println(exist(board, word));
     }
     
+	/* ****
+	1. 	四向DNS可以显式表达，更清晰。
+	2.	排除越界。
+	3.  要求不能重复走，所以要mark和reset.
+	*****/
     /**
      * Use boolean array to remember whether a word is used
      * Traverse each position and do DFS
@@ -42,9 +47,7 @@ class WordSearch {
 
         for (int i = 0; i < board.length; i++)
             for (int j = 0; j < board[0].length; j++)
-                if (board[i][j] == word.charAt(0)) { // match the first char - unnecessary but save some time
-                    if (dfs(board, i, j, word, 0)) return true;
-                }
+                if (dfs(board, i, j, word, 0)) return true;
         return false;
     }
     
@@ -59,8 +62,12 @@ class WordSearch {
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != word.charAt(n)) return false;
         board[i][j] = '#'; // mark 
         // search 4 connectivity
-        boolean res = dfs(board, i - 1, j, word, n + 1) || dfs(board, i + 1, j, word, n + 1) || dfs(board, i, j - 1, word, n + 1) || dfs(board, i, j + 1, word, n + 1);
-        board[i][j] = word.charAt(n);// reset mark, if res is true, the reset is just to resume matrix rather than backtracking reset.
+        boolean res = 	dfs(board, i - 1, j, word, n + 1) ||
+						dfs(board, i + 1, j, word, n + 1) ||
+						dfs(board, i, j - 1, word, n + 1) ||
+						dfs(board, i, j + 1, word, n + 1);
+        
+		board[i][j] = word.charAt(n);// reset mark
         return res;
     }
 }

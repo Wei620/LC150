@@ -19,6 +19,38 @@ class SearchForARange {
         int[] range = s.searchRange(A, 3);
         System.out.println(range[0] + " ~ " + range[1]);
     }
+	
+	/* ****
+	1. 209 基本型
+	2. 找下限， 找到后继续向左， 挪r
+	   找上限， 找到后继续向右， 挪l
+	3. 找不到，越界。 r没动。
+				  l没动。
+	4. 基本型合并了等号， 所以还要验证最后找到的 = target？
+	*****/
+	
+	public int[] searchRange(int[] A, int target) {
+		int l = 0, r = A.length;
+		int[] res = new int[2];
+		while(l < r){
+			int mid = l + (r - l)/2;
+			if(A[mid] >= target) r = mid; //开区间，不再看mid
+			else l = mid + 1;
+		}
+		res[0] = r;
+		if(r == A.length || A[r] != target) res[0] = -1; 
+		
+		l = 0; r = A.length; 
+		while(l < r){
+			int mid = l + (r - l)/2;
+			if(A[mid] <= target) l = mid + 1;
+			else r = mid;
+		}
+		res[1] = l - 1;
+		if(l == 0 || A[l - 1] != target) res[1] = -1;
+		
+		return res;	
+    }
     
     /**
      * Suppose we have a binary search helper method

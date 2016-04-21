@@ -14,7 +14,35 @@
  * 
  * Tags: Array, Binary Search
  */
-class FindPeak {
+
+ /* ****
+ 1. 三个corn cases. 因为循环里要访问前后元素。
+ 2. 不算fs， 找到就行， 不用209， 用闭区间。
+ 3. 非peak后，形成 三个连续元素单调序列， 在最大端继续寻找。
+ 4. 最后返回 有显示表达的序号。
+ *****/
+ // 410
+ public class Solution {
+    public int findPeakElement(int[] nums) {
+        if(nums == null || nums.length == 0) return -1;
+        
+        int n = nums.length;
+        if(n == 1) return 0;
+        if(nums[0] > nums[1]) return 0;
+        if(nums[n -1] > nums[n - 2]) return n - 1;
+        
+        int l = 1, r = n - 2;
+        while(l <= r){
+            int mid = l + (r - l)/2;
+            if(nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) return mid;
+            if(nums[mid] > nums[mid - 1]) l = mid + 1;
+            else r = mid - 1;
+        }
+        return l - 1;
+    }
+}
+ 
+ class FindPeak {
     
     public static void main(String[] args) {
         int[] num = {1, 2, 1, 3, 1, 4, 1};

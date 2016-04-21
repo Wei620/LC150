@@ -42,22 +42,23 @@ class CombinationSum2 {
     /**
      * Skip duplicates after new target is generated
      */
+	
+	/* ****
+	1. 有重复， 但每个只能用一次（和I不同）。
+		idx = i + 1；
+	2. 但对于每个位置，还是要遍历“不同”的可能， 所以要skip dups	
+	*****/
     public void combinationSum2(int[] num, int target, int index, List<Integer> comb, List<List<Integer>> result) {
-        if (target == 0) { // && !result.contains(comb)
+        if (target == 0) {
             result.add(new ArrayList<Integer>(comb));
             return;
         }
         
-        for (int i = index; i < num.length; i++) {
-            if(i != index && num[i] == num[i-1]) continue; //skip dups - keep consistent with subsetII
-            int newTarget = target - num[i];
-            if (newTarget >= 0) {
-                comb.add(num[i]);
-                combinationSum2(num, newTarget, i + 1, comb, result);
-                comb.remove(comb.size() - 1);
-            } else break;
-            // skip dups, note the range
-            //while (i < num.length - 1 && num[i] == num[i + 1]) i++;
+        for (int i = index; i < num.length && num[i] <= target; i++) {
+            if(i != index && num[i] == num[i-1]) continue; //skip dups
+            comb.add(num[i]);
+            combinationSum2(num, target - num[i], i + 1, comb, result);
+            comb.remove(comb.size() - 1);
         }
     }
 }

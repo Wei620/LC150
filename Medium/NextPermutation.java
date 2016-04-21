@@ -21,6 +21,11 @@ class NextPermutation {
     public static void main(String[] args) {
         
     }
+	
+	/*****
+	1. 从后向前找递减区间。 从区间里找到比区外（相邻）点大的数。 至少存在一个，是（i+1）。
+		 swap， reverse.
+	*****/
     
     /**
      * O(n) Time

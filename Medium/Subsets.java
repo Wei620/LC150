@@ -31,13 +31,19 @@ class Subsets {
         }
     }
     
+	/* ****
+	1. 排序只为结果是增序列。
+	2. 子集， 组合， 无顺序关系。 所以下一个只能选start+1以后的选择。
+	3. 没有自己大小限制， 所以每更新过set，都要把set添加至res。
+	*****/
+	
     /**
      * Remember the start position and do backtracking
      * null, {1}, {1,2}, {1,2,3},{1,3},{2},{2,3},{3}
      */
     public static List<List<Integer>> subsetsB(int[] s) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        // Arrays.sort(s); // unneccessary
+        Arrays.sort(s); 
         subsetsB(s, 0, new ArrayList<Integer>(), res);
         return res;
     }

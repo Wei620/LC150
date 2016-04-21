@@ -23,10 +23,9 @@ class RemoveDupFromSortedArr2 {
         int n = A.length;
         if (n <= 2) return n; // no need to deal with n<=2 case.
         int len = 2, i = 2;
-        while (i < n) {
+        for(int i = 2; i < n; i++) {
             // compare cuurent with second last element
             if (A[i] != A[len - 2]) A[len++] = A[i];
-            i++;
         }
         return len;
     }

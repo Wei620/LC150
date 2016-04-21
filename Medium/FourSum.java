@@ -52,7 +52,7 @@ class FourSum {
                         l++; 
                         continue;
                     }
-                    if(2 * num[l] > netTar) break;
+                    //if(2 * num[l] > netTar) break;
                     
                     /* no need to check dups on num[r], line 63, line 66-67.
                     if (r < num.length - 1 && num[r] == num[r + 1]) { // skip

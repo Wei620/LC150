@@ -32,6 +32,11 @@ class Triangle {
         testInput(input);
         System.out.println(minimumTotal(input));
     }
+	
+	/* ***
+	418
+	1. 想象有[0...0]层
+	*****/
 
     /**
      * DP

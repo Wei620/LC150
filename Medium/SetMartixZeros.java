@@ -15,6 +15,12 @@ class SetMartixZeros {
      * cols and rows are to be sets
      * Use two flags for whether first row and first col should be set
      */
+	 
+	/* ****
+	1. 	一行一类被占用，引两个变量表示。
+	2. 两遍扫描，顺序相反。
+	3. 第二遍时， 四个或条件（j==0, i==0在先）， 查询归零。
+	*****/
     public static void setZeros(int[][] matrix) {
         int row = matrix.length;
         int col = matrix[0].length;
@@ -36,7 +42,7 @@ class SetMartixZeros {
         for(int i = row - 1; i >= 0; i--){
             for(int j = col -1; j >= 0; j--){
                 boolean isZero = (i == 0 && firstRow) || (j == 0 && firstCol) ||
-                                    matrix[0][j] || matrix[i][0]; 
+                                    matrix[0][j] == 0 || matrix[i][0] == 0; 
                 if(isZero){
                     matrix[i][j] = 0;
                 }

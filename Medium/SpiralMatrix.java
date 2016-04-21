@@ -20,6 +20,9 @@ class SpiralMatrix {
     public static void main(String[] args) {
         
     }
+	/* ****
+	1. 和II不同，中心处理是或关系。
+	*****/
     
     /**
      * Remember which level it is right now
@@ -31,24 +34,21 @@ class SpiralMatrix {
         
         int m = matrix.length;
         int n = matrix[0].length;
-        int lv = 0;
         
-        while (2 * lv < m && 2 * lv < n) { // note 2 * level
-            for (int i = lv; i < n - 1 - lv; i++) res.add(matrix[lv][i]); // top, use the symmetric style
-            //for (int i = lv; i < n - lv; i++) res.add(matrix[lv][i]);
-            for (int i = lv; i < m - 1 - lv; i++) res.add(matrix[i][n-1-lv]); // right
-            //for (int i = lv + 1; i < m - lv; i++) res.add(matrix[i][n-lv-1]); 
-            // check if reach the last row/cow. m(n) - 2 * lv = 1. which has been visit above.  
-            if (2 * lv == m - 1 || 2 * lv == n - 1) break; //otherwise, tranverse the last col or row again. At least one of the following loop conditions will not be satisfied.
-			if (2 * lv == m - 1 && 2 * lv == n - 1){
-				res.add(matrix[lv][lv]);
-				break;
-			}
-            for (int i = n - 1 - lv; i > lv; i--) res.add(matrix[m-1-lv][i]); // bottom
-            //for (int i = n - lv - 2; i >= lv; i--) res.add(matrix[m-lv-1][i]);
-            for (int i = m - 1 - lv; i > lv; i--) res.add(matrix[i][lv]); // left
-            //for (int i = m - lv - 2; i >= lv+1; i--) res.add(matrix[i][lv]);
-            lv++;
+        for(int lv = 0; 2 * lv < m && 2 * lv < n; lv++) { // note 2 * level
+			int iMin = lv, iMax = m - 1 - lv;
+			int jMin = lv, jMax = n - 1 - lv;//(iMin, jMin), (iMax, jMax)
+
+            for (int j = jMin; j < jMax; j++) res.add(matrix[iMin][j]); 
+            for (int i = iMin; i < iMax; i++) res.add(matrix[i][jMax]);   
+            
+            if (iMin == iMax || jMin ==  jMax){
+                res.add(matrix[iMax][jMax]);
+                break;
+            } 
+
+            for (int j = jMax; i > jMin; j--) res.add(matrix[iMax][j]);
+            for (int i = iMax; i > iMin; i--) res.add(matrix[i][jMin]);
         }
         return res;
     }

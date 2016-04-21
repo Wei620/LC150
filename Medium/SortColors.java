@@ -31,6 +31,30 @@ class SortColors {
         s.onePassSortColors(A);
     }
     
+	/*****
+	1. 三个index记录各色下一个的位置。
+	2. 注意更新顺序。 从后到前， 否则有可能被覆盖。
+	****/
+	public void onePassSortColors(int[] A) {
+        int rLen = 0; // red count, start of white 
+        int wLen = 0; // red + white count, start of blue
+		int bLen = 0；		
+        
+        for(int i = 0; i < A.length; i++){
+            int color = A[i];
+			if (color == 0){
+				A[bLen++] = 2;
+                A[wLen++] = 1; // write white first, then red
+                A[rLen++] = 0; // overwrite 1 when there is no white yet
+            }			
+			else if(color == 1){
+				A[bLen++] = 2;
+				A[wLen++] = 1;
+			else
+				A[bLen++] = 2;
+        }
+    }
+	
     /**
      * One-pass count sorting
      * Remember the count of red, and count of red + white

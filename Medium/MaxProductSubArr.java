@@ -12,6 +12,13 @@ class MaxProductSubArr {
     public static void main(String[] args) {
         
     }
+	
+	/* ****
+	1. 最优
+	2. currMax有三个候选， A[i], 最大乘A[i], 最小乘A[i](变号)
+	   currMin 同理。
+	3. 初始值为 [0],循环从 i = 1开始。 和 MaxSum不同， 不能用1做初值， 比如，全负情况。 
+	*****/
     
     /**
      * DP, update according to A[i]

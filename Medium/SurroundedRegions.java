@@ -25,6 +25,12 @@ class SurroundedRegions {
     public static void main(String[] args) {
         
     }
+	
+	/* ****
+	418
+	1. BFS "o" 看有没有出界.
+	2. 如队前标visited
+	*****/
     
     /**
      * Use a queue to store index to do BFS

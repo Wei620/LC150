@@ -10,6 +10,23 @@
  * 
  * Tags: Array, Greedy
  */
+/* ****
+1. early terminate 长度1序列更清楚。
+*****/
+
+//410 
+public class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length <= 1) return 0;
+        int maxProfit = 0;
+        for(int i = 1; i < prices.length; i++){
+            int profit = prices[i] - prices[i - 1];
+            if(profit > 0) maxProfit += profit;
+        }
+        return maxProfit;
+    }
+} 
+ 
 class BestTimeStock2 {
     public static void main(String[] args) {
         int[] prices = { 1, 2, 10, 100 };

@@ -45,14 +45,14 @@ class LetterCombinationsOfPhoneNum {
         return res;
     }
     
-    private void helper(String digits, int s, String comb, List<String> res) {
-        if (s == digits.length()) { // all digits done, stop
+    private void helper(String digits, int pos, String comb, List<String> res) {
+        if (pos == digits.length()) { // all digits done, stop
             res.add(comb);
             return;
         }
-        String c = LETTERS[digits.charAt(s) - '0']; // note how to get int index
+        String c = LETTERS[digits.charAt(pos) - '0']; // note how to get int index
         for (int i = 0; i < c.length(); i++) { // note its i starts from 0
-            helper(digits, s + 1, comb + c.charAt(i), res); // backtracking
+            helper(digits, pos + 1, comb + c.charAt(i), res); // backtracking
         }
     }
 }

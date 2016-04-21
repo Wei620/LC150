@@ -13,6 +13,32 @@ class FindRotatedArrMin {
         // int[] num = { 4, 5, 6, 7, 0, 1, 2 };
         System.out.println(findMin(num));
     }
+	
+	/* ****
+	1. 不是找到继续找，所以不同于209开区间， 用闭区间。
+	2. 处理dups, 区间不rotate， 区间rotate. 三种情况。
+		 第一种， 一步破除。
+		 最后一种， 只能处理num[l] > num[r]的情况, 没等号。 否则图想， 逻辑相反。
+	*****/
+	
+	//410
+	public int findMin(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+        int l = 0, r = nums.length - 1;
+        while(l < r){
+			/* dups for II
+            if(nums[l] == nums[r]){
+                r--;
+                continue;
+            }*/
+            if(nums[l] < nums[r]) return nums[l];
+            // rotated
+            int mid = l + (r - l)/2;
+            if(nums[l] <= nums[mid]) l = mid + 1;
+            else r = mid;
+        }
+        return nums[r];
+    }
     
     // Keep consistent with II
     public int findMin(int[] num) {

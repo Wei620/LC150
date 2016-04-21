@@ -25,6 +25,11 @@ class SpiralMatrix2 {
         }
         
     }
+	
+	/*****
+	1. 计算每层两端。
+	2. 中心节点的处理和I统一。
+	*****/
     
     /**
      * Track current level
@@ -34,24 +39,22 @@ class SpiralMatrix2 {
         if (n <= 0) return new int[0][0];
         int[][] ans = new int[n][n];
         int num = 1;
-        int lv = 0;
-        while (2 * lv < n) {
-            int k = n - 2 * lv - 1; // number of element on each "edge";
-			if(k > 0){
-				for(int j = lv; j < lv + k; j++) ans[lv][j] = num++;
-				for(int i = lv; i < lv + k; i++) ans[i][lv + k] = num++;
-				for(int j = lv + k; j > lv; j--) ans[lv + k][j] = num++;
-				for(int i = lv + k; i > lv; i--) ans[i][lv] = num++;
-			}
-			else ans[lv][lv] = num;
-            /*
-            for (int i = lv; i < n - lv; i++) ans[lv][i] = num++;
-            for (int i = lv + 1; i < n - lv; i++) ans[i][n - lv - 1] = num++;
-            for (int i = n - lv - 2; i >= lv; i--) ans[n - lv - 1][i] = num++;
-            for (int i = n - lv - 2; i >= lv + 1; i--) ans[i][lv] = num++;*/
-            lv++;
-        }
-		
+
+        for(int lv = 0; 2 * lv < n; lv++) {
+            int min = lv, max = n - 1 - lv;
+
+			
+			for(int j = min; j < max; j++) ans[min][j] = num++;
+			for(int i = min; i < max; i++) ans[i][max] = num++;
+			
+			if(min == max){
+				ans[min][min] = num;
+				break;
+			}// same as I			
+			
+			for(int j = max; j > min; j--) ans[max][j] = num++;
+			for(int i = max; i > min; i--) ans[i][min] = num++;
+        }		
         return ans;
     }
     

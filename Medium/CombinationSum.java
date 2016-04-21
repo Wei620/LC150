@@ -35,6 +35,11 @@ class CombinationSum {
         helper(candidates, target, 0, new ArrayList<Integer>(), res);
         return res;
     }
+	
+	/* ****
+	1. 可重复使用， 所以dfs是pos = i， 不用加1.
+	2. cand[i] <= target 加到循环条件。 因为已排序。
+	*****/
 
     /**
      * Bakctracking
@@ -45,17 +50,10 @@ class CombinationSum {
             return;
         }
 		
-		/* if element are negative
-		 * Comment out line54,58. Add extra base case.
-		if(target != 0) return;
-		 */
-        for (int i = pos; i < candidates.length; i++) {
-            int newTarget = target - candidates[i];
-            if (newTarget >= 0) {
-                comb.add(candidates[i]);
-                helper(candidates, newTarget, i, comb, res); // note i
-                comb.remove(comb.size() - 1);
-            } else break; // too big, never go to the base case.
+        for (int i = pos; i < candidates.length && candidates[i] <= target; i++) {
+			comb.add(candidates[i]);
+			helper(candidates, target - candidates[i], i, comb, res); // note i
+			comb.remove(comb.size() - 1);
         }
     }
 }

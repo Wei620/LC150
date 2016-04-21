@@ -25,9 +25,11 @@ class ThreeSumClosest {
         int closest = 0;
         if (num == null) return closest;
         Arrays.sort(num);
+		
         for (int i = 0; i < num.length && i < 3; i++) closest += num[i];  //init closest
         if (num.length < 3) return closest;  //edge case
-        for (int i = 0; i < num.length - 2; i++) {
+        
+		for (int i = 0; i < num.length - 2; i++) {
             int j = i + 1;
             int k = num.length - 1;
             while (j < k) {

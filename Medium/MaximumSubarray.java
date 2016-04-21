@@ -11,7 +11,22 @@
  * 
  * Tags: Divide and Conquer, Array, DP
  */
-class MaximumSubarray {
+/*****
+1. 何时重置currSum 
+*****/
+ //410
+ public class Solution {
+    public int maxSubArray(int[] nums) {
+        int currSum = 0, max = Integer.MIN_VALUE;
+        for(int num : nums){
+            currSum = currSum < 0? num : currSum + num;
+            max = Math.max(max, currSum);
+        }
+        return max;
+    }
+}
+ 
+ class MaximumSubarray {
     public static void main(String[] args) {
         int[] A = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
         System.out.println(maxSubArray(A));

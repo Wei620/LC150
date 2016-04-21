@@ -11,6 +11,37 @@
  * 
  * Tags: Array, DP
  */
+ /* ****
+ 1. maxBy, maxSince 都是比较更新。
+ 2. valley和peak的初始值
+ 3. maxProfit 的初始值
+ *****/
+ 
+ //410
+ public class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length <= 1) return 0;
+        int n = prices.length;
+        
+        // calculate max profit by i.
+        int valley = prices[0];
+        int[] maxBy = new int[n];
+        for(int i = 1; i < n; i++){
+            if(prices[i] < valley) valley = prices[i];
+            maxBy[i] = Math.max(maxBy[i -1], prices[i] - valley);
+        }
+        
+        // calculate max profit since i
+        int peak = prices[n - 1], maxProfit = maxBy[n - 1];
+        int[] maxSince = new int[n];
+        for(int i = n - 2; i >= 0; i--){
+            if(prices[i] > peak) peak = prices[i];
+            maxSince[i] = Math.max(maxSince[i+1], peak - prices[i]);
+            maxProfit = Math.max(maxProfit, maxBy[i] + maxSince[i]);
+        }
+        return maxProfit;
+    }
+}
 class BestTimeStock3 {
     public static void main(String[] args) {
         BestTimeStock3 b = new BestTimeStock3();

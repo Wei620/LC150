@@ -34,6 +34,40 @@ class Search2DMatrix {
         System.out.println(s.searchMatrix(matrix, 51));
         System.out.println(s.searchMatrix(matrix, 100));
     }
+	
+	/* ****
+	1. 209形式
+	2. 找row是要找 [mid] <= target
+	3. 找col， <=, >=都行，最后都要验证。
+	4. 找不到的形式， <= target, l == 0
+			      >= target, r == m
+	*****/
+	
+	public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0) return false;
+        int m = matrix.length, n = matrix[0].length;
+        
+        //Find row
+        int l = 0, r = m;
+        while(l < r){
+            int mid = l + (r - l)/2;
+            if(matrix[mid][0] <= target) l = mid + 1;
+            else r = mid;
+        }
+        if(l == 0) return false;
+        int row = l - 1;
+        
+        // Find column
+        l = 0;
+        r = n;
+        while(l < r){
+            int mid = l + (r - l)/2;
+            if(matrix[row][mid] >= target) r= mid;
+            else l = mid + 1;
+        }
+        if(r == n) return false;
+        return matrix[row][r] == target;
+    }
     
     /**
      * Binary search to locate row, then binary search in a row

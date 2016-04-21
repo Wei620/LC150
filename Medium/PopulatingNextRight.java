@@ -44,19 +44,20 @@ class PopulatingNextRight {
      * Stay on current level to connect children on next level
      * Store node in previous line
      */
+	//perfect binary tree 
     public void connect(TreeLinkNode root) {
         if(root == null) return;
-        TreeLinkNode firstCL = root;  // first node on current level
+        TreeLinkNode pre = root;  // first node on current level
         //TreeLinkNode cur = null;
-        while (firstCL.left != null) { // no more next level if left child is null - Perfect BT
-            TreeLink Node cur = firstCL;
+        while (pre.left != null) { // no more next level if left child is null - Perfect BT
+            TreeLink Node cur = pre;
             while (cur != null) { // work on next level
                 cur.left.next = cur.right; // step 1 - connect left and right
                 // step 2- connect right child with next node's left child
                 if (cur.next != null) cur.right.next = cur.next.left;
                 cur = cur.next; // move current to next node
             }
-            firstCL = firstCL.left; // move to next line
+            pre = pre.left; // move to next line
         }
     }
 
