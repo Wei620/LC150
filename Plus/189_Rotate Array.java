@@ -7,6 +7,11 @@ For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,
 
 */
 
+/*****
+1. k = k%n 处理负数和长数.
+2. 有数Kth, length - k.
+*****/
+
 public class Solution {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
@@ -17,7 +22,7 @@ public class Solution {
         swap(nums, 0, n);
     }
 
-    
+    //[s,e)
     private void swap(int[] A, int s, int e){
         e--;
         while(s < e){

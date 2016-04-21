@@ -14,22 +14,160 @@ Hard
 159. Longest Substring with At Most Two Distinct Characters
 
 214 Shortest Palindrome  19.1% Hard 
-213 House Robber II  29.8% Medium 
-212 Word Search II  18.6% Hard 
-211 Add and Search Word - Data structure design  20.2% Medium 
-210 Course Schedule II  20.8% Medium 
-209 Minimum Size Subarray Sum  26.3% Medium 
-208 Implement Trie (Prefix Tree)  25.3% Medium 
-207 Course Schedule  26.2% Medium 
-206 Reverse Linked List  38.5% Easy 
-205 Isomorphic Strings  28.9% Easy 
-204 Count Primes  23.6% Easy 
-203 Remove Linked List Elements  28.0% Easy 
-202 Happy Number  35.8% Easy 
-201 Bitwise AND of Numbers Range  29.6% Medium 
-200 Number of Islands  27.0% Medium 
-199 Binary Tree Right Side View  33.4% Medium 
-198 House Robber  33.4% Easy 
-191 Number of 1 Bits  37.6% Easy 
-190 Reverse Bits  29.1% Easy 
-189 Rotate Array  20.6% Easy 
+        6	20	213 House Robber II  29.8% Medium 
+        15	20	44	212 Word Search II  18.6% Hard 
+        25	30	21	211 Add and Search Word - Data structure design  20.2% Medium 
+    40  25	60	210 Course Schedule II  20.8% Medium 
+    15  26	23	209 Minimum Size Subarray Sum  26.3% Medium 
+    20  19	30	208 Implement Trie (Prefix Tree)  25.3% Medium 
+    40  23	24	207 Course Schedule  26.2% Medium 
+    1   9		206 Reverse Linked List  38.5% Easy 
+    15  10		205 Isomorphic Strings  28.9% Easy 
+    41  23		204 Count Primes  23.6% Easy 
+    11  5		203 Remove Linked List Elements  28.0% Easy 
+    16  10		202 Happy Number  35.8% Easy 
+    12  12	17	201 Bitwise AND of Numbers Range  29.6% Medium 
+    11  5	15	200 Number of Islands  27.0% Medium 
+    10  10	8	199 Binary Tree Right Side View  33.4% Medium 
+    7   4	5	198 House Robber  33.4% Easy
+    1   4		191 Number of 1 Bits  37.6% Easy 
+    13  25		190 Reverse Bits  29.1% Easy 
+    4   12		189 Rotate Array  20.6% Easy 
+    
+3.8
+	11	19		60	234 Palindrome Linked List  27.3% Easy 
+	11	12		45	233 Number of Digit One  24.0% Medium 
+	2	4		5	232 Implement Queue using Stacks  33.9% Easy 
+	5	5		5	231 Power of Two  35.6% Easy 
+	8	12  15  30	230 Kth Smallest Element in a BST  36.5% Medium 
+	2	14  60  17	229 Majority Element II  25.3% Medium 
+	9	9		10	228 Summary Ranges  23.4% Easy 
+	9	17      20	227 Basic Calculator II  24.1% Medium 
+	11	12		10	226 Invert Binary Tree  44.2% Easy 
+	3	9		5	225 Implement Stack using Queues  30.5% Easy 
+	12	4       15	224 Basic Calculator  21.4% Medium 
+	34	5			223 Rectangle Area  29.3% Easy 
+	20	8       15	222 Count Complete Tree Nodes  24.4% Medium 
+	9	10      12	221 Maximal Square  23.0% Medium 
+	40	40	60	20	220 Contains Duplicate III  18.2% Medium 
+	5	11	10	10	219 Contains Duplicate II  29.4% Easy 
+	13	29		40  218 The Skyline Problem  21.3% Hard 
+	2	7	5	5	217 Contains Duplicate  40.5% Easy 
+	15	15	30	20	216 Combination Sum III  34.7% Medium 
+	6	4	10	20	215 Kth Largest Element in an Array  32.3% Medium
+
+3.9
+	20	6	8	8	254 Factor Combinations   34.2% Medium 
+	10	6	15	12	253 Meeting Rooms II   34.0% Medium 
+	5	3	5	252 Meeting Rooms   41.2% Easy 
+	12	5	13	10	251 Flatten 2D Vector   32.9% Medium 
+	17	4	45	29	250 Count Univalue Subtrees   35.7% Medium 
+	9	10		9	249 Group Shifted Strings   31.0% Easy 
+	16	60	120	45	248 Strobogrammatic Number III   25.7% Hard 
+	6	29	20	15	247 Strobogrammatic Number II   33.6% Medium 
+	4	3	5	11	246 Strobogrammatic Number   35.9% Easy 
+	5	8	18	15	245 Shortest Word Distance III   45.7% Medium 
+	10	14	11	6	244 Shortest Word Distance II   34.9% Medium 
+	5	2	8	5	243 Shortest Word Distance   45.7% Easy 
+	2	3		4	242 Valid Anagram  41.1% Easy 
+	12	10	11	14	241 Different Ways to Add Parentheses  33.4% Medium 
+	3	4	26	8	240 Search a 2D Matrix II  33.8% Medium 
+	20	54		18	239 Sliding Window Maximum  26.5% Hard 
+	5	3	11	19	238 Product of Array Except Self  41.8% Medium 
+	1	4		2	237 Delete Node in a Linked List  43.7% Easy 
+	12	26	16	12	236 Lowest Common Ancestor of a Binary Tree  28.7% Medium 
+	6	7		3	235 Lowest Common Ancestor of a Binary Search Tree  38.0% Easy 
+    
+3.10
+	15	25	35	30	275 H-Index II  32.4% Medium 
+		20	34	17	274 H-Index  28.9% Medium 
+		13	28	13	273 Integer to English Words  18.3% Medium 
+			47	45  272 Closest Binary Search Tree Value II   32.2% Hard 
+		9	9	11	271 Encode and Decode Strings   26.8% Medium 
+					270 Closest Binary Search Tree Value   33.6% Easy 
+			34	45	269 Alien Dictionary   22.1% Hard 
+		9	20	14	268 Missing Number  39.5% Medium 
+		17	20	54	267 Palindrome Permutation II   27.1% Medium 
+			7	8	266 Palindrome Permutation   50.0% Easy 
+			24	25	265 Paint House II   35.0% Hard 
+		2	8	15	264 Ugly Number II  26.9% Medium 
+			6	6	263 Ugly Number  36.0% Easy 
+		9	12	60	261 Graph Valid Tree   31.8% Medium 
+		1	9	8	260 Single Number III  42.9% Medium 
+		8	28	12	259 3Sum Smaller   37.7% Medium 
+					258 Add Digits  48.1% Easy 
+					257 Binary Tree Paths  27.5% Easy 
+		1	12	21	256 Paint House   41.9% Medium 
+		8	27	24	255 Verify Preorder Sequence in Binary Search Tree   Medium
+    
+3.11
+	2	7	22	40  295 Find Median from Data Stream  21.6% Hard 
+	10	10	12	9   294 Flip Game II   40.7% Medium 
+	11	2	5	8   293 Flip Game   49.0% Easy 
+	25	9		12  292 Nim Game  51.9% Easy 
+	20	22	18	30  291 Word Pattern II   34.0% Hard 
+	20	10	15	60  290 Word Pattern  28.4% Easy 
+	2	9	10	31  289 Game of Life  33.8% Medium 
+	15	6		10  288 Unique Word Abbreviation   15.6% Easy 
+	25	28	12x 15  287 Find the Duplicate Number  38.0% Hard 
+	5	9	14	20  286 Walls and Gates   36.4% Medium 
+	60	25	39	10  285 Inorder Successor in BST   35.3% Medium 
+	3	6	13	8   284 Peeking Iterator  33.1% Medium 
+	3	2		3   283 Move Zeroes  43.7% Easy 
+	11	13	26	30  282 Expression Add Operators  23.9% Hard 
+	4	14	26	20  281 Zigzag Iterator   41.8% Medium 
+	8	6	18	6   280 Wiggle Sort   49.4% Medium 
+	11	15	25	18  279 Perfect Squares  31.7% Medium 
+	15	11		3   278 First Bad Version  22.0% Easy 
+	5	9	9	15  277 Find the Celebrity   34.8% Medium 
+	15	12		10  276 Paint Fence   30.5% Easy
+
+3.12
+	30	180	?60	315 Count of Smaller Numbers After Self  29.0% Hard 
+	35	30	15	314 Binary Tree Vertical Order Traversal   30.5% Medium 
+	2	10	40	313 Super Ugly Number  32.8% Medium 
+	80	32	60	312 Burst Balloons  34.9% Hard 
+	24	15	12	311 Sparse Matrix Multiplication   47.1% Medium 
+	30	40	20  310 Minimum Height Trees  26.5% Medium 
+	24	12	20  309 Best Time to Buy and Sell Stock with Cooldown  36.1% Medium 
+308 Range Sum Query 2D - Mutable   21.4% Hard 
+	17			307 Range Sum Query - Mutable  16.9% Medium 
+	22	180	306 Additive Number  25.1% Medium 
+	11	60	30  305 Number of Islands II   33.3% Hard 
+	30			304 Range Sum Query 2D - Immutable  21.9% Medium 
+	9			303 Range Sum Query - Immutable  24.5% Easy 
+	38	18x	60  302 Smallest Rectangle Enclosing Black Pixels   38.4% Hard 
+	7	22	15  301 Remove Invalid Parentheses  31.1% Hard 
+	90	15	60  300 Longest Increasing Subsequence  33.7% Medium 
+	30		30	299 Bulls and Cows  28.8% Easy 
+	15	22	10	298 Binary Tree Longest Consecutive Sequence   35.9% Medium 
+	68	30	10  297 Serialize and Deserialize Binary Tree  27.0% Hard 
+	2	12	10  296 Best Meeting Point   46.2% Hard 
+    
+3.16
+	15	337 House Robber III  36.6% Medium 
+336 Palindrome Pairs  17.6% Hard 
+		65	40	335 Self Crossing  17.3% Medium 
+	7	334 Increasing Triplet Subsequence  32.4% Medium 
+	40	333 Largest BST Subtree   26.1% Medium 
+	60	332 Reconstruct Itinerary  23.3% Medium 
+	15	331 Verify Preorder Serialization of a Binary Tree  31.4% Medium 
+	20	330 Patching Array  28.7% Medium 
+		180	20	60	329 Longest Increasing Path in a Matrix  30.4% Hard 
+328 Odd Even Linked List  37.3% Easy 
+		180	327 Count of Range Sum  24.7% Hard 
+326 Power of Three  35.7% Easy 
+325 Maximum Size Subarray Sum Equals k   39.0% Easy 
+		30	45	324 Wiggle Sort II  21.7% Medium 
+		15	10	323 Number of Connected Components in an Undirected Graph   42.6% Medium 
+		25	13	322 Coin Change  24.6% Medium 
+		49	40	321 Create Maximum Number  20.1% Hard 
+		15	20	320 Generalized Abbreviation   39.9% Medium 
+		10	15	319 Bulb Switcher  39.8% Medium 
+		10	6	318 Maximum Product of Word Lengths  38.9% Medium 
+		45	30	317 Shortest Distance from All Buildings   30.4% Hard 
+		22	20	316 Remove Duplicate Letters  24.3% Medium 
+
+    
+
+    
